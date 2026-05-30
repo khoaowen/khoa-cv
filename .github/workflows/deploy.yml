@@ -41,9 +41,10 @@ jobs:
       - name: Generate PDFs
         run: npm run pdf
 
-      - name: Deploy to Cloudflare Pages
+      - name: Deploy to Cloudflare Workers (static assets)
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-          command: pages deploy dist --project-name=khoa-cv --branch=main
+          # Reads wrangler.jsonc: deploys the ./dist assets as the "khoa-cv" Worker.
+          command: deploy
