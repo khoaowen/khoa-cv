@@ -20,6 +20,27 @@ and push to `main`. CI then validates → builds → regenerates the PDFs → de
 
 When updating one language, update the other to keep them in sync.
 
+## Contribution flow (autonomous)
+
+`main` is protected: **all changes go through a pull request**, and a PR can
+only merge once these checks are green — there is **no human review step**:
+
+- `Build and typecheck` (CI — schema validation, no-phone guard, build)
+- `Analyze JavaScript and TypeScript` (CodeQL)
+- `Gitleaks` (secret scan)
+- `Review dependency changes` (dependency review)
+
+So an editing bot (e.g. Openclaw) should:
+
+1. Create a branch, edit the YAML, commit, push the branch.
+2. Open a PR to `main`.
+3. Enable auto-merge: `gh pr merge <PR> --auto --squash --delete-branch`.
+4. When all checks pass, GitHub merges automatically and `deploy.yml` ships it.
+
+Use a **non-admin, repo-scoped token** for the bot (contents:write +
+pull-requests:write) so it is forced through this flow. Admins can push to
+`main` directly for emergencies. Dependabot PRs auto-merge the same way.
+
 ## Hard rules (enforced by CI — do not attempt to bypass)
 
 - **Never add a phone number** anywhere — not in YAML, the page, or the PDF.

@@ -15,7 +15,7 @@ concurrency:
 
 jobs:
   deploy:
-    name: Build, generate PDFs, deploy to Cloudflare Pages
+    name: Build, generate PDFs, deploy to Cloudflare
     runs-on: ubuntu-latest
     timeout-minutes: 15
 
