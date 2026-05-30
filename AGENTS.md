@@ -26,6 +26,7 @@ When updating one language, update the other to keep them in sync.
 only merge once these checks are green — there is **no human review step**:
 
 - `Build and typecheck` (CI — schema validation, no-phone guard, build)
+- `PDF page budget` (the PDF must fit 2 pages — see below)
 - `Analyze JavaScript and TypeScript` (CodeQL)
 - `Gitleaks` (secret scan)
 - `Review dependency changes` (dependency review)
@@ -65,6 +66,20 @@ for exact fields and validation.
   always shows the full entry.
 - In French, quote any list item containing ` : ` (colon-space) or YAML will
   misparse it as a mapping.
+
+## 2-page PDF budget (enforced)
+
+Each PDF must fit **2 pages**. `scripts/gen-pdf.mjs` renders at 100% and, if it
+overflows, auto-shrinks the print scale down to a readable floor (85%) to absorb
+small growth. If it *still* overflows at 85%, the `PDF page budget` check fails
+and the PR cannot merge.
+
+To fix a failing budget check after adding/expanding a role:
+- Set `condensed: true` on an older `work` entry (moves it to the compact
+  "Earlier experience" list in the PDF; the web page still shows it in full), or
+- Shorten that entry's `highlights` / `summary`.
+
+Tunable via env if ever needed: `CV_MAX_PAGES`, `CV_MIN_SCALE`, `CV_SCALE_STEP`.
 
 ## Verify locally before pushing
 

@@ -34,3 +34,29 @@ jobs:
 
       - name: Build and validate content
         run: npm run build:site
+
+  pdf-budget:
+    name: PDF page budget
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Chromium for Playwright
+        run: npx playwright install --with-deps chromium
+
+      # build:all = build + generate PDFs; gen-pdf.mjs auto-fits to the readable
+      # floor and exits non-zero if a PDF still exceeds the 2-page budget.
+      - name: Build and enforce 2-page PDF budget
+        run: npm run build:all
