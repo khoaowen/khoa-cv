@@ -5,8 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "astro dev",
+    "check:content": "node scripts/check-content.mjs",
     "build": "astro check && astro build",
-    "build:site": "astro check && astro build",
+    "build:site": "node scripts/check-content.mjs && astro check && astro build",
     "pdf": "node scripts/gen-pdf.mjs",
     "build:all": "npm run build:site && npm run pdf",
     "preview": "astro preview"

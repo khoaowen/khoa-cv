@@ -12,8 +12,9 @@ privacy-first, and ships zero JavaScript.
 ## Edit the CV
 
 Edit `src/content/cv/en.yaml` and `src/content/cv/fr.yaml`, then push to `main`.
-See [`CLAUDE.md`](./CLAUDE.md) for the full editing guide and privacy rules
-(notably: **no phone number anywhere**; email/address live only in the PDF).
+See [`AGENTS.md`](./AGENTS.md) for the full editing guide and privacy rules
+(notably: **no phone number anywhere**, enforced by CI; email/address live only
+in the PDF). Any agent — Codex, Claude, etc. — should read `AGENTS.md` first.
 
 ## Develop
 
