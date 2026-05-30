@@ -74,6 +74,7 @@ work:
     tech: [Java 11, Spring Boot, Maven, Oracle SQL, Azure DevOps, Cucumber, Checkmarx, Kibana, Gatling]
 
   - company: Nexway
+    condensed: true
     position: Développeur Sénior Java
     start: Juil. 2020
     end: Oct. 2020
@@ -86,6 +87,7 @@ work:
     tech: [Java 11, MongoDB, Gradle, Git, IntelliJ IDEA]
 
   - company: BNP Paribas
+    condensed: true
     position: Développeur Sénior Java
     start: Oct. 2018
     end: Oct. 2019
@@ -103,6 +105,7 @@ work:
     tech: [Java 8, Python 2, Angular 6, Spring Boot, Hibernate, Oracle SQL, Tomcat, Mule, Jenkins, Ansible, Git, Sonar, Artifactory]
 
   - company: HSBC
+    condensed: true
     position: Java Lead technique
     start: Juil. 2017
     end: Oct. 2018
@@ -119,6 +122,7 @@ work:
     tech: [Java EE 6, JSF, Richfaces, Spring, Hibernate, Oracle SQL 11, Tomcat, PL/SQL, JasperReport, Confluence]
 
   - company: SSI-SOFT (Groupe DEF)
+    condensed: true
     position: Développeur
     start: Avril 2015
     end: Juil. 2017
@@ -133,6 +137,7 @@ work:
     tech: [Java 8, JavaFX, XML, Spring, Maven, MyBatis, H2, Jenkins, Git]
 
   - company: DEF (Détection Électronique Française)
+    condensed: true
     position: Consultant Développeur
     start: Sept. 2013
     end: Avril 2015
@@ -147,6 +152,7 @@ work:
     tech: [Java 6, XML, Maven, TortoiseHg, InnoSetup]
 
   - company: TERRASOL
+    condensed: true
     position: Développeur
     start: Avril 2012
     end: Juil. 2013
@@ -161,6 +167,7 @@ work:
     tech: [Java 6, XML, UML, HTML, Netbeans, SVN, Balsamiq]
 
   - company: CEA (Commissariat à l'Énergie Atomique)
+    condensed: true
     position: Développeur
     start: Jan. 2012
     end: Mars 2012
@@ -172,6 +179,7 @@ work:
     tech: [Java 6, Eclipse, SmartGit]
 
   - company: Safran Engineering Services
+    condensed: true
     position: Stagiaire
     start: Mars 2011
     end: Sept. 2011
@@ -184,6 +192,7 @@ work:
     tech: [Java 6, UML]
 
   - company: IRIT (Institut de Recherche en Informatique de Toulouse)
+    condensed: true
     position: Stagiaire
     start: Sept. 2010
     end: Mars 2011

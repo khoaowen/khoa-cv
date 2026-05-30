@@ -7,6 +7,7 @@ export const ui = {
   en: {
     'nav.summary': 'Summary',
     'nav.experience': 'Experience',
+    'nav.earlier': 'Earlier experience',
     'nav.education': 'Education',
     'nav.skills': 'Skills',
     'nav.projects': 'Projects',
@@ -25,6 +26,7 @@ export const ui = {
   fr: {
     'nav.summary': 'Profil',
     'nav.experience': 'Expérience',
+    'nav.earlier': 'Expérience antérieure',
     'nav.education': 'Formation',
     'nav.skills': 'Compétences',
     'nav.projects': 'Projets',

@@ -73,6 +73,7 @@ work:
     tech: [Java 11, Spring Boot, Maven, Oracle SQL, Azure DevOps, Cucumber, Checkmarx, Kibana, Gatling]
 
   - company: Nexway
+    condensed: true
     position: Senior Java Developer
     start: Jul 2020
     end: Oct 2020
@@ -84,6 +85,7 @@ work:
     tech: [Java 11, MongoDB, Gradle, Git, IntelliJ IDEA]
 
   - company: BNP Paribas
+    condensed: true
     position: Senior Java Developer
     start: Oct 2018
     end: Oct 2019
@@ -101,6 +103,7 @@ work:
     tech: [Java 8, Python 2, Angular 6, Spring Boot, Hibernate, Oracle SQL, Tomcat, Mule, Jenkins, Ansible, Git, Sonar, Artifactory]
 
   - company: HSBC
+    condensed: true
     position: Java Technical Lead
     start: Jul 2017
     end: Oct 2018
@@ -117,6 +120,7 @@ work:
     tech: [Java EE 6, JSF, Richfaces, Spring, Hibernate, Oracle SQL 11, Tomcat, PL/SQL, JasperReport, Confluence]
 
   - company: SSI-SOFT (Groupe DEF)
+    condensed: true
     position: Developer
     start: Apr 2015
     end: Jul 2017
@@ -131,6 +135,7 @@ work:
     tech: [Java 8, JavaFX, XML, Spring, Maven, MyBatis, H2, Jenkins, Git]
 
   - company: DEF (French Electronic Detection)
+    condensed: true
     position: Consultant Developer
     start: Sep 2013
     end: Apr 2015
@@ -145,6 +150,7 @@ work:
     tech: [Java 6, XML, Maven, TortoiseHg, InnoSetup]
 
   - company: TERRASOL
+    condensed: true
     position: Developer
     start: Apr 2012
     end: Jul 2013
@@ -159,6 +165,7 @@ work:
     tech: [Java 6, XML, UML, HTML, Netbeans, SVN, Balsamiq]
 
   - company: CEA (Atomic Energy Commission)
+    condensed: true
     position: Developer
     start: Jan 2012
     end: Mar 2012
@@ -170,6 +177,7 @@ work:
     tech: [Java 6, Eclipse, SmartGit]
 
   - company: Safran Engineering Services
+    condensed: true
     position: Intern
     start: Mar 2011
     end: Sep 2011
@@ -182,6 +190,7 @@ work:
     tech: [Java 6, UML]
 
   - company: IRIT (Institute of Research in Computer Science of Toulouse)
+    condensed: true
     position: Intern
     start: Sep 2010
     end: Mar 2011

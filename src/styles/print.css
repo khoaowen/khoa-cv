@@ -99,6 +99,14 @@ section > h2 {
   white-space: nowrap;
   font-size: 9pt;
 }
+.condensed-entry {
+  margin: 0 0 2pt;
+  break-inside: avoid;
+}
+.condensed-entry .entry-dates {
+  color: var(--muted);
+}
+
 .entry ul {
   margin: 3pt 0 0;
   padding-left: 12pt;
