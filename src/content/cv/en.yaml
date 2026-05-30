@@ -1,70 +1,245 @@
 # ============================================================================
-# CV CONTENT — ENGLISH
-# This file is the single source of truth for the English CV (web + PDF).
-# Edit values below, commit, and push: CI validates this against the schema,
-# rebuilds the site, regenerates the PDF, and deploys automatically.
-# NOTE: there is no phone field by design. Public contact = LinkedIn link.
-# TODO: placeholder content — replace with the real CV imported from Drive.
+# CV CONTENT — ENGLISH  (imported from Google Drive CV)
+# Single source of truth for the English CV (web + PDF). Edit, commit, push.
+# NOTE: no phone field by design. Public contact = LinkedIn link.
+# REVIEW: `basics.summary` was generated from the CV — tweak to taste.
 # ============================================================================
 lang: en
 
 basics:
-  name: Khoa
-  role: Software Engineer
+  name: Dang Khoa BUI
+  role: Senior Java Developer / Tech Lead
   location: France
   summary: >-
-    Software engineer building reliable web and backend systems. Comfortable
-    across the stack with a focus on clean architecture, automation, and
-    pragmatic delivery.
+    Senior Java developer and technical lead with over a decade of experience
+    building reliable backend systems and microservices across fintech, banking
+    and software-product companies. Focused on clean code, TDD, CI/CD and
+    pragmatic delivery, with a track record of leading integrations and
+    mentoring teams.
   links:
-    linkedin: https://www.linkedin.com/in/khoa/
+    linkedin: https://www.linkedin.com/in/dangkhoabui/
     github: https://github.com/khoaowen
   # Shown ONLY in the downloadable PDF, never on the public page.
   private:
     email: khoaowen2510@gmail.com
 
 work:
-  - company: Example Company
-    position: Software Engineer
-    location: Paris, France
-    start: "2023"
+  - company: Amundi Technology
+    position: Senior Java Developer
+    start: Oct 2024
     end: ""
-    summary: Backend and full-stack development.
+    summary: >-
+      Core squad of the Employee Savings & Retirement (Épargne Salariale et
+      Retraite) product, building cross-functional features to support other
+      teams. Team: 4 backend Java developers, 1 Product Owner.
     highlights:
-      - Delivered features X, Y, Z that did A.
-      - Improved B by N%.
-    tech:
-      - Java
-      - Spring Boot
-      - TypeScript
+      - Improved the CI/CD pipeline — parallel unit tests in Jenkins, Sonar reporting, and Docker Compose for local testing.
+      - Implemented Test-Driven Development (TDD) best practices.
+      - Analysed and fixed production bugs; refactored and improved code quality.
+      - Helped onboard new team members.
+    tech: [Java 8, Spring 3, Hibernate 5, Oracle SQL, Maven, IntelliJ IDEA, Codex]
+
+  - company: BVNK
+    position: Senior Java Developer
+    start: Jun 2022
+    end: Oct 2024
+    summary: >-
+      Fintech startup enabling businesses to send, receive and convert any
+      currency (incl. crypto and EUR/USD) at internet speed. Integration squad,
+      building third-party API integrations to create virtual IBANs and move
+      money over SEPA, SWIFT and more. Team: 4 backend Java developers, 1 PO.
+    highlights:
+      - Developed new EUR payment integrations (Modulr, EasyEP, LHV).
+      - Designed the architecture of a new microservice to integrate the LHV API as feature lead, owning communication with business and third parties.
+      - Implemented a Spring State Machine for a complex IBAN-creation flow.
+      - Analysed and fixed production bugs; helped onboard new team members.
+    tech: [Java 21, Spring Boot, MySQL, Gradle, Kubernetes, Docker, AWS SQS/SNS, Grafana, Localstack]
+
+  - company: ING
+    position: Senior Java Developer
+    start: Oct 2020
+    end: May 2022
+    summary: >-
+      DARE project — collaboration with AXA to integrate insurance products into
+      banking offers via a microservices platform letting users customise
+      protections (Mobility, Living, Wellness) per country. Mobility squad,
+      building motor and non-motor insurance screens. Team: 3 frontend, 6
+      backend Java developers, 1 PO.
+    highlights:
+      - Developed new features and fixed production bugs while ensuring clean code.
+      - Implemented the Rules design pattern to add business rules without modifying existing code.
+      - Improved page performance via parallel multithreaded AXA API calls and caching.
+      - Analysed and fixed security issues reported by Checkmarx; updated Gatling performance tests.
+    tech: [Java 11, Spring Boot, Maven, Oracle SQL, Azure DevOps, Cucumber, Checkmarx, Kibana, Gatling]
+
+  - company: Nexway
+    position: Senior Java Developer
+    start: Jul 2020
+    end: Oct 2020
+    summary: >-
+      Contributed to the online payment system microservices. Team: 3 Java
+      developers, 1 Python developer, 4 frontend developers.
+    highlights:
+      - Developed a new reference module.
+    tech: [Java 11, MongoDB, Gradle, Git, IntelliJ IDEA]
+
+  - company: BNP Paribas
+    position: Senior Java Developer
+    start: Oct 2018
+    end: Oct 2019
+    summary: >-
+      BNP CIB — Primerisk team, evolutionary and corrective maintenance of the
+      client risk-calculation application; designing and sharing solutions with
+      the team and setting up CI for the new Maestro project. Team: 2 full-stack
+      + 2 Java + 1 Java/Python developers, 1 proxy PO, 1 PO.
+    highlights:
+      - Developed new features and provided level-3 production support.
+      - Performed technical migrations (Jenkins; SVN to Git).
+      - Helped design the "Maestro" microservices web app — the future central interface for risk-calculation systems.
+      - Built REST APIs + GUI for counterparty creation/modification; improved the UI with Material Design alongside BNP's UX team.
+      - Implemented CI/CD from development to deployment with Jenkins pipelines and Ansible; documented the release workflow.
+    tech: [Java 8, Python 2, Angular 6, Spring Boot, Hibernate, Oracle SQL, Tomcat, Mule, Jenkins, Ansible, Git, Sonar, Artifactory]
+
+  - company: HSBC
+    position: Java Technical Lead
+    start: Jul 2017
+    end: Oct 2018
+    summary: >-
+      HSBC GBM — BCC team redesigning the EBCC application that manages client
+      data; providing technical solutions and improvements. Team: 4 full-stack
+      Java developers, 1 project manager, 1 PM assistant.
+    highlights:
+      - Analysed requirements and developed new features.
+      - Refactored code and created Facelet tags for the GUI to promote reusability and consistency, with Confluence documentation and templates.
+      - Generated monthly PDF reports with hyperlinks back into the application.
+      - Developed a PL/SQL procedure to calculate and categorise client statuses.
+      - Initiated end-to-end automated testing with Selenium; managed production releases.
+    tech: [Java EE 6, JSF, Richfaces, Spring, Hibernate, Oracle SQL 11, Tomcat, PL/SQL, JasperReport, Confluence]
+
+  - company: SSI-SOFT (Groupe DEF)
+    position: Developer
+    start: Apr 2015
+    end: Jul 2017
+    summary: >-
+      Development of TéléUltima, software for programming fire-detection control
+      panels; providing technical solutions and improvements. Team: 5 Java
+      developers, 1 project manager.
+    highlights:
+      - Developed new features; optimised performance and UI; refactored code.
+      - Automated screen tests using Pulover's Macro Creator.
+      - Resolved N+1 SQL query problems; transferred knowledge to new members.
+    tech: [Java 8, JavaFX, XML, Spring, Maven, MyBatis, H2, Jenkins, Git]
+
+  - company: DEF (French Electronic Detection)
+    position: Consultant Developer
+    start: Sep 2013
+    end: Apr 2015
+    summary: >-
+      VisioDef3D, software for administering fire-surveillance systems;
+      providing technical solutions and developing new features. Team: 2 Java
+      developers, 1 project manager/Java developer.
+    highlights:
+      - Developed an internal tool for editing XML files; input the OPC Siemens server database.
+      - Fixed bugs and resolved memory leaks; implemented features per user needs.
+      - Built a simplified touchscreen version used by Purpan hospital; improved the InnoSetup installer.
+    tech: [Java 6, XML, Maven, TortoiseHg, InnoSetup]
+
+  - company: TERRASOL
+    position: Developer
+    start: Apr 2012
+    end: Jul 2013
+    summary: >-
+      Talren (v5), software for verifying the stability of geotechnical
+      structures; strengthening the team and developing new features. Team: 2
+      Java developers.
+    highlights:
+      - Studied existing software and improved usability; designed and developed property panels.
+      - Migrated legacy file-import modules to the new version (debugging and source analysis to extract and adapt modules).
+      - Developed a printing module with layout; built interoperability with Plaxis and AutoCAD via file decoders.
+    tech: [Java 6, XML, UML, HTML, Netbeans, SVN, Balsamiq]
+
+  - company: CEA (Atomic Energy Commission)
+    position: Developer
+    start: Jan 2012
+    end: Mar 2012
+    summary: >-
+      CIVA, a tool for simulating and analysing materials; developed an
+      annotation module for scanned images.
+    highlights:
+      - Analysed specifications and built a tool to draw shapes (line, rectangle, circle) and add text onto scanned images.
+    tech: [Java 6, Eclipse, SmartGit]
+
+  - company: Safran Engineering Services
+    position: Intern
+    start: Mar 2011
+    end: Sep 2011
+    summary: >-
+      Design and development of a tool to assist in modelling aircraft
+      maintenance-system HMIs.
+    highlights:
+      - Gathered requirements (user interviews, usability testing) and wrote the state of the art on UML modelling of user interfaces.
+      - Ran participatory design and a comparative study of existing tools; trained the team on the tool (applied to the ATMOST project).
+    tech: [Java 6, UML]
+
+  - company: IRIT (Institute of Research in Computer Science of Toulouse)
+    position: Intern
+    start: Sep 2010
+    end: Mar 2011
+    summary: >-
+      Design and development of interaction techniques for configuring a 3D
+      simulation environment for home care.
+    highlights:
+      - Applied an iterative, user-centred HCI approach; gathered requirements via interviews and wrote the state of the art on 3D interaction techniques.
+      - Developed the software prototype and ran user testing.
+    tech: [Java 6, "C++ (Irrlicht 3D engine)", Ivy Bus, Eclipse]
 
 education:
-  - institution: Example University
-    studyType: M.Sc.
-    area: Computer Science
-    start: "2018"
-    end: "2020"
+  - institution: École Nationale de l'Aviation Civile (ENAC)
+    studyType: Master 2
+    area: Human–Computer Interaction
+    end: "2011"
+  - institution: Université Paul Sabatier III, Toulouse
+    studyType: Master 1
+    area: Computer Science — Human–Computer Interaction
+    end: "2010"
+  - institution: Université Paul Sabatier III, Toulouse
+    studyType: Bachelor's (Licence)
+    area: Fundamental Computer Science
+    end: "2008"
+  - institution: Baccalauréat S (Science)
+    end: "2004"
 
 skills:
   - category: Backend
-    items: [Java, Spring Boot, Node.js]
+    items: [Java 6/8/11/21, Spring Boot 3, Hibernate, Gradle, Docker, AWS]
   - category: Frontend
-    items: [TypeScript, Astro, React]
-  - category: Tooling
-    items: [Git, Docker, GitHub Actions]
+    items: [Angular 6, JavaFX, Java Swing, JSF/Richfaces, HTML/CSS]
+  - category: Databases
+    items: [MySQL, MongoDB, Oracle SQL, H2, PL/SQL]
+  - category: Other
+    items: [Python 2, Tomcat, MyBatis, XML, UML, Mule]
+  - category: Tools
+    items: [IntelliJ IDEA, Eclipse, Netbeans, GitLab, Burp Suite]
+  - category: Practices
+    items: [Clean code, Pair programming, Domain-Driven Design, TDD, CI/CD]
 
-projects:
-  - name: Example Project
-    description: A short description of what it does.
-    url: https://github.com/khoaowen
-    tech: [Astro, Cloudflare]
+projects: []
 
 languages:
   - language: English
-    fluency: Professional
+    fluency: Fluent
   - language: French
-    fluency: Professional
+    fluency: Fluent
   - language: Vietnamese
     fluency: Native
 
-certifications: []
+certifications:
+  - name: Azure Fundamentals (AZ-900)
+    issuer: Microsoft
+    date: "2022"
+  - name: Professional Scrum Master I (PSM I)
+    issuer: Scrum.org
+    date: "2019"
+  - name: Java / JEE Development with Java/JEE frameworks
+    issuer: ORSYS Paris
+    date: "2013"

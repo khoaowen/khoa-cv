@@ -1,70 +1,247 @@
 # ============================================================================
-# CONTENU DU CV — FRANÇAIS
-# Fichier source unique pour le CV en français (site + PDF).
-# Modifiez les valeurs, committez et poussez : la CI valide selon le schéma,
-# reconstruit le site, régénère le PDF et déploie automatiquement.
-# NOTE : aucun numéro de téléphone par choix. Contact public = lien LinkedIn.
-# TODO : contenu provisoire — à remplacer par le vrai CV importé depuis Drive.
+# CONTENU DU CV — FRANÇAIS  (importé depuis le CV Google Drive)
+# Source unique pour le CV en français (site + PDF). Modifiez, committez, poussez.
+# NOTE : aucun téléphone par choix. Contact public = lien LinkedIn.
+# À RELIRE : `basics.summary` a été généré à partir du CV — à ajuster.
 # ============================================================================
 lang: fr
 
 basics:
-  name: Khoa
-  role: Ingénieur logiciel
+  name: Dang Khoa BUI
+  role: Développeur Java Senior / Tech Lead
   location: France
   summary: >-
-    Ingénieur logiciel développant des systèmes web et backend fiables. À
-    l'aise sur toute la stack, avec un souci d'architecture propre,
-    d'automatisation et de livraison pragmatique.
+    Développeur Java senior et tech lead avec plus de dix ans d'expérience dans
+    la conception de systèmes backend et de microservices fiables, dans la
+    fintech, la banque et l'édition logicielle. Attaché au clean code, au TDD,
+    au CI/CD et à une livraison pragmatique, avec une expérience de lead sur des
+    intégrations et d'accompagnement d'équipes.
   links:
-    linkedin: https://www.linkedin.com/in/khoa/
+    linkedin: https://www.linkedin.com/in/dangkhoabui/
     github: https://github.com/khoaowen
   # Affiché UNIQUEMENT dans le PDF téléchargeable, jamais sur la page publique.
   private:
     email: khoaowen2510@gmail.com
 
 work:
-  - company: Entreprise Exemple
-    position: Ingénieur logiciel
-    location: Paris, France
-    start: "2023"
+  - company: Amundi Technology
+    position: Développeur Sénior Java
+    start: Oct. 2024
     end: ""
-    summary: Développement backend et full-stack.
+    summary: >-
+      Squad Core — application principale du produit Épargne Salariale et
+      Retraite ; développement de fonctionnalités transverses pour soutenir les
+      autres équipes. Équipe : 4 développeurs back-end Java, 1 Product Owner.
     highlights:
-      - Livraison des fonctionnalités X, Y, Z ayant permis A.
-      - Amélioration de B de N %.
-    tech:
-      - Java
-      - Spring Boot
-      - TypeScript
+      - "Amélioration du pipeline CI/CD : tests unitaires en parallèle, rapport Sonar, mise en place de Docker Compose pour les tests en local."
+      - Mise en place des bonnes pratiques TDD.
+      - Analyse et correction des bugs en production ; refactoring et amélioration de la qualité du code.
+      - Aide à l'intégration des nouveaux membres de l'équipe.
+    tech: [Java 8, Spring 3, Hibernate 5, Oracle SQL, Maven, IntelliJ IDEA, Codex]
+
+  - company: BVNK
+    position: Développeur Sénior Java
+    start: Juin 2022
+    end: Oct. 2024
+    summary: >-
+      Startup fintech permettant aux entreprises d'envoyer, recevoir et convertir
+      n'importe quelle devise (crypto ou EUR/USD) à la vitesse d'Internet. Squad
+      Intégration : intégrations avec des API tierces pour créer des IBAN
+      virtuels et envoyer de l'argent via SEPA, SWIFT, etc. Équipe : 4
+      développeurs back-end Java, 1 PO.
+    highlights:
+      - Développement de nouvelles intégrations de paiement EUR (Modulr, EasyEP, LHV).
+      - Conception de l'architecture d'un nouveau microservice pour intégrer l'API LHV (feature lead, gestion de la communication avec le métier et les tiers).
+      - Mise en place d'une Spring State Machine pour un flux complexe de création d'IBAN.
+      - Analyse et correction des bugs en production ; aide à l'intégration des nouveaux membres.
+    tech: [Java 21, Spring Boot, MySQL, Gradle, Kubernetes, Docker, AWS SQS/SNS, Grafana, Localstack]
+
+  - company: ING
+    position: Développeur Sénior Java
+    start: Oct. 2020
+    end: Mai 2022
+    summary: >-
+      Projet DARE — collaboration avec AXA pour intégrer des produits d'assurance
+      dans les offres bancaires via une plateforme microservices permettant de
+      personnaliser les protections (Mobility, Living, Wellness) selon les pays.
+      Squad Mobility : écrans d'assurance motor et non-motor. Équipe : 3
+      développeurs front-end, 6 back-end Java, 1 PO.
+    highlights:
+      - Développement de nouvelles fonctionnalités et correction des bugs en production, en assurant le clean code.
+      - Mise en place du Rules Design Pattern pour ajouter des règles métier sans modifier le code existant.
+      - Amélioration des performances de certaines pages via des appels parallèles multithreads aux API AXA et de la mise en cache.
+      - Analyse et correction des problèmes de sécurité remontés par Checkmarx ; mise à jour des tests de performance Gatling.
+    tech: [Java 11, Spring Boot, Maven, Oracle SQL, Azure DevOps, Cucumber, Checkmarx, Kibana, Gatling]
+
+  - company: Nexway
+    position: Développeur Sénior Java
+    start: Juil. 2020
+    end: Oct. 2020
+    summary: >-
+      Contribution au développement des microservices du système de paiement en
+      ligne. Équipe : 3 développeurs Java, 1 développeur Python, 4 développeurs
+      front-end.
+    highlights:
+      - Développement d'un nouveau module de Reference.
+    tech: [Java 11, MongoDB, Gradle, Git, IntelliJ IDEA]
+
+  - company: BNP Paribas
+    position: Développeur Sénior Java
+    start: Oct. 2018
+    end: Oct. 2019
+    summary: >-
+      BNP CIB — équipe Primerisk, maintenance évolutive et corrective de
+      l'application de calcul de risque client ; conception et partage de
+      solutions, et mise en place de l'intégration continue du projet Maestro.
+      Équipe : 2 full-stack + 2 Java + 1 Java/Python, 1 Proxy PO, 1 PO.
+    highlights:
+      - Développement de nouvelles fonctionnalités et support production niveau 3.
+      - Migrations techniques (Jenkins ; SVN vers Git).
+      - Participation à la conception de « Maestro », l'application web microservices destinée à devenir l'interface centrale du calcul de risque.
+      - Développement d'API REST + GUI pour la création/modification de contreparties ; amélioration de l'interface avec Material Design avec l'équipe UX de BNP.
+      - Mise en place de l'intégration continue du développement au déploiement avec Jenkins et Ansible ; rédaction du workflow de release.
+    tech: [Java 8, Python 2, Angular 6, Spring Boot, Hibernate, Oracle SQL, Tomcat, Mule, Jenkins, Ansible, Git, Sonar, Artifactory]
+
+  - company: HSBC
+    position: Java Lead technique
+    start: Juil. 2017
+    end: Oct. 2018
+    summary: >-
+      HSBC GBM — équipe BCC, refonte de l'application EBCC qui gère les données
+      clients ; apport de solutions techniques et propositions d'améliorations.
+      Équipe : 4 développeurs Java full-stack, 1 chef de projet, 1 assistante.
+    highlights:
+      - Analyse des besoins et développement de nouvelles fonctionnalités.
+      - Refactoring et création de Facelet tags pour la GUI afin de favoriser la réutilisabilité et la cohérence, avec documentation et templates sur Confluence.
+      - Génération de reportings mensuels en PDF avec hyperliens vers l'application.
+      - Développement d'une procédure PL/SQL pour calculer et catégoriser les statuts clients.
+      - Initiation des tests automatisés E2E avec Selenium ; mise en production et suivi de release.
+    tech: [Java EE 6, JSF, Richfaces, Spring, Hibernate, Oracle SQL 11, Tomcat, PL/SQL, JasperReport, Confluence]
+
+  - company: SSI-SOFT (Groupe DEF)
+    position: Développeur
+    start: Avril 2015
+    end: Juil. 2017
+    summary: >-
+      Développement de TéléUltima, logiciel de programmation des centrales de
+      détection d'incendie ; apport de solutions techniques et d'améliorations.
+      Équipe : 5 développeurs Java, 1 chef de projet.
+    highlights:
+      - Développement de nouvelles fonctionnalités ; optimisation des performances et de l'interface ; refactoring.
+      - Automatisation des tests d'écrans avec Pulover's Macro Creator.
+      - Résolution des problèmes de requêtes N+1 ; passage de connaissances aux nouveaux arrivants.
+    tech: [Java 8, JavaFX, XML, Spring, Maven, MyBatis, H2, Jenkins, Git]
+
+  - company: DEF (Détection Électronique Française)
+    position: Consultant Développeur
+    start: Sept. 2013
+    end: Avril 2015
+    summary: >-
+      VisioDef3D, logiciel d'administration des systèmes de surveillance
+      d'incendie ; apport de solutions techniques et développement de nouvelles
+      fonctionnalités. Équipe : 2 développeurs Java, 1 chef de projet/développeur.
+    highlights:
+      - Développement d'un outil interne d'édition de fichiers XML ; saisie de la base de données des serveurs OPC Siemens.
+      - Correction de bugs et résolution de « memory leaks » ; implémentation de fonctionnalités selon les besoins utilisateurs.
+      - Développement d'une version simplifiée pour écran tactile utilisée par l'hôpital Purpan ; amélioration de l'installeur InnoSetup.
+    tech: [Java 6, XML, Maven, TortoiseHg, InnoSetup]
+
+  - company: TERRASOL
+    position: Développeur
+    start: Avril 2012
+    end: Juil. 2013
+    summary: >-
+      Talren (v5), logiciel de vérification de la stabilité des ouvrages
+      géotechniques ; renfort de l'équipe et développement de nouvelles
+      fonctionnalités. Équipe : 2 développeurs Java.
+    highlights:
+      - Étude de l'existant et amélioration de l'utilisabilité ; conception et développement des volets de propriétés.
+      - Migration d'anciens modules d'importation vers la nouvelle version (débogage et analyse du code source pour extraire et adapter les modules).
+      - Implémentation du module d'impression avec mise en page ; interopérabilité avec Plaxis et AutoCAD via des décodeurs de fichiers.
+    tech: [Java 6, XML, UML, HTML, Netbeans, SVN, Balsamiq]
+
+  - company: CEA (Commissariat à l'Énergie Atomique)
+    position: Développeur
+    start: Jan. 2012
+    end: Mars 2012
+    summary: >-
+      CIVA, outil de simulation et d'analyse des matériaux ; développement d'un
+      module d'annotation sur les images scannées.
+    highlights:
+      - Analyse du cahier des charges et développement d'un outil permettant de dessiner des formes (ligne, rectangle, cercle) et d'ajouter du texte sur une image scannée.
+    tech: [Java 6, Eclipse, SmartGit]
+
+  - company: Safran Engineering Services
+    position: Stagiaire
+    start: Mars 2011
+    end: Sept. 2011
+    summary: >-
+      Conception et développement d'un outil d'aide à la modélisation des IHM du
+      système de maintenance des avions.
+    highlights:
+      - Recueil des besoins (interviews, tests d'utilisabilité) et rédaction de l'état de l'art sur la modélisation UML des interfaces utilisateurs.
+      - Conception participative et étude comparative des outils existants ; formation de l'équipe à l'outil (appliqué au projet ATMOST).
+    tech: [Java 6, UML]
+
+  - company: IRIT (Institut de Recherche en Informatique de Toulouse)
+    position: Stagiaire
+    start: Sept. 2010
+    end: Mars 2011
+    summary: >-
+      Conception et développement de techniques d'interaction pour la
+      configuration d'un environnement 3D de simulation d'aide à domicile.
+    highlights:
+      - Application de la démarche IHM itérative et centrée utilisateur ; recueil des besoins via interviews et rédaction de l'état de l'art sur les techniques d'interaction 3D.
+      - Développement du prototype logiciel et tests utilisateurs.
+    tech: [Java 6, "C++ (moteur 3D Irrlicht)", Bus Ivy, Eclipse]
 
 education:
-  - institution: Université Exemple
-    studyType: Master
-    area: Informatique
-    start: "2018"
-    end: "2020"
+  - institution: École Nationale de l'Aviation Civile (ENAC)
+    studyType: Master 2
+    area: Interaction Homme-Machine
+    end: "2011"
+  - institution: Université Paul Sabatier III, Toulouse
+    studyType: Master 1
+    area: Informatique — Interaction Homme-Machine
+    end: "2010"
+  - institution: Université Paul Sabatier III, Toulouse
+    studyType: Licence
+    area: Informatique fondamentale
+    end: "2008"
+  - institution: Baccalauréat S
+    end: "2004"
 
 skills:
   - category: Backend
-    items: [Java, Spring Boot, Node.js]
+    items: [Java 6/8/11/21, Spring Boot 3, Hibernate, Gradle, Docker, AWS]
   - category: Frontend
-    items: [TypeScript, Astro, React]
+    items: [Angular 6, JavaFX, Java Swing, JSF/Richfaces, HTML/CSS]
+  - category: Bases de données
+    items: [MySQL, MongoDB, Oracle SQL, H2, PL/SQL]
+  - category: Autres
+    items: [Python 2, Tomcat, MyBatis, XML, UML, Mule]
   - category: Outils
-    items: [Git, Docker, GitHub Actions]
+    items: [IntelliJ IDEA, Eclipse, Netbeans, GitLab, Burp Suite]
+  - category: Pratiques
+    items: [Clean code, Pair programming, Domain-Driven Design, TDD, CI/CD]
 
-projects:
-  - name: Projet Exemple
-    description: Une brève description de ce que fait le projet.
-    url: https://github.com/khoaowen
-    tech: [Astro, Cloudflare]
+projects: []
 
 languages:
   - language: Anglais
-    fluency: Professionnel
+    fluency: Courant
   - language: Français
-    fluency: Professionnel
+    fluency: Courant
   - language: Vietnamien
     fluency: Langue maternelle
 
-certifications: []
+certifications:
+  - name: Azure Fundamentals (AZ-900)
+    issuer: Microsoft
+    date: "2022"
+  - name: Professional Scrum Master I (PSM I)
+    issuer: Scrum.org
+    date: "2019"
+  - name: Développement Java / JEE avec les frameworks Java/JEE
+    issuer: ORSYS Paris
+    date: "2013"
