@@ -1,0 +1,70 @@
+# ============================================================================
+# CONTENU DU CV — FRANÇAIS
+# Fichier source unique pour le CV en français (site + PDF).
+# Modifiez les valeurs, committez et poussez : la CI valide selon le schéma,
+# reconstruit le site, régénère le PDF et déploie automatiquement.
+# NOTE : aucun numéro de téléphone par choix. Contact public = lien LinkedIn.
+# TODO : contenu provisoire — à remplacer par le vrai CV importé depuis Drive.
+# ============================================================================
+lang: fr
+
+basics:
+  name: Khoa
+  role: Ingénieur logiciel
+  location: France
+  summary: >-
+    Ingénieur logiciel développant des systèmes web et backend fiables. À
+    l'aise sur toute la stack, avec un souci d'architecture propre,
+    d'automatisation et de livraison pragmatique.
+  links:
+    linkedin: https://www.linkedin.com/in/khoa/
+    github: https://github.com/khoaowen
+  # Affiché UNIQUEMENT dans le PDF téléchargeable, jamais sur la page publique.
+  private:
+    email: khoaowen2510@gmail.com
+
+work:
+  - company: Entreprise Exemple
+    position: Ingénieur logiciel
+    location: Paris, France
+    start: "2023"
+    end: ""
+    summary: Développement backend et full-stack.
+    highlights:
+      - Livraison des fonctionnalités X, Y, Z ayant permis A.
+      - Amélioration de B de N %.
+    tech:
+      - Java
+      - Spring Boot
+      - TypeScript
+
+education:
+  - institution: Université Exemple
+    studyType: Master
+    area: Informatique
+    start: "2018"
+    end: "2020"
+
+skills:
+  - category: Backend
+    items: [Java, Spring Boot, Node.js]
+  - category: Frontend
+    items: [TypeScript, Astro, React]
+  - category: Outils
+    items: [Git, Docker, GitHub Actions]
+
+projects:
+  - name: Projet Exemple
+    description: Une brève description de ce que fait le projet.
+    url: https://github.com/khoaowen
+    tech: [Astro, Cloudflare]
+
+languages:
+  - language: Anglais
+    fluency: Professionnel
+  - language: Français
+    fluency: Professionnel
+  - language: Vietnamien
+    fluency: Langue maternelle
+
+certifications: []

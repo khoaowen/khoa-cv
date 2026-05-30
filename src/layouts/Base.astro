@@ -1,0 +1,73 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import type { Locale } from '../i18n/ui';
+import { useTranslations } from '../i18n/ui';
+import LangToggle from '../components/LangToggle.astro';
+import '../styles/global.css';
+
+interface Props {
+  data: CollectionEntry<'cv'>['data'];
+  locale: Locale;
+  pdfHref: string;
+}
+const { data, locale, pdfHref } = Astro.props;
+const t = useTranslations(locale);
+
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const title = `${data.basics.name} — ${data.basics.role}`;
+const description = data.basics.summary.slice(0, 155);
+---
+
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang="en" href={new URL('/', Astro.site).href} />
+    <link rel="alternate" hreflang="fr" href={new URL('/fr/', Astro.site).href} />
+    <link rel="alternate" hreflang="x-default" href={new URL('/', Astro.site).href} />
+
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content={locale === 'fr' ? 'fr_FR' : 'en_US'} />
+    <meta name="twitter:card" content="summary" />
+
+    <meta name="robots" content="index, follow" />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">{t('a11y.skipToContent')}</a>
+    <div class="container">
+      <header class="site-header">
+        <div>
+          <h1>{data.basics.name}</h1>
+          <p class="role">{data.basics.role}</p>
+          {data.basics.location && <p class="location">{data.basics.location}</p>}
+        </div>
+        <div class="toolbar">
+          <LangToggle locale={locale} />
+          <a class="btn" href={data.basics.links.linkedin} rel="me noopener noreferrer" target="_blank">
+            {t('action.viewLinkedin')}
+          </a>
+          <a class="btn btn-primary" href={pdfHref} download>
+            {t('action.downloadPdf')}
+          </a>
+        </div>
+      </header>
+
+      <main id="main">
+        <slot />
+      </main>
+
+      <footer class="site-footer">
+        <p>© {new Date().getFullYear()} {data.basics.name}</p>
+      </footer>
+    </div>
+  </body>
+</html>

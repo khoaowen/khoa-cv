@@ -1,0 +1,144 @@
+/* Print / PDF layout — A4, optimised for a clean recruiter-ready document.
+   Used by the /cv-print routes that Playwright renders to PDF. */
+:root {
+  --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    Helvetica, Arial, sans-serif;
+  --ink: #1a1d23;
+  --muted: #4a4f59;
+  --accent: #1f4e79;
+  --line: #cfd4db;
+}
+
+@page {
+  size: A4;
+  margin: 14mm 14mm 14mm 14mm;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #fff;
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 10.5pt;
+  line-height: 1.4;
+}
+
+.page {
+  max-width: 182mm;
+  margin-inline: auto;
+}
+
+.p-header h1 {
+  font-size: 20pt;
+  margin: 0;
+}
+.p-header .role {
+  font-size: 12pt;
+  color: var(--muted);
+  margin: 2pt 0 0;
+}
+.p-contact {
+  margin-top: 4pt;
+  font-size: 9pt;
+  color: var(--muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4pt 12pt;
+}
+.p-contact a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+section {
+  margin-top: 10pt;
+  break-inside: avoid;
+}
+section > h2 {
+  font-size: 11pt;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+  border-bottom: 1pt solid var(--line);
+  padding-bottom: 2pt;
+  margin: 0 0 6pt;
+}
+
+.summary {
+  margin: 0;
+}
+
+.entry {
+  margin-bottom: 8pt;
+  break-inside: avoid;
+}
+.entry-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 8pt;
+}
+.entry-title {
+  font-weight: 700;
+  margin: 0;
+  font-size: 10.5pt;
+}
+.entry-sub {
+  color: var(--muted);
+  margin: 0;
+}
+.entry-dates {
+  color: var(--muted);
+  white-space: nowrap;
+  font-size: 9pt;
+}
+.entry ul {
+  margin: 3pt 0 0;
+  padding-left: 12pt;
+}
+.entry li {
+  margin: 1pt 0;
+}
+
+.tags {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3pt 6pt;
+  padding: 0;
+  margin: 3pt 0 0;
+  font-size: 8.5pt;
+  color: var(--muted);
+}
+.tags li::after {
+  content: "·";
+  margin-left: 6pt;
+}
+.tags li:last-child::after {
+  content: "";
+}
+
+.skill-row {
+  display: flex;
+  gap: 6pt;
+  margin-bottom: 2pt;
+}
+.skill-row .cat {
+  font-weight: 700;
+  min-width: 90pt;
+}
+
+.lang-list,
+.cert-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  columns: 2;
+}

@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /cv-print/
+Disallow: /fr/cv-print/
+
+Sitemap: https://khoa-cv.pages.dev/sitemap-index.xml

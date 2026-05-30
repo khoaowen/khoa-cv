@@ -1,0 +1,52 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import type { Locale } from '../i18n/ui';
+import '../styles/print.css';
+
+interface Props {
+  data: CollectionEntry<'cv'>['data'];
+  locale: Locale;
+}
+const { data, locale } = Astro.props;
+const b = data.basics;
+
+// Contact line for the PDF. Email/address come from the `private` block and
+// appear ONLY here (the PDF), never on the public web page. No phone, ever.
+const contacts: { label: string; href?: string }[] = [];
+if (b.private?.email) contacts.push({ label: b.private.email, href: `mailto:${b.private.email}` });
+contacts.push({ label: 'LinkedIn', href: b.links.linkedin });
+if (b.links.github) contacts.push({ label: 'GitHub', href: b.links.github });
+if (b.links.website) contacts.push({ label: b.links.website, href: b.links.website });
+if (b.private?.address) contacts.push({ label: b.private.address });
+if (b.location) contacts.push({ label: b.location });
+---
+
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{b.name} — {b.role}</title>
+    <meta name="robots" content="noindex" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="p-header">
+        <h1>{b.name}</h1>
+        <p class="role">{b.role}</p>
+        <div class="p-contact">
+          {
+            contacts.map((c) =>
+              c.href ? (
+                <a href={c.href}>{c.label}</a>
+              ) : (
+                <span>{c.label}</span>
+              ),
+            )
+          }
+        </div>
+      </header>
+      <slot />
+    </div>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+/** UI label translations (section headings, buttons). CV data itself lives in
+ *  src/content/cv/{en,fr}.yaml — this is only for chrome/labels. */
+
+export type Locale = 'en' | 'fr';
+
+export const ui = {
+  en: {
+    'nav.summary': 'Summary',
+    'nav.experience': 'Experience',
+    'nav.education': 'Education',
+    'nav.skills': 'Skills',
+    'nav.projects': 'Projects',
+    'nav.languages': 'Languages',
+    'nav.certifications': 'Certifications',
+    'action.downloadPdf': 'Download PDF',
+    'action.viewLinkedin': 'LinkedIn',
+    'action.website': 'Website',
+    'action.github': 'GitHub',
+    'date.present': 'Present',
+    'lang.switchTo': 'Français',
+    'lang.label': 'Language',
+    'a11y.skipToContent': 'Skip to content',
+    'meta.description': 'curriculum vitae',
+  },
+  fr: {
+    'nav.summary': 'Profil',
+    'nav.experience': 'Expérience',
+    'nav.education': 'Formation',
+    'nav.skills': 'Compétences',
+    'nav.projects': 'Projets',
+    'nav.languages': 'Langues',
+    'nav.certifications': 'Certifications',
+    'action.downloadPdf': 'Télécharger le PDF',
+    'action.viewLinkedin': 'LinkedIn',
+    'action.website': 'Site web',
+    'action.github': 'GitHub',
+    'date.present': 'Présent',
+    'lang.switchTo': 'English',
+    'lang.label': 'Langue',
+    'a11y.skipToContent': 'Aller au contenu',
+    'meta.description': 'curriculum vitae',
+  },
+} as const;
+
+export function useTranslations(locale: Locale) {
+  return function t(key: keyof (typeof ui)['en']): string {
+    return ui[locale][key];
+  };
+}

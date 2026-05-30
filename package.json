@@ -1,0 +1,29 @@
+{
+  "name": "khoa-cv",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro check && astro build",
+    "build:site": "astro check && astro build",
+    "pdf": "node scripts/gen-pdf.mjs",
+    "build:all": "npm run build:site && npm run pdf",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "@astrojs/check": "0.9.9",
+    "@astrojs/sitemap": "3.7.3",
+    "astro": "6.4.2",
+    "typescript": "6.0.3"
+  },
+  "devDependencies": {
+    "playwright": "1.55.1",
+    "wrangler": "4.95.0"
+  },
+  "overrides": {
+    "yaml-language-server": {
+      "yaml": "2.8.3"
+    }
+  }
+}

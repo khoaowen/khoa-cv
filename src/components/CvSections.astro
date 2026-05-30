@@ -1,0 +1,153 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import type { Locale } from '../i18n/ui';
+import { useTranslations } from '../i18n/ui';
+import { dateRange } from '../lib/format';
+
+interface Props {
+  data: CollectionEntry<'cv'>['data'];
+  locale: Locale;
+}
+const { data, locale } = Astro.props;
+const t = useTranslations(locale);
+const present = t('date.present');
+---
+
+<section class="cv-section" id="summary" aria-labelledby="h-summary">
+  <h2 id="h-summary">{t('nav.summary')}</h2>
+  <p class="summary">{data.basics.summary}</p>
+</section>
+
+{
+  data.work.length > 0 && (
+    <section class="cv-section" id="experience" aria-labelledby="h-exp">
+      <h2 id="h-exp">{t('nav.experience')}</h2>
+      {data.work.map((job) => (
+        <article class="entry">
+          <div class="entry-head">
+            <div>
+              <p class="entry-title">
+                {job.position} — {job.company}
+              </p>
+              {job.location && <p class="entry-sub">{job.location}</p>}
+            </div>
+            <span class="entry-dates">{dateRange(job.start, job.end, present)}</span>
+          </div>
+          {job.summary && <p class="entry-sub">{job.summary}</p>}
+          {job.highlights.length > 0 && (
+            <ul>
+              {job.highlights.map((h) => (
+                <li>{h}</li>
+              ))}
+            </ul>
+          )}
+          {job.tech.length > 0 && (
+            <ul class="tags" aria-label="Technologies">
+              {job.tech.map((x) => (
+                <li>{x}</li>
+              ))}
+            </ul>
+          )}
+        </article>
+      ))}
+    </section>
+  )
+}
+
+{
+  data.projects.length > 0 && (
+    <section class="cv-section" id="projects" aria-labelledby="h-proj">
+      <h2 id="h-proj">{t('nav.projects')}</h2>
+      {data.projects.map((p) => (
+        <article class="entry">
+          <p class="entry-title">
+            {p.url ? (
+              <a href={p.url} rel="noopener noreferrer">
+                {p.name}
+              </a>
+            ) : (
+              p.name
+            )}
+          </p>
+          {p.description && <p class="entry-sub">{p.description}</p>}
+          {p.tech.length > 0 && (
+            <ul class="tags" aria-label="Technologies">
+              {p.tech.map((x) => (
+                <li>{x}</li>
+              ))}
+            </ul>
+          )}
+        </article>
+      ))}
+    </section>
+  )
+}
+
+{
+  data.skills.length > 0 && (
+    <section class="cv-section" id="skills" aria-labelledby="h-skills">
+      <h2 id="h-skills">{t('nav.skills')}</h2>
+      {data.skills.map((s) => (
+        <div class="skill-row">
+          <span class="cat">{s.category}</span>
+          <span>{s.items.join(', ')}</span>
+        </div>
+      ))}
+    </section>
+  )
+}
+
+{
+  data.education.length > 0 && (
+    <section class="cv-section" id="education" aria-labelledby="h-edu">
+      <h2 id="h-edu">{t('nav.education')}</h2>
+      {data.education.map((ed) => (
+        <article class="entry">
+          <div class="entry-head">
+            <div>
+              <p class="entry-title">
+                {[ed.studyType, ed.area].filter(Boolean).join(' — ')}
+              </p>
+              <p class="entry-sub">{ed.institution}</p>
+            </div>
+            <span class="entry-dates">{dateRange(ed.start, ed.end, present)}</span>
+          </div>
+          {ed.note && <p class="entry-sub">{ed.note}</p>}
+        </article>
+      ))}
+    </section>
+  )
+}
+
+{
+  data.certifications.length > 0 && (
+    <section class="cv-section" id="certifications" aria-labelledby="h-cert">
+      <h2 id="h-cert">{t('nav.certifications')}</h2>
+      <ul class="cert-list">
+        {data.certifications.map((c) => (
+          <li>
+            <strong>{c.name}</strong>
+            {c.issuer && <span> — {c.issuer}</span>}
+            {c.date && <span> ({c.date})</span>}
+          </li>
+        ))}
+      </ul>
+    </section>
+  )
+}
+
+{
+  data.languages.length > 0 && (
+    <section class="cv-section" id="languages" aria-labelledby="h-lang">
+      <h2 id="h-lang">{t('nav.languages')}</h2>
+      <ul class="lang-list">
+        {data.languages.map((l) => (
+          <li>
+            <strong>{l.language}</strong>
+            {l.fluency && <span> — {l.fluency}</span>}
+          </li>
+        ))}
+      </ul>
+    </section>
+  )
+}

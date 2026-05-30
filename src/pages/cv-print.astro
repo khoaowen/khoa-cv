@@ -1,0 +1,14 @@
+---
+import { getEntry } from 'astro:content';
+import PrintLayout from '../layouts/PrintLayout.astro';
+import CvSections from '../components/CvSections.astro';
+
+// Print-only route rendered to dist/cv-en.pdf by scripts/gen-pdf.mjs.
+const entry = await getEntry('cv', 'en');
+if (!entry) throw new Error('Missing CV content: src/content/cv/en.yaml');
+const { data } = entry;
+---
+
+<PrintLayout data={data} locale="en">
+  <CvSections data={data} locale="en" />
+</PrintLayout>

@@ -1,0 +1,70 @@
+# ============================================================================
+# CV CONTENT — ENGLISH
+# This file is the single source of truth for the English CV (web + PDF).
+# Edit values below, commit, and push: CI validates this against the schema,
+# rebuilds the site, regenerates the PDF, and deploys automatically.
+# NOTE: there is no phone field by design. Public contact = LinkedIn link.
+# TODO: placeholder content — replace with the real CV imported from Drive.
+# ============================================================================
+lang: en
+
+basics:
+  name: Khoa
+  role: Software Engineer
+  location: France
+  summary: >-
+    Software engineer building reliable web and backend systems. Comfortable
+    across the stack with a focus on clean architecture, automation, and
+    pragmatic delivery.
+  links:
+    linkedin: https://www.linkedin.com/in/khoa/
+    github: https://github.com/khoaowen
+  # Shown ONLY in the downloadable PDF, never on the public page.
+  private:
+    email: khoaowen2510@gmail.com
+
+work:
+  - company: Example Company
+    position: Software Engineer
+    location: Paris, France
+    start: "2023"
+    end: ""
+    summary: Backend and full-stack development.
+    highlights:
+      - Delivered features X, Y, Z that did A.
+      - Improved B by N%.
+    tech:
+      - Java
+      - Spring Boot
+      - TypeScript
+
+education:
+  - institution: Example University
+    studyType: M.Sc.
+    area: Computer Science
+    start: "2018"
+    end: "2020"
+
+skills:
+  - category: Backend
+    items: [Java, Spring Boot, Node.js]
+  - category: Frontend
+    items: [TypeScript, Astro, React]
+  - category: Tooling
+    items: [Git, Docker, GitHub Actions]
+
+projects:
+  - name: Example Project
+    description: A short description of what it does.
+    url: https://github.com/khoaowen
+    tech: [Astro, Cloudflare]
+
+languages:
+  - language: English
+    fluency: Professional
+  - language: French
+    fluency: Professional
+  - language: Vietnamese
+    fluency: Native
+
+certifications: []

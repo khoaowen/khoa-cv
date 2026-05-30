@@ -1,0 +1,13 @@
+---
+import { getEntry } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import CvSections from '../../components/CvSections.astro';
+
+const entry = await getEntry('cv', 'fr');
+if (!entry) throw new Error('Missing CV content: src/content/cv/fr.yaml');
+const { data } = entry;
+---
+
+<Base data={data} locale="fr" pdfHref="/cv-fr.pdf">
+  <CvSections data={data} locale="fr" />
+</Base>
