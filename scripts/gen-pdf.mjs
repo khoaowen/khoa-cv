@@ -1,12 +1,26 @@
-// Generate recruiter-ready PDFs from the built print routes.
-// Renders dist/cv-print/ -> dist/cv-en.pdf and dist/fr/cv-print/ -> dist/cv-fr.pdf.
-// Run after `astro build` (the print routes and bundled CSS must exist in dist/).
+// Generate recruiter-ready PDFs from the built print routes, with a hard
+// 2-page budget per language.
+//
+// Strategy (auto-fit, then block):
+//   - Render at 100% scale. If it exceeds the page budget, shrink the print
+//     scale step by step down to a readable floor (default 85%) until it fits.
+//   - Pick the LARGEST scale that fits the budget and write that PDF.
+//   - If it still overflows at the floor, write the floor version (so dist has
+//     a file) and exit non-zero so CI blocks the change.
+//
+// Run after `astro build` (print routes + bundled CSS must exist in dist/).
 import { createServer } from 'node:http';
-import { readFile, stat, access } from 'node:fs/promises';
+import { readFile, writeFile, stat, access } from 'node:fs/promises';
 import { join, extname, normalize } from 'node:path';
 import { chromium } from 'playwright';
+import { PDFDocument } from 'pdf-lib';
 
 const DIST = new URL('../dist/', import.meta.url).pathname;
+
+// Budget knobs (overridable via env for flexibility).
+const MAX_PAGES = Number(process.env.CV_MAX_PAGES ?? 2);
+const MIN_SCALE = Number(process.env.CV_MIN_SCALE ?? 0.85);
+const SCALE_STEP = Number(process.env.CV_SCALE_STEP ?? 0.03);
 
 const MIME = {
   '.html': 'text/html; charset=utf-8',
@@ -51,8 +65,25 @@ const TARGETS = [
   { route: '/fr/cv-print/', out: 'cv-fr.pdf' },
 ];
 
+async function pageCount(buffer) {
+  const doc = await PDFDocument.load(buffer);
+  return doc.getPageCount();
+}
+
+// Render one route, shrinking scale until it fits the page budget.
+async function renderToBudget(page, url) {
+  await page.goto(url, { waitUntil: 'networkidle' });
+  let last = null;
+  for (let scale = 1; scale >= MIN_SCALE - 1e-9; scale = Number((scale - SCALE_STEP).toFixed(2))) {
+    const buffer = await page.pdf({ printBackground: true, preferCSSPageSize: true, scale });
+    const pages = await pageCount(buffer);
+    last = { buffer, pages, scale };
+    if (pages <= MAX_PAGES) return { ...last, fits: true };
+  }
+  return { ...last, fits: false }; // floor reached, still over budget
+}
+
 async function main() {
-  // Sanity check: dist/ built?
   try {
     await access(join(DIST, 'index.html'));
   } catch {
@@ -61,23 +92,33 @@ async function main() {
 
   const { server, port } = await startServer();
   const browser = await chromium.launch();
+  let failed = false;
   try {
     const page = await browser.newPage();
     for (const { route, out } of TARGETS) {
-      const url = `http://127.0.0.1:${port}${route}`;
-      await page.goto(url, { waitUntil: 'networkidle' });
-      const outPath = join(DIST, out);
-      await page.pdf({
-        path: outPath,
-        printBackground: true,
-        preferCSSPageSize: true, // honor @page { size: A4; margin } from print.css
-      });
-      const { size } = await stat(outPath);
-      console.log(`✓ ${out} (${(size / 1024).toFixed(0)} KB)`);
+      const result = await renderToBudget(page, `http://127.0.0.1:${port}${route}`);
+      await writeFile(join(DIST, out), result.buffer);
+      const pct = Math.round(result.scale * 100);
+      if (result.fits) {
+        const note = pct < 100 ? ` (auto-fit to ${pct}%)` : '';
+        console.log(`✓ ${out} — ${result.pages} page(s)${note}`);
+      } else {
+        failed = true;
+        console.error(
+          `✗ ${out} — still ${result.pages} pages at the ${pct}% readable floor ` +
+            `(budget is ${MAX_PAGES}). Fix: set \`condensed: true\` on an older work ` +
+            `entry, or shorten its highlights, in the matching YAML. See AGENTS.md.`,
+        );
+      }
     }
   } finally {
     await browser.close();
     server.close();
+  }
+
+  if (failed) {
+    console.error(`\nPDF page-budget check failed (limit: ${MAX_PAGES} pages).`);
+    process.exit(1);
   }
 }
 
