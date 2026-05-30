@@ -48,6 +48,8 @@ One-time setup:
 - Strict CSP (`script-src 'none'`), HSTS, nosniff, frame-deny — see
   `public/_headers`.
 - No third-party fonts, analytics, or trackers.
-- Private repo (source contains personal data used only in the PDF).
-- Security workflows: CodeQL, OpenSSF Scorecard, Gitleaks, Dependabot
-  auto-merge. See [`SECURITY.md`](./SECURITY.md).
+- Automated: Dependabot (alerts + security + version updates, auto-merge),
+  CodeQL, secret scanning + push protection, Gitleaks, dependency review,
+  OpenSSF Scorecard. `main` is branch-protected (PR-only, required checks, no
+  human review needed). See [`SECURITY.md`](./SECURITY.md) and
+  [`AGENTS.md`](./AGENTS.md).
