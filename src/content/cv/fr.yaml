@@ -245,12 +245,27 @@ languages:
     fluency: Langue maternelle
 
 certifications:
-  - name: Azure Fundamentals (AZ-900)
+  - name: "Microsoft Certified: Azure Solutions Architect Expert"
     issuer: Microsoft
-    date: "2022"
+    date: "Oct. 2022 - Oct. 2023"
+  - name: "Microsoft Certified: Azure Administrator Associate"
+    issuer: Microsoft
+    date: "Sept. 2022 - Sept. 2023"
+  - name: "Microsoft Certified: Azure AI Fundamentals"
+    issuer: Microsoft
+    date: "Juin 2022"
+  - name: "Microsoft Certified: Security, Compliance, and Identity Fundamentals"
+    issuer: Microsoft
+    date: "Juin 2022"
+  - name: "Microsoft Certified: Azure Data Fundamentals"
+    issuer: Microsoft
+    date: "Mai 2022"
+  - name: "Microsoft Certified: Azure Fundamentals"
+    issuer: Microsoft
+    date: "Mai 2022"
   - name: Professional Scrum Master I (PSM I)
     issuer: Scrum.org
-    date: "2019"
+    date: "Févr. 2019"
   - name: Développement Java / JEE avec les frameworks Java/JEE
     issuer: ORSYS Paris
     date: "2013"
