@@ -3,4 +3,4 @@ Allow: /
 Disallow: /cv-print/
 Disallow: /fr/cv-print/
 
-Sitemap: https://khoa-cv.pages.dev/sitemap-index.xml
+Sitemap: https://khoa-cv.khoaowen2510.workers.dev/sitemap-index.xml

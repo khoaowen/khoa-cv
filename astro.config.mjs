@@ -1,10 +1,10 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
-// Public site URL. Update to a custom domain later if one is attached in
-// Cloudflare Pages (Pages project -> Custom domains).
+// Public site URL — used for canonical links, hreflang and the sitemap.
+// Update if you later attach a custom domain to the Worker.
 export default defineConfig({
-  site: 'https://khoa-cv.pages.dev',
+  site: 'https://khoa-cv.khoaowen2510.workers.dev',
   i18n: {
     defaultLocale: 'en',
     locales: ['en', 'fr'],
