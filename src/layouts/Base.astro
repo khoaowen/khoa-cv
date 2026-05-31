@@ -56,7 +56,8 @@ const description = data.basics.summary.slice(0, 155);
             {t('action.viewLinkedin')}
           </a>
           <a class="btn btn-primary" href={pdfHref} download>
-            {t('action.downloadPdf')}
+            <span>{t('action.downloadPdf')}</span>
+            <small>{t('action.downloadPdfSub')}</small>
           </a>
         </div>
       </header>

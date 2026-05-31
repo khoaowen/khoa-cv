@@ -102,7 +102,15 @@ const cv = defineCollection({
         }),
       )
       .default([]),
-    interests: z.array(z.string()).default([]),
+    sideProjects: z
+      .array(
+        z.object({
+          name: z.string(),
+          description: z.string().optional(),
+          tech: z.array(z.string()).default([]),
+        }),
+      )
+      .default([]),
   }),
 });
 
