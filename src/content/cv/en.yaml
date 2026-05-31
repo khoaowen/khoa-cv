@@ -57,6 +57,7 @@ work:
     tech: [Java 21, Spring Boot, MySQL, Gradle, Kubernetes, Docker, AWS SQS/SNS, Grafana, Localstack]
 
   - company: ING
+    condensed: true
     position: Senior Java Developer
     start: Oct 2020
     end: May 2022
