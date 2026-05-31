@@ -276,5 +276,10 @@ certifications:
     issuer: ORSYS Paris
     date: "2013"
 
-interests:
-  - Krav Maga
+sideProjects:
+  - name: Krav Maga Website AI Delivery Flow
+    description: >-
+      Set up a Discord-driven AI workflow to update and verify the Krav Maga
+      website end-to-end: requests come through chat, the agent edits the site,
+      opens PRs, runs CI/CD, and verifies the live deployment.
+    tech: [OpenClaw, Discord, GitHub Apps, Astro, CI/CD, Cloudflare]
