@@ -9,7 +9,7 @@ lang: fr
 basics:
   name: Dang Khoa BUI
   role: Développeur Java Senior / Tech Lead
-  location: France
+  location: Ile de France, Paris
   summary: >-
     Développeur Java senior et tech lead avec plus de dix ans d'expérience dans
     la conception de systèmes backend et de microservices fiables, dans la
@@ -58,6 +58,7 @@ work:
     tech: [Java 21, Spring Boot, MySQL, Gradle, Kubernetes, Docker, AWS SQS/SNS, Grafana, Localstack]
 
   - company: ING
+    condensed: true
     position: Développeur Sénior Java
     start: Oct. 2020
     end: Mai 2022
