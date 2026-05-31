@@ -9,7 +9,7 @@ lang: en
 basics:
   name: Dang Khoa BUI
   role: Senior Java Developer / Tech Lead
-  location: France
+  location: Ile de France, Paris
   summary: >-
     Senior Java developer and technical lead with over a decade of experience
     building reliable backend systems and microservices across fintech, banking
@@ -37,6 +37,7 @@ work:
       - Implemented Test-Driven Development (TDD) best practices.
       - Analysed and fixed production bugs; refactored and improved code quality.
       - Helped onboard new team members.
+      - Designed AI-driven skill flows encoding team conventions — AI analyses requirements, implements, and verifies end-to-end by running the local application, replacing repetitive development patterns.
     tech: [Java 8, Spring 3, Hibernate 5, Oracle SQL, Maven, IntelliJ IDEA, Codex]
 
   - company: BVNK
@@ -56,6 +57,7 @@ work:
     tech: [Java 21, Spring Boot, MySQL, Gradle, Kubernetes, Docker, AWS SQS/SNS, Grafana, Localstack]
 
   - company: ING
+    condensed: true
     position: Senior Java Developer
     start: Oct 2020
     end: May 2022
@@ -243,12 +245,35 @@ languages:
     fluency: Native
 
 certifications:
-  - name: Azure Fundamentals (AZ-900)
+  - name: "Microsoft Certified: Azure Solutions Architect Expert"
     issuer: Microsoft
-    date: "2022"
+    date: "Oct 2022 - Oct 2023"
+  - name: "Microsoft Certified: Azure Administrator Associate"
+    issuer: Microsoft
+    date: "Sep 2022 - Sep 2023"
+  - name: "Microsoft Certified: Azure AI Fundamentals"
+    issuer: Microsoft
+    date: "Jun 2022"
+  - name: "Microsoft Certified: Security, Compliance, and Identity Fundamentals"
+    issuer: Microsoft
+    date: "Jun 2022"
+  - name: "Microsoft Certified: Azure Data Fundamentals"
+    issuer: Microsoft
+    date: "May 2022"
+  - name: "Microsoft Certified: Azure Fundamentals"
+    issuer: Microsoft
+    date: "May 2022"
   - name: Professional Scrum Master I (PSM I)
     issuer: Scrum.org
-    date: "2019"
+    date: "Feb 2019"
   - name: Java / JEE Development with Java/JEE frameworks
     issuer: ORSYS Paris
     date: "2013"
+
+sideProjects:
+  - name: Krav Maga Website AI Delivery Flow
+    description: >-
+      Set up a Discord-driven AI workflow to update and verify the Krav Maga
+      website end-to-end: requests come through chat, the agent edits the site,
+      opens PRs, runs CI/CD, and verifies the live deployment.
+    tech: [OpenClaw, Discord, GitHub Apps, Astro, CI/CD, Cloudflare]
