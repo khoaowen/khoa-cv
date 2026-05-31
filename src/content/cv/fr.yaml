@@ -37,6 +37,7 @@ work:
       - Mise en place des bonnes pratiques TDD.
       - Analyse et correction des bugs en production ; refactoring et amélioration de la qualité du code.
       - Aide à l'intégration des nouveaux membres de l'équipe.
+      - Conception de skill flows pilotés par l'IA encodant les conventions de l'équipe — l'IA analyse les besoins, implémente et vérifie de bout en bout en exécutant l'application locale, remplaçant les patterns de développement répétitifs.
     tech: [Java 8, Spring 3, Hibernate 5, Oracle SQL, Maven, IntelliJ IDEA, Codex]
 
   - company: BVNK
@@ -234,7 +235,14 @@ skills:
   - category: Pratiques
     items: [Clean code, Pair programming, Domain-Driven Design, TDD, CI/CD]
 
-projects: []
+projects:
+  - name: Système d'orchestration IA personnel
+    description: >-
+      Agent IA auto-hébergé livrant des fonctionnalités de bout en bout :
+      reçoit les demandes via chat, implémente, vérifie dans le navigateur,
+      s'authentifie via GitHub App, ouvre des PR et déclenche le CI/CD —
+      de façon autonome.
+    tech: [Claude AI, GitHub Apps, Node.js, CI/CD, Astro]
 
 languages:
   - language: Anglais
@@ -269,3 +277,6 @@ certifications:
   - name: Développement Java / JEE avec les frameworks Java/JEE
     issuer: ORSYS Paris
     date: "2013"
+
+interests:
+  - Krav Maga

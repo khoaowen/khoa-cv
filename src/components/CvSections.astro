@@ -172,3 +172,16 @@ const earlierWork = variant === 'print' ? data.work.filter((j) => j.condensed) :
     </section>
   )
 }
+
+{
+  data.interests.length > 0 && (
+    <section class="cv-section" id="interests" aria-labelledby="h-interests">
+      <h2 id="h-interests">{t('nav.interests')}</h2>
+      <ul class="lang-list">
+        {data.interests.map((i) => (
+          <li>{i}</li>
+        ))}
+      </ul>
+    </section>
+  )
+}
