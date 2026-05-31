@@ -235,14 +235,7 @@ skills:
   - category: Pratiques
     items: [Clean code, Pair programming, Domain-Driven Design, TDD, CI/CD]
 
-projects:
-  - name: Système d'orchestration IA personnel
-    description: >-
-      Agent IA auto-hébergé livrant des fonctionnalités de bout en bout :
-      reçoit les demandes via chat, implémente, vérifie dans le navigateur,
-      s'authentifie via GitHub App, ouvre des PR et déclenche le CI/CD —
-      de façon autonome.
-    tech: [Claude AI, GitHub Apps, Node.js, CI/CD, Astro]
+projects: []
 
 languages:
   - language: Anglais

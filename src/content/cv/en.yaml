@@ -233,14 +233,7 @@ skills:
   - category: Practices
     items: [Clean code, Pair programming, Domain-Driven Design, TDD, CI/CD]
 
-projects:
-  - name: Personal AI Orchestration System
-    description: >-
-      Self-hosted AI agent capable of end-to-end software delivery: takes
-      requests via chat, implements features, verifies in-browser,
-      authenticates via GitHub App, opens PRs, and triggers CI/CD —
-      autonomously.
-    tech: [Claude AI, GitHub Apps, Node.js, CI/CD, Astro]
+projects: []
 
 languages:
   - language: English
