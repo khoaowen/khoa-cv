@@ -174,7 +174,7 @@ const earlierWork = variant === 'print' ? data.work.filter((j) => j.condensed) :
 }
 
 {
-  variant !== 'print' && data.sideProjects.length > 0 && (
+  data.sideProjects.length > 0 && (
     <section class="cv-section" id="side-projects" aria-labelledby="h-side-projects">
       <h2 id="h-side-projects">{t('nav.sideProjects')}</h2>
       {data.sideProjects.map((p) => (
