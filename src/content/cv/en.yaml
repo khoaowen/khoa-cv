@@ -38,7 +38,7 @@ work:
       - Analysed and fixed production bugs; refactored and improved code quality.
       - Helped onboard new team members.
       - Designed AI-driven skill flows encoding team conventions — AI analyses requirements, implements, and verifies end-to-end by running the local application, replacing repetitive development patterns.
-    tech: [Java 8, Spring 3, Hibernate 5, Oracle SQL, Maven, IntelliJ IDEA, Codex]
+    tech: [Java 8, Spring 3, Hibernate 5, Oracle SQL, Maven, IntelliJ IDEA, Codex, Claude Code]
 
   - company: BVNK
     position: Senior Java Developer

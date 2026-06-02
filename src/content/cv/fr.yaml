@@ -38,7 +38,7 @@ work:
       - Analyse et correction des bugs en production ; refactoring et amélioration de la qualité du code.
       - Aide à l'intégration des nouveaux membres de l'équipe.
       - Conception de skill flows pilotés par l'IA encodant les conventions de l'équipe — l'IA analyse les besoins, implémente et vérifie de bout en bout en exécutant l'application locale, remplaçant les patterns de développement répétitifs.
-    tech: [Java 8, Spring 3, Hibernate 5, Oracle SQL, Maven, IntelliJ IDEA, Codex]
+    tech: [Java 8, Spring 3, Hibernate 5, Oracle SQL, Maven, IntelliJ IDEA, Codex, Claude Code]
 
   - company: BVNK
     position: Développeur Sénior Java
