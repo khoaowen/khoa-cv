@@ -1,4 +1,4 @@
-/* Design tokens + base styles. System font stack only — no third-party font
+/* Design variables + base styles. System font stack only — no third-party font
    requests (privacy + speed + CSP-friendly). */
 :root {
   --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
@@ -245,6 +245,14 @@ a:focus-visible {
 .skill-row .cat {
   font-weight: 700;
   min-width: 9rem;
+}
+
+.soft-skill-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.45rem 1.5rem;
+  margin: 0;
+  padding-left: 1.1rem;
 }
 
 .lang-list,

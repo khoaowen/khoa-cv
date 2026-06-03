@@ -132,6 +132,20 @@ const earlierWork = variant === 'print' ? data.work.filter((j) => j.condensed) :
   )
 }
 
+
+{
+  data.softSkills.length > 0 && (
+    <section class="cv-section" id="soft-skills" aria-labelledby="h-soft-skills">
+      <h2 id="h-soft-skills">{t("nav.softSkills")}</h2>
+      <ul class="soft-skill-list">
+        {data.softSkills.map((skill) => (
+          <li>{skill}</li>
+        ))}
+      </ul>
+    </section>
+  )
+}
+
 {
   data.education.length > 0 && (
     <section class="cv-section" id="education" aria-labelledby="h-edu">
