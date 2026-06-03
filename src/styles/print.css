@@ -143,6 +143,15 @@ section > h2 {
   min-width: 90pt;
 }
 
+.soft-skill-list {
+  columns: 2;
+  margin: 0;
+  padding-left: 12pt;
+}
+.soft-skill-list li {
+  margin: 1pt 0;
+}
+
 .lang-list,
 .cert-list {
   list-style: none;

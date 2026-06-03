@@ -235,16 +235,14 @@ skills:
     items: [IntelliJ IDEA, Eclipse, Netbeans, GitLab, Burp Suite]
   - category: Pratiques
     items: [Clean code, Pair programming, Domain-Driven Design, TDD, CI/CD]
-  - category: Soft Skills
-    items:
-      [
-        Persévérance,
-        Collaboration en équipe,
-        Autonomie,
-        Fiabilité,
-        Rigueur,
-        Exécution orientée objectif,
-      ]
+
+softSkills:
+  - Persévérance
+  - Collaboration en équipe
+  - Autonomie
+  - Fiabilité
+  - Rigueur
+  - Exécution orientée objectif
 
 projects: []
 

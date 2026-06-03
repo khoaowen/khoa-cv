@@ -75,6 +75,7 @@ const cv = defineCollection({
         }),
       )
       .default([]),
+    softSkills: z.array(z.string()).default([]),
     projects: z
       .array(
         z.object({
