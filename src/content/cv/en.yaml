@@ -29,15 +29,16 @@ work:
     start: Oct 2024
     end: ""
     summary: >-
-      Core squad of the Employee Savings & Retirement (Épargne Salariale et
-      Retraite) product, building cross-functional features to support other
-      teams. Team: 4 backend Java developers, 1 Product Owner.
+      Core backend contributor to the Employee Savings & Retirement product,
+      working on NOEE business services, APIs, delivery quality, and production
+      reliability.
     highlights:
-      - Improved the CI/CD pipeline — parallel unit tests in Jenkins, Sonar reporting, and Docker Compose for local testing.
-      - Implemented Test-Driven Development (TDD) best practices.
-      - Analysed and fixed production bugs; refactored and improved code quality.
-      - Helped onboard new team members.
-      - Designed AI-driven skill flows encoding team conventions — AI analyses requirements, implements, and verifies end-to-end by running the local application, replacing repetitive development patterns.
+      - Delivered backend fixes and enhancements across critical Employee Savings workflows, including M1ST routing, reporting, payment/virement services, and operational processing.
+      - Improved Jenkins CI/CD with MR-aware quality gates, focused regression execution, commit validation, and safer delivery controls.
+      - Strengthened code quality through SonarQube remediation, API logging fixes, and OpenAPI/Swagger improvements.
+      - Built and stabilized Oracle-backed integration tests, SQL initialization scripts, and regression coverage for key business services.
+      - Investigated and resolved production and pre-production issues involving concurrency, database behavior, JMS flows, reporting pipelines, and external integrations.
+      - Contributed to developer productivity by standardizing delivery workflows and AI-assisted engineering practices integrated with Jira and Confluence.
     tech: [Java 8, Spring 3, Hibernate 5, Oracle SQL, Maven, IntelliJ IDEA, Codex, Claude Code]
 
   - company: BVNK
