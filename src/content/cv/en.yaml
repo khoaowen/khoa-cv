@@ -37,7 +37,7 @@ work:
       - Improved Jenkins CI/CD with MR-aware quality gates, focused regression execution, commit validation, and safer delivery controls.
       - Strengthened code quality through SonarQube remediation, API logging fixes, and OpenAPI/Swagger improvements.
       - Built and stabilized Oracle-backed integration tests, SQL initialization scripts, and regression coverage for key business services.
-      - Investigated and resolved production and pre-production issues involving concurrency, database behavior, JMS flows, reporting pipelines, and external integrations.
+      - Investigated priority SMS latency in production flows and isolated the issue to a pre-JMS producer-side bottleneck by correlating Oracle databases, Splunk logs, Grafana dashboards, ActiveMQ, and Java runtime traces.
       - Contributed to developer productivity by standardizing delivery workflows and AI-assisted engineering practices integrated with Jira and Confluence.
     tech: [Java 8, Spring 3, Hibernate 5, Oracle SQL, Maven, IntelliJ IDEA, Codex, Claude Code]
 
