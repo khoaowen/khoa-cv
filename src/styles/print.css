@@ -27,7 +27,7 @@ body {
   background: #fff;
   color: var(--ink);
   font-family: var(--font-sans);
-  font-size: 10.5pt;
+  font-size: 10.9pt;
   line-height: 1.4;
 }
 
@@ -37,17 +37,17 @@ body {
 }
 
 .p-header h1 {
-  font-size: 20pt;
+  font-size: 21.5pt;
   margin: 0;
 }
 .p-header .role {
-  font-size: 12pt;
+  font-size: 12.5pt;
   color: var(--muted);
   margin: 2pt 0 0;
 }
 .p-contact {
   margin-top: 4pt;
-  font-size: 9pt;
+  font-size: 9.4pt;
   color: var(--muted);
   display: flex;
   flex-wrap: wrap;
@@ -63,7 +63,7 @@ section {
   break-inside: avoid;
 }
 section > h2 {
-  font-size: 11pt;
+  font-size: 11.5pt;
   text-transform: uppercase;
   letter-spacing: 0.04em;
   color: var(--accent);
@@ -88,7 +88,7 @@ section > h2 {
 .entry-title {
   font-weight: 700;
   margin: 0;
-  font-size: 10.5pt;
+  font-size: 10.9pt;
 }
 .entry-sub {
   color: var(--muted);
@@ -97,7 +97,7 @@ section > h2 {
 .entry-dates {
   color: var(--muted);
   white-space: nowrap;
-  font-size: 9pt;
+  font-size: 9.4pt;
 }
 .condensed-entry {
   margin: 0 0 2pt;
@@ -122,7 +122,7 @@ section > h2 {
   gap: 3pt 6pt;
   padding: 0;
   margin: 3pt 0 0;
-  font-size: 8.5pt;
+  font-size: 8.9pt;
   color: var(--muted);
 }
 .tags li::after {
