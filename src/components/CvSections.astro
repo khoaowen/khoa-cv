@@ -40,20 +40,41 @@ const earlierWork = variant === 'print' ? data.work.filter((j) => j.condensed) :
             </div>
             <span class="entry-dates">{dateRange(job.start, job.end, present)}</span>
           </div>
-          {job.summary && <p class="entry-sub">{job.summary}</p>}
+          {job.summary && (
+            <>
+              {variant === 'web' && <p class="entry-detail-label">{t('experience.contribution')}</p>}
+              <p class="entry-sub">{job.summary}</p>
+            </>
+          )}
           {job.highlights.length > 0 && (
-            <ul>
-              {job.highlights.map((h) => (
-                <li>{h}</li>
-              ))}
-            </ul>
+            <>
+              {variant === 'web' && <p class="entry-detail-label">{t('experience.responsibilities')}</p>}
+              <ul>
+                {job.highlights.map((h) => (
+                  <li>{h}</li>
+                ))}
+              </ul>
+            </>
+          )}
+          {variant === 'web' && job.impacts.length > 0 && (
+            <>
+              <p class="entry-detail-label">{t('experience.impact')}</p>
+              <ul>
+                {job.impacts.map((impact) => (
+                  <li>{impact}</li>
+                ))}
+              </ul>
+            </>
           )}
           {job.tech.length > 0 && (
-            <ul class="tags" aria-label="Technologies">
-              {job.tech.map((x) => (
-                <li>{x}</li>
-              ))}
-            </ul>
+            <>
+              {variant === 'web' && <p class="entry-detail-label">{t('experience.environment')}</p>}
+              <ul class="tags" aria-label={t('experience.environment')}>
+                {job.tech.map((x) => (
+                  <li>{x}</li>
+                ))}
+              </ul>
+            </>
           )}
         </article>
       ))}

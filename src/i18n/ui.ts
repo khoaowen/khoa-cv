@@ -7,6 +7,10 @@ export const ui = {
   en: {
     'nav.summary': 'Summary',
     'nav.experience': 'Experience',
+    'experience.contribution': 'Contribution',
+    'experience.responsibilities': 'Responsibilities',
+    'experience.impact': 'Impact',
+    'experience.environment': 'Environment',
     'nav.earlier': 'Earlier experience',
     'nav.education': 'Education',
     'nav.skills': 'Skills',
@@ -29,6 +33,10 @@ export const ui = {
   fr: {
     'nav.summary': 'Profil',
     'nav.experience': 'Expérience',
+    'experience.contribution': 'Contribution',
+    'experience.responsibilities': 'Responsabilités',
+    'experience.impact': 'Impact',
+    'experience.environment': 'Environnement',
     'nav.earlier': 'Expérience antérieure',
     'nav.education': 'Formation',
     'nav.skills': 'Compétences',

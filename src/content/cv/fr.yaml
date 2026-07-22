@@ -37,6 +37,8 @@ work:
       - Remédiation de la dette technique avec SonarQube ; amélioration du logging API et de la documentation OpenAPI/Swagger.
       - Stabilisation des tests d'intégration Oracle, des scripts SQL et de la couverture de régression ; investigation d'incidents de production.
       - "Création de skills IA pour fiabiliser une livraison manuelle complexe : scripts SSH, contrôles base de données, jobs Jenkins et suivi Splunk post-livraison."
+    impacts:
+      - Amélioration de la fiabilité des livraisons et réduction du risque de régression sur des workflows critiques d'épargne salariale et retraite.
     tech: [Java 8, Spring 3, Hibernate 5, Oracle SQL, Maven, Jenkins, SonarQube, OpenAPI/Swagger, Splunk, Grafana, ActiveMQ, Git, IntelliJ IDEA, Codex, Claude Code]
 
   - company: BVNK
@@ -52,6 +54,8 @@ work:
       - Lead technique de l'intégration de l'API LHV et conception d'un microservice d'intégration avec des API bancaires tierces.
       - Mise en place d'une Spring State Machine pour un flux complexe de création d'IBAN.
       - Analyse et correction des bugs en production ; aide à l'intégration des nouveaux membres.
+    impacts:
+      - Extension des capacités de paiement EUR et fiabilisation des intégrations partenaires ainsi que du parcours IBAN.
     tech: [Java 21, Spring Boot, MySQL, Gradle, Kubernetes, Docker, AWS SQS/SNS, Grafana, Localstack]
 
   - company: ING
@@ -70,6 +74,8 @@ work:
       - Mise en place du Rules Design Pattern pour ajouter des règles métier sans modifier le code existant.
       - Amélioration des performances de certaines pages via des appels parallèles multithreads aux API AXA et de la mise en cache.
       - Analyse et correction des problèmes de sécurité remontés par Checkmarx ; mise à jour des tests de performance Gatling.
+    impacts:
+      - Amélioration des performances, de la sécurité applicative et de l'évolutivité des parcours banque-assurance.
     tech: [Java 11, Spring Boot, Maven, Oracle SQL, Azure DevOps, Cucumber, Checkmarx, Kibana, Gatling]
 
   - company: Nexway
@@ -83,6 +89,8 @@ work:
       front-end.
     highlights:
       - Développement d'un nouveau module de Reference.
+    impacts:
+      - Amélioration de la qualité et de la maintenabilité du socle de microservices de paiement.
     tech: [Java 11, MongoDB, Gradle, Git, IntelliJ IDEA]
 
   - company: BNP Paribas CIB (via Meritis)
@@ -101,6 +109,8 @@ work:
       - Participation à la conception de « Maestro », l'application web microservices destinée à devenir l'interface centrale du calcul de risque.
       - Développement d'API REST + GUI pour la création/modification de contreparties ; amélioration de l'interface avec Material Design avec l'équipe UX de BNP.
       - Mise en place de l'intégration continue du développement au déploiement avec Jenkins et Ansible ; rédaction du workflow de release.
+    impacts:
+      - Modernisation d'applications de calcul de risque client et renforcement de l'automatisation des livraisons.
     tech: [Java 8, Python 2, Angular 6, Spring Boot, Hibernate, Oracle SQL, Tomcat, Mule, Jenkins, Ansible, Git, Sonar, Artifactory]
 
   - company: HSBC (via Meritis)
@@ -118,6 +128,8 @@ work:
       - Génération de reportings mensuels en PDF avec hyperliens vers l'application.
       - Développement d'une procédure PL/SQL pour calculer et catégoriser les statuts clients.
       - Initiation des tests automatisés E2E avec Selenium ; mise en production et suivi de release.
+    impacts:
+      - Renforcement de la fiabilité et de l'utilisabilité grâce aux composants réutilisables, aux tests end-to-end et aux reportings automatisés.
     tech: [Java EE 6, JSF, Richfaces, Spring, Hibernate, Oracle SQL 11, Tomcat, PL/SQL, JasperReport, Confluence]
 
   - company: SSI SOFT | Réseau DEF
@@ -133,6 +145,8 @@ work:
       - Développement de nouvelles fonctionnalités ; optimisation des performances et de l'interface ; refactoring.
       - Automatisation des tests d'écrans avec Pulover's Macro Creator.
       - Résolution des problèmes de requêtes N+1 ; passage de connaissances aux nouveaux arrivants.
+    impacts:
+      - Amélioration de la stabilité, de l'ergonomie et de la vitesse de validation fonctionnelle d'un produit critique de sécurité incendie.
     tech: [Java 8, JavaFX, XML, Spring, Maven, MyBatis, H2, Jenkins, Git]
 
   - company: DEF (via Viveris Technologies)
@@ -148,6 +162,8 @@ work:
       - Développement d'un outil interne d'édition de fichiers XML ; saisie de la base de données des serveurs OPC Siemens.
       - Correction de bugs et résolution de « memory leaks » ; implémentation de fonctionnalités selon les besoins utilisateurs.
       - Développement d'une version simplifiée pour écran tactile utilisée par l'hôpital Purpan ; amélioration de l'installeur InnoSetup.
+    impacts:
+      - Amélioration de la maintenabilité, du déploiement et de l'usage du logiciel via une version tactile et un installateur enrichi.
     tech: [Java 6, XML, Maven, TortoiseHg, InnoSetup]
 
   - company: TERRASOL (via Omnitech)
@@ -163,6 +179,8 @@ work:
       - Étude de l'existant et amélioration de l'utilisabilité ; conception et développement des volets de propriétés.
       - Migration d'anciens modules d'importation vers la nouvelle version (débogage et analyse du code source pour extraire et adapter les modules).
       - Implémentation du module d'impression avec mise en page ; interopérabilité avec Plaxis et AutoCAD via des décodeurs de fichiers.
+    impacts:
+      - Modernisation d'un logiciel géotechnique et amélioration de son interopérabilité avec l'écosystème d'outils métier.
     tech: [Java 6, XML, UML, HTML, Netbeans, SVN, Balsamiq]
 
   - company: CEA (Commissariat à l'Énergie Atomique)
@@ -175,6 +193,8 @@ work:
       module d'annotation sur les images scannées.
     highlights:
       - Analyse du cahier des charges et développement d'un outil permettant de dessiner des formes (ligne, rectangle, cercle) et d'ajouter du texte sur une image scannée.
+    impacts:
+      - Contribution à un outil d'annotation pour une suite de simulation scientifique et industrielle spécialisée.
     tech: [Java 6, Eclipse, SmartGit]
 
   - company: Safran Engineering Services
@@ -188,6 +208,8 @@ work:
     highlights:
       - Recueil des besoins (interviews, tests d'utilisabilité) et rédaction de l'état de l'art sur la modélisation UML des interfaces utilisateurs.
       - Conception participative et étude comparative des outils existants ; formation de l'équipe à l'outil (appliqué au projet ATMOST).
+    impacts:
+      - Amélioration de l'analyse et de la formalisation des besoins IHM dans un contexte de maintenance aéronautique.
     tech: [Java 6, UML]
 
   - company: IRIT (Institut de Recherche en Informatique de Toulouse)
@@ -201,6 +223,8 @@ work:
     highlights:
       - Application de la démarche IHM itérative et centrée utilisateur ; recueil des besoins via interviews et rédaction de l'état de l'art sur les techniques d'interaction 3D.
       - Développement du prototype logiciel et tests utilisateurs.
+    impacts:
+      - Validation de concepts d'interaction pour la configuration d'un habitat intelligent au moyen de prototypes et de tests utilisateurs.
     tech: [Java 6, "C++ (moteur 3D Irrlicht)", Bus Ivy, Eclipse]
 
 education:

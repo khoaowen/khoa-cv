@@ -47,6 +47,7 @@ const cv = defineCollection({
           end: dateString.optional(), // omit or leave empty => "Present"
           summary: z.string().optional(),
           highlights: z.array(z.string()).default([]),
+          impacts: z.array(z.string()).default([]),
           tech: z.array(z.string()).default([]),
           // When true, the PDF renders this role as a compact one-line entry
           // under "Earlier experience" (keeps the PDF to ~2 pages). The web
