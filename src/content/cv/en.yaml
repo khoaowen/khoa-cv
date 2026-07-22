@@ -12,10 +12,9 @@ basics:
   location: Ile de France, Paris
   summary: >-
     Senior Java developer and technical lead with over a decade of experience
-    building reliable backend systems and microservices across fintech, banking
-    and software-product companies. Focused on clean code, TDD, CI/CD and
-    pragmatic delivery, with a track record of leading integrations and
-    mentoring teams.
+    across fintech, banking and software products. I build reliable,
+    maintainable backend systems and contribute from design and integration to
+    delivery quality, production support and technical team enablement.
   links:
     linkedin: https://www.linkedin.com/in/dangkhoabui/
     github: https://github.com/khoaowen
@@ -24,35 +23,33 @@ basics:
     email: khoaowen2510@gmail.com
 
 work:
-  - company: Amundi Technology
+  - company: Amundi
     position: Senior Java Developer
     start: Oct 2024
-    end: ""
+    end: Jul 2026
     summary: >-
       Core backend contributor to the Employee Savings & Retirement product,
       working on NOEE business services, APIs, delivery quality, and production
       reliability.
     highlights:
-      - Delivered backend fixes and enhancements across critical Employee Savings workflows, including M1ST routing, reporting, payment/virement services, and operational processing.
-      - Improved Jenkins CI/CD with MR-aware quality gates, focused regression execution, commit validation, and safer delivery controls.
-      - Strengthened code quality through SonarQube remediation, API logging fixes, and OpenAPI/Swagger improvements.
-      - Built and stabilized Oracle-backed integration tests, SQL initialization scripts, and regression coverage for key business services.
-      - Investigated priority SMS latency in production flows and isolated the issue to a pre-JMS producer-side bottleneck by correlating Oracle databases, Splunk logs, Grafana dashboards, ActiveMQ, and Java runtime traces.
-      - Contributed to developer productivity by standardizing delivery workflows and AI-assisted engineering practices integrated with Jira and Confluence.
-    tech: [Java 8, Spring 3, Hibernate 5, Oracle SQL, Maven, IntelliJ IDEA, Codex, Claude Code]
+      - Delivered backend changes for critical user-routing, transfer and operational workflows.
+      - Strengthened Jenkins CI/CD through quality gates, targeted regression testing, commit validation and delivery controls.
+      - Remediated technical debt with SonarQube; improved API logging and OpenAPI/Swagger documentation.
+      - Stabilised Oracle-backed integration tests, SQL scripts and regression coverage; investigated production incidents.
+      - Created AI skills to make a complex manual release process more reliable, covering SSH scripts, database checks, Jenkins jobs and post-release Splunk monitoring.
+    tech: [Java 8, Spring 3, Hibernate 5, Oracle SQL, Maven, Jenkins, SonarQube, OpenAPI/Swagger, Splunk, Grafana, ActiveMQ, Git, IntelliJ IDEA, Codex, Claude Code]
 
   - company: BVNK
     position: Senior Java Developer
     start: Jun 2022
     end: Oct 2024
     summary: >-
-      Fintech startup enabling businesses to send, receive and convert any
-      currency (incl. crypto and EUR/USD) at internet speed. Integration squad,
-      building third-party API integrations to create virtual IBANs and move
-      money over SEPA, SWIFT and more. Team: 4 backend Java developers, 1 PO.
+      Integration-squad contributor building backend integrations for EUR
+      payments, virtual IBAN creation and SEPA/SWIFT flows. Team: 4 backend
+      Java developers and a product owner.
     highlights:
       - Developed new EUR payment integrations (Modulr, EasyEP, LHV).
-      - Designed the architecture of a new microservice to integrate the LHV API as feature lead, owning communication with business and third parties.
+      - Led the technical integration of the LHV API and designed a microservice for third-party banking APIs.
       - Implemented a Spring State Machine for a complex IBAN-creation flow.
       - Analysed and fixed production bugs; helped onboard new team members.
     tech: [Java 21, Spring Boot, MySQL, Gradle, Kubernetes, Docker, AWS SQS/SNS, Grafana, Localstack]
@@ -87,7 +84,7 @@ work:
       - Developed a new reference module.
     tech: [Java 11, MongoDB, Gradle, Git, IntelliJ IDEA]
 
-  - company: BNP Paribas
+  - company: BNP Paribas CIB (via Meritis)
     condensed: true
     position: Senior Java Developer
     start: Oct 2018
@@ -105,7 +102,7 @@ work:
       - Implemented CI/CD from development to deployment with Jenkins pipelines and Ansible; documented the release workflow.
     tech: [Java 8, Python 2, Angular 6, Spring Boot, Hibernate, Oracle SQL, Tomcat, Mule, Jenkins, Ansible, Git, Sonar, Artifactory]
 
-  - company: HSBC
+  - company: HSBC (via Meritis)
     condensed: true
     position: Java Technical Lead
     start: Jul 2017
@@ -122,7 +119,7 @@ work:
       - Initiated end-to-end automated testing with Selenium; managed production releases.
     tech: [Java EE 6, JSF, Richfaces, Spring, Hibernate, Oracle SQL 11, Tomcat, PL/SQL, JasperReport, Confluence]
 
-  - company: SSI-SOFT (Groupe DEF)
+  - company: SSI SOFT | Réseau DEF
     condensed: true
     position: Developer
     start: Apr 2015
@@ -137,7 +134,7 @@ work:
       - Resolved N+1 SQL query problems; transferred knowledge to new members.
     tech: [Java 8, JavaFX, XML, Spring, Maven, MyBatis, H2, Jenkins, Git]
 
-  - company: DEF (French Electronic Detection)
+  - company: DEF (via Viveris Technologies)
     condensed: true
     position: Consultant Developer
     start: Sep 2013
@@ -152,7 +149,7 @@ work:
       - Built a simplified touchscreen version used by Purpan hospital; improved the InnoSetup installer.
     tech: [Java 6, XML, Maven, TortoiseHg, InnoSetup]
 
-  - company: TERRASOL
+  - company: TERRASOL (via Omnitech)
     condensed: true
     position: Developer
     start: Apr 2012
@@ -223,7 +220,7 @@ education:
 
 skills:
   - category: Backend
-    items: [Java 6/8/11/21, Spring Boot 3, Hibernate, Gradle, Docker, AWS]
+    items: [Java 6/8/11/21, Spring, Spring Boot, Hibernate, Gradle, Docker, AWS]
   - category: Frontend
     items: [Angular 6, JavaFX, Java Swing, JSF/Richfaces, HTML/CSS]
   - category: Databases
@@ -231,9 +228,9 @@ skills:
   - category: Other
     items: [Python 2, Tomcat, MyBatis, XML, UML, Mule]
   - category: Tools
-    items: [IntelliJ IDEA, Eclipse, Netbeans, GitLab, Burp Suite]
+    items: [IntelliJ IDEA, Eclipse, Netbeans, Git, Jenkins, SonarQube, Grafana]
   - category: Practices
-    items: [Clean code, Pair programming, Domain-Driven Design, TDD, CI/CD]
+    items: [Clean Code, Automated testing, CI/CD, Production support, Technical leadership]
 
 softSkills:
   - Perseverance
