@@ -49,6 +49,7 @@ const cv = defineCollection({
           // candidate's contribution to mirror the LinkedIn profile structure.
           introduction: z.string().optional(),
           summary: z.string().optional(),
+          team: z.string().optional(),
           highlights: z.array(z.string()).default([]),
           impacts: z.array(z.string()).default([]),
           tech: z.array(z.string()).default([]),
