@@ -79,8 +79,7 @@ work:
       Projet DARE — collaboration avec AXA pour intégrer des produits d'assurance
       dans les offres bancaires via une plateforme microservices permettant de
       personnaliser les protections (Mobility, Living, Wellness) selon les pays.
-      Squad Mobility : écrans d'assurance motor et non-motor. Équipe : 3
-      développeurs front-end, 6 back-end Java, 1 PO.
+      Développement des écrans d'assurance motor et non-motor.
     highlights:
       - Développement de nouvelles fonctionnalités et correction des bugs en production, en assurant le clean code.
       - Mise en place du Rules Design Pattern pour ajouter des règles métier sans modifier le code existant.
@@ -102,8 +101,7 @@ work:
       Nexway est une entreprise spécialisée dans les solutions e-commerce, paiement et distribution digitale.
     summary: >-
       Contribution au développement des microservices du système de paiement en
-      ligne. Équipe : 3 développeurs Java, 1 développeur Python, 4 développeurs
-      front-end.
+      ligne.
     highlights:
       - Développement d'un nouveau module de Reference.
     impacts:
@@ -123,7 +121,6 @@ work:
       BNP CIB — équipe Primerisk, maintenance évolutive et corrective de
       l'application de calcul de risque client ; conception et partage de
       solutions, et mise en place de l'intégration continue du projet Maestro.
-      Équipe : 2 full-stack + 2 Java + 1 Java/Python, 1 Proxy PO, 1 PO.
     highlights:
       - Développement de nouvelles fonctionnalités et support production niveau 3.
       - Migrations techniques (Jenkins ; SVN vers Git).
@@ -145,9 +142,8 @@ work:
     introduction: >-
       HSBC Global Banking and Markets est la branche banque de financement et d'investissement du groupe HSBC.
     summary: >-
-      HSBC GBM — équipe BCC, refonte de l'application EBCC qui gère les données
-      clients ; apport de solutions techniques et propositions d'améliorations.
-      Équipe : 4 développeurs Java full-stack, 1 chef de projet, 1 assistante.
+      HSBC GBM — refonte de l'application EBCC qui gère les données clients ;
+      apport de solutions techniques et propositions d'améliorations.
     highlights:
       - Analyse des besoins et développement de nouvelles fonctionnalités.
       - Refactoring et création de Facelet tags pour la GUI afin de favoriser la réutilisabilité et la cohérence, avec documentation et templates sur Confluence.
@@ -171,7 +167,6 @@ work:
     summary: >-
       Développement de TéléUltima, logiciel de programmation des centrales de
       détection d'incendie ; apport de solutions techniques et d'améliorations.
-      Équipe : 5 développeurs Java, 1 chef de projet.
     highlights:
       - Développement de nouvelles fonctionnalités ; optimisation des performances et de l'interface ; refactoring.
       - Automatisation des tests d'écrans avec Pulover's Macro Creator.
@@ -192,7 +187,7 @@ work:
     summary: >-
       VisioDef3D, logiciel d'administration des systèmes de surveillance
       d'incendie ; apport de solutions techniques et développement de nouvelles
-      fonctionnalités. Équipe : 2 développeurs Java, 1 chef de projet/développeur.
+      fonctionnalités.
     highlights:
       - Développement d'un outil interne d'édition de fichiers XML ; saisie de la base de données des serveurs OPC Siemens.
       - Correction de bugs et résolution de « memory leaks » ; implémentation de fonctionnalités selon les besoins utilisateurs.
@@ -213,7 +208,7 @@ work:
     summary: >-
       Talren (v5), logiciel de vérification de la stabilité des ouvrages
       géotechniques ; renfort de l'équipe et développement de nouvelles
-      fonctionnalités. Équipe : 2 développeurs Java.
+      fonctionnalités.
     highlights:
       - Étude de l'existant et amélioration de l'utilisabilité ; conception et développement des volets de propriétés.
       - Migration d'anciens modules d'importation vers la nouvelle version (débogage et analyse du code source pour extraire et adapter les modules).
