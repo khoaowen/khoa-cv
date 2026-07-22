@@ -94,6 +94,10 @@ section > h2 {
   color: var(--muted);
   margin: 0;
 }
+.entry-detail-text {
+  color: #000;
+  margin: 0;
+}
 .entry-dates {
   color: var(--muted);
   white-space: nowrap;
