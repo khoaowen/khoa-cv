@@ -90,13 +90,14 @@ work:
       - Amélioration des performances, de la sécurité applicative et de l'évolutivité des parcours banque-assurance.
       - Contribution à l'intégration de produits d'assurance dans le parcours bancaire client.
       - Meilleure séparation des règles métier, facilitant l'évolution du code.
+    team: Équipe Mobility composée de 3 développeurs frontend, 6 développeurs backend Java et 1 Product Owner.
     tech: [Java 11, Spring Boot, Maven, Oracle SQL, Azure DevOps, Cucumber, Checkmarx, Kibana, Gatling]
 
   - company: Nexway
     condensed: true
     position: Développeur Sénior Java
     start: Juil. 2020
-    end: Oct. 2020
+    end: Sept. 2020
     introduction: >-
       Nexway est une entreprise spécialisée dans les solutions e-commerce, paiement et distribution digitale.
     summary: >-
@@ -108,6 +109,7 @@ work:
     impacts:
       - Amélioration de la qualité et de la maintenabilité du socle de microservices de paiement.
       - Contribution à la livraison d'un nouveau module de référence au sein de la plateforme.
+    team: Équipe composée de 3 développeurs Java, 1 développeur Python et 4 développeurs frontend.
     tech: [Java 11, MongoDB, Gradle, Git, IntelliJ IDEA]
 
   - company: BNP Paribas CIB (via Meritis)
@@ -132,11 +134,12 @@ work:
       - Modernisation d'applications de calcul de risque client et renforcement de l'automatisation des livraisons.
       - Amélioration de l'expérience utilisateur sur des écrans métier complexes, en collaboration avec l'équipe UX.
       - Renforcement de la maintenabilité grâce aux migrations techniques structurantes de SVN vers Git et de Jenkins.
+    team: Équipe composée de 2 développeurs full-stack, 2 développeurs Java, 1 développeur Java/Python, 1 Proxy Product Owner et 1 Product Owner.
     tech: [Java 8, Python 2, Angular 6, Spring Boot, Hibernate, Oracle SQL, Tomcat, Mule, Jenkins, Ansible, Git, Sonar, Artifactory]
 
   - company: HSBC (via Meritis)
     condensed: true
-    position: Java Lead technique
+    position: Développeur Java Senior
     start: Juil. 2017
     end: Oct. 2018
     introduction: >-
@@ -155,12 +158,13 @@ work:
       - Renforcement de la fiabilité et de l'utilisabilité grâce aux composants réutilisables, aux tests end-to-end et aux reportings automatisés.
       - Contribution à la refonte d'une application clé de gestion des données clients.
       - Automatisation de traitements métier via PL/SQL et génération de reportings PDF.
+    team: Équipe composée de 4 développeurs Java full-stack, 1 chef de projet et 1 assistante projet.
     tech: [Java EE 6, JSF, Richfaces, Spring, Hibernate, Oracle SQL 11, Tomcat, PL/SQL, JasperReport, Confluence]
 
   - company: SSI SOFT | Réseau DEF
     condensed: true
-    position: Développeur
-    start: Avril 2015
+    position: Ingénieur logiciel Java
+    start: Mai 2015
     end: Juil. 2017
     introduction: >-
       SSI SOFT, filiale du Réseau DEF, développe des solutions logicielles pour les systèmes de sécurité incendie.
@@ -175,13 +179,14 @@ work:
     impacts:
       - Amélioration de la stabilité, de l'ergonomie et de la vitesse de validation fonctionnelle d'un produit critique de sécurité incendie.
       - Gain de temps sur les validations fonctionnelles grâce à l'automatisation des tests d'écrans.
+    team: Équipe composée de 5 développeurs Java et d’un chef de projet.
     tech: [Java 8, JavaFX, XML, Spring, Maven, MyBatis, H2, Jenkins, Git]
 
   - company: DEF (via Viveris Technologies)
     condensed: true
-    position: Consultant Développeur
+    position: Ingénieur logiciel Java
     start: Sept. 2013
-    end: Avril 2015
+    end: Mai 2015
     introduction: >-
       DEF est un acteur historique de la sécurité incendie en France, membre du Réseau DEF.
     summary: >-
@@ -195,13 +200,14 @@ work:
     impacts:
       - Amélioration de la maintenabilité, du déploiement et de l'usage du logiciel via une version tactile et un installateur enrichi.
       - Facilitation de la maintenance technique grâce à l'outillage interne d'édition XML.
+    team: Équipe composée de 3 développeurs Java.
     tech: [Java 6, XML, Maven, TortoiseHg, InnoSetup]
 
   - company: TERRASOL (via Omnitech)
     condensed: true
-    position: Développeur
+    position: Ingénieur logiciel Java
     start: Avril 2012
-    end: Juil. 2013
+    end: Janv. 2013
     introduction: >-
       Terrasol, filiale du groupe Setec, est spécialisée dans l'ingénierie géotechnique et les logiciels métier.
     summary: >-
@@ -216,11 +222,12 @@ work:
       - Modernisation d'un logiciel géotechnique et amélioration de son interopérabilité avec l'écosystème d'outils métier.
       - Amélioration progressive de l'utilisabilité grâce à la refonte des écrans et aux prototypes participatifs.
       - Réutilisation de modules existants pour accélérer la migration vers la nouvelle version.
+    team: Équipe composée de 2 développeurs Java.
     tech: [Java 6, XML, UML, HTML, Netbeans, SVN, Balsamiq]
 
   - company: CEA (Commissariat à l'Énergie Atomique)
     condensed: true
-    position: Développeur
+    position: Ingénieur logiciel Java
     start: Jan. 2012
     end: Mars 2012
     introduction: >-
@@ -233,6 +240,7 @@ work:
     impacts:
       - Contribution à un outil d'annotation pour une suite de simulation scientifique et industrielle spécialisée.
       - Mise à disposition de fonctionnalités de dessin et de texte pour l'annotation d'images scannées.
+    team: Équipe composée de deux développeurs Java.
     tech: [Java 6, Eclipse, SmartGit]
 
   - company: Safran Engineering Services
@@ -251,6 +259,7 @@ work:
     impacts:
       - Amélioration de l'analyse et de la formalisation des besoins IHM dans un contexte de maintenance aéronautique.
       - Facilitation de la conception participative et de l'adoption de l'outil par l'équipe projet.
+    team: Travail en interaction avec les utilisateurs métier et l’équipe projet.
     tech: [Java 6, UML]
 
   - company: IRIT (Institut de Recherche en Informatique de Toulouse)
@@ -269,6 +278,7 @@ work:
     impacts:
       - Validation de concepts d'interaction pour la configuration d'un habitat intelligent au moyen de prototypes et de tests utilisateurs.
       - Contribution à un projet de recherche autour des environnements intelligents et de l'aide à domicile.
+    team: Travail en interaction avec l’équipe de recherche, un médecin du CHU Rangueil et l’auteur d’une maison intelligente à Blagnac.
     tech: [Java 6, "C++ (moteur 3D Irrlicht)", Bus Ivy, Eclipse]
 
 education:
