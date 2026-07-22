@@ -11,11 +11,10 @@ basics:
   role: Développeur Java Senior / Tech Lead
   location: Ile de France, Paris
   summary: >-
-    Développeur Java senior et tech lead avec plus de dix ans d'expérience dans
-    la conception de systèmes backend et de microservices fiables, dans la
-    fintech, la banque et l'édition logicielle. Attaché au clean code, au TDD,
-    au CI/CD et à une livraison pragmatique, avec une expérience de lead sur des
-    intégrations et d'accompagnement d'équipes.
+    Développeur Java Senior et Tech Lead avec plus de dix ans d'expérience dans
+    la fintech, la banque et l'édition logicielle. Je conçois des systèmes
+    backend fiables et maintenables, de la conception et des intégrations à la
+    qualité de livraison, au support de production et à l'accompagnement technique.
   links:
     linkedin: https://www.linkedin.com/in/dangkhoabui/
     github: https://github.com/khoaowen
@@ -24,36 +23,33 @@ basics:
     email: khoaowen2510@gmail.com
 
 work:
-  - company: Amundi Technology
-    position: Développeur Sénior Java
+  - company: Amundi
+    position: Développeur Java Senior
     start: Oct. 2024
-    end: ""
+    end: Juil. 2026
     summary: >-
       Contributeur backend core au produit Épargne Salariale et Retraite, sur
       les services métier NOEE, les API, la qualité de livraison et la fiabilité
       en production.
     highlights:
-      - Livraison de correctifs et d'évolutions backend sur des workflows critiques d'Épargne Salariale, dont le routage M1ST, le reporting, les services de paiement/virement et les traitements opérationnels.
-      - Amélioration de la CI/CD Jenkins avec quality gates adaptées aux MR, exécution ciblée des régressions, validation des commits et contrôles de livraison plus sûrs.
-      - Renforcement de la qualité du code via la remédiation SonarQube, les corrections de logging API et les améliorations OpenAPI/Swagger.
-      - Construction et stabilisation de tests d'intégration adossés à Oracle, de scripts d'initialisation SQL et de couvertures de régression pour les services métier clés.
-      - Investigation d'une latence prioritaire SMS dans les flux de production et isolation de la cause sur un goulot d'étranglement côté producteur avant JMS, en corrélant bases Oracle, logs Splunk, tableaux de bord Grafana, ActiveMQ et traces d'exécution Java.
-      - Contribution à la productivité développeur par la standardisation des workflows de livraison et des pratiques d'ingénierie assistée par IA intégrées à Jira et Confluence.
-    tech: [Java 8, Spring 3, Hibernate 5, Oracle SQL, Maven, IntelliJ IDEA, Codex, Claude Code]
+      - "Développement d'évolutions et de correctifs backend sur des workflows critiques : routage utilisateur, virements et traitements opérationnels."
+      - "Renforcement de la CI/CD Jenkins : quality gates, régressions ciblées, validation des commits et contrôles de livraison."
+      - Remédiation de la dette technique avec SonarQube ; amélioration du logging API et de la documentation OpenAPI/Swagger.
+      - Stabilisation des tests d'intégration Oracle, des scripts SQL et de la couverture de régression ; investigation d'incidents de production.
+      - "Création de skills IA pour fiabiliser une livraison manuelle complexe : scripts SSH, contrôles base de données, jobs Jenkins et suivi Splunk post-livraison."
+    tech: [Java 8, Spring 3, Hibernate 5, Oracle SQL, Maven, Jenkins, SonarQube, OpenAPI/Swagger, Splunk, Grafana, ActiveMQ, Git, IntelliJ IDEA, Codex, Claude Code]
 
   - company: BVNK
-    position: Développeur Sénior Java
+    position: Développeur Java Senior
     start: Juin 2022
     end: Oct. 2024
     summary: >-
-      Startup fintech permettant aux entreprises d'envoyer, recevoir et convertir
-      n'importe quelle devise (crypto ou EUR/USD) à la vitesse d'Internet. Squad
-      Intégration : intégrations avec des API tierces pour créer des IBAN
-      virtuels et envoyer de l'argent via SEPA, SWIFT, etc. Équipe : 4
-      développeurs back-end Java, 1 PO.
+      Contribution à la squad Intégration pour les paiements EUR, la création
+      d'IBAN virtuels et les flux SEPA/SWIFT. Équipe : 4 développeurs backend
+      Java et un Product Owner.
     highlights:
       - Développement de nouvelles intégrations de paiement EUR (Modulr, EasyEP, LHV).
-      - Conception de l'architecture d'un nouveau microservice pour intégrer l'API LHV (feature lead, gestion de la communication avec le métier et les tiers).
+      - Lead technique de l'intégration de l'API LHV et conception d'un microservice d'intégration avec des API bancaires tierces.
       - Mise en place d'une Spring State Machine pour un flux complexe de création d'IBAN.
       - Analyse et correction des bugs en production ; aide à l'intégration des nouveaux membres.
     tech: [Java 21, Spring Boot, MySQL, Gradle, Kubernetes, Docker, AWS SQS/SNS, Grafana, Localstack]
@@ -89,7 +85,7 @@ work:
       - Développement d'un nouveau module de Reference.
     tech: [Java 11, MongoDB, Gradle, Git, IntelliJ IDEA]
 
-  - company: BNP Paribas
+  - company: BNP Paribas CIB (via Meritis)
     condensed: true
     position: Développeur Sénior Java
     start: Oct. 2018
@@ -107,7 +103,7 @@ work:
       - Mise en place de l'intégration continue du développement au déploiement avec Jenkins et Ansible ; rédaction du workflow de release.
     tech: [Java 8, Python 2, Angular 6, Spring Boot, Hibernate, Oracle SQL, Tomcat, Mule, Jenkins, Ansible, Git, Sonar, Artifactory]
 
-  - company: HSBC
+  - company: HSBC (via Meritis)
     condensed: true
     position: Java Lead technique
     start: Juil. 2017
@@ -124,7 +120,7 @@ work:
       - Initiation des tests automatisés E2E avec Selenium ; mise en production et suivi de release.
     tech: [Java EE 6, JSF, Richfaces, Spring, Hibernate, Oracle SQL 11, Tomcat, PL/SQL, JasperReport, Confluence]
 
-  - company: SSI-SOFT (Groupe DEF)
+  - company: SSI SOFT | Réseau DEF
     condensed: true
     position: Développeur
     start: Avril 2015
@@ -139,7 +135,7 @@ work:
       - Résolution des problèmes de requêtes N+1 ; passage de connaissances aux nouveaux arrivants.
     tech: [Java 8, JavaFX, XML, Spring, Maven, MyBatis, H2, Jenkins, Git]
 
-  - company: DEF (Détection Électronique Française)
+  - company: DEF (via Viveris Technologies)
     condensed: true
     position: Consultant Développeur
     start: Sept. 2013
@@ -154,7 +150,7 @@ work:
       - Développement d'une version simplifiée pour écran tactile utilisée par l'hôpital Purpan ; amélioration de l'installeur InnoSetup.
     tech: [Java 6, XML, Maven, TortoiseHg, InnoSetup]
 
-  - company: TERRASOL
+  - company: TERRASOL (via Omnitech)
     condensed: true
     position: Développeur
     start: Avril 2012
@@ -225,7 +221,7 @@ education:
 
 skills:
   - category: Backend
-    items: [Java 6/8/11/21, Spring Boot 3, Hibernate, Gradle, Docker, AWS]
+    items: [Java 6/8/11/21, Spring, Spring Boot, Hibernate, Gradle, Docker, AWS]
   - category: Frontend
     items: [Angular 6, JavaFX, Java Swing, JSF/Richfaces, HTML/CSS]
   - category: Bases de données
@@ -233,9 +229,9 @@ skills:
   - category: Autres
     items: [Python 2, Tomcat, MyBatis, XML, UML, Mule]
   - category: Outils
-    items: [IntelliJ IDEA, Eclipse, Netbeans, GitLab, Burp Suite]
+    items: [IntelliJ IDEA, Eclipse, Netbeans, Git, Jenkins, SonarQube, Grafana]
   - category: Pratiques
-    items: [Clean code, Pair programming, Domain-Driven Design, TDD, CI/CD]
+    items: [Clean Code, Tests automatisés, CI/CD, Support de production, Accompagnement technique]
 
 softSkills:
   - Persévérance
