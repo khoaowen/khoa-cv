@@ -3,10 +3,10 @@
 :root {
   --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
     Helvetica, Arial, sans-serif;
-  --ink: #1a1d23;
-  --muted: #4a4f59;
-  --accent: #1f4e79;
-  --line: #cfd4db;
+  --ink: #26160f;
+  --muted: #6b5145;
+  --accent: #632100;
+  --line: #ead9cf;
 }
 
 @page {

@@ -4,11 +4,11 @@
   --font-sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
     Helvetica, Arial, sans-serif;
   --color-bg: #ffffff;
-  --color-surface: #f6f7f9;
-  --color-text: #1a1d23;
-  --color-muted: #555b66;
-  --color-accent: #1f4e79; /* AA-contrast blue on white */
-  --color-border: #e2e5ea;
+  --color-surface: #fbf5f1;
+  --color-text: #26160f;
+  --color-muted: #6b5145;
+  --color-accent: #632100; /* LinkedIn banner fire brown; AA contrast on white */
+  --color-border: #ead9cf;
   --maxw: 820px;
   --radius: 10px;
   --space: 1rem;
@@ -16,12 +16,12 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-bg: #0f1115;
-    --color-surface: #181b21;
-    --color-text: #e9ecf1;
-    --color-muted: #aab2bf;
-    --color-accent: #7fb0e0;
-    --color-border: #2a2f38;
+    --color-bg: #211009;
+    --color-surface: #32180d;
+    --color-text: #fff5ef;
+    --color-muted: #e2b9a4;
+    --color-accent: #ffb58c;
+    --color-border: #613420;
   }
 }
 
