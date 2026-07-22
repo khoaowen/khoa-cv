@@ -40,6 +40,12 @@ const earlierWork = variant === 'print' ? data.work.filter((j) => j.condensed) :
             </div>
             <span class="entry-dates">{dateRange(job.start, job.end, present)}</span>
           </div>
+          {variant === 'web' && job.introduction && (
+            <>
+              <p class="entry-detail-label">{t('experience.introduction')}</p>
+              <p class="entry-sub">{job.introduction}</p>
+            </>
+          )}
           {job.summary && (
             <>
               {variant === 'web' && <p class="entry-detail-label">{t('experience.contribution')}</p>}
