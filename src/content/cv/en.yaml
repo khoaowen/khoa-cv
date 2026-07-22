@@ -27,6 +27,9 @@ work:
     position: Senior Java Developer
     start: Oct 2024
     end: Jul 2026
+    introduction: >-
+      Amundi Technology provides technology solutions and investment services
+      for the financial sector.
     summary: >-
       Core backend contributor to the Employee Savings & Retirement product,
       working on NOEE business services, APIs, delivery quality, and production
@@ -49,6 +52,9 @@ work:
     position: Senior Java Developer
     start: Jun 2022
     end: Oct 2024
+    introduction: >-
+      BVNK is a fintech company specializing in stablecoin payment infrastructure
+      and international payments.
     summary: >-
       Integration-squad contributor building backend integrations for EUR
       payments, virtual IBAN creation and SEPA/SWIFT flows.
@@ -69,12 +75,13 @@ work:
     position: Senior Java Developer
     start: Oct 2020
     end: May 2022
+    introduction: >-
+      ING France was an online bank serving around one million customers in France,
+      offering banking and financial products to retail clients.
     summary: >-
-      DARE project — collaboration with AXA to integrate insurance products into
-      banking offers via a microservices platform letting users customise
-      protections (Mobility, Living, Wellness) per country. Mobility squad,
-      building motor and non-motor insurance screens. Team: 3 frontend, 6
-      backend Java developers, 1 PO.
+      Contributed to the DARE project, carried out in partnership with AXA, to
+      integrate insurance products into banking offers through a microservices platform.
+    team: Mobility squad composed of 3 frontend developers, 6 Java backend developers, and 1 Product Owner.
     highlights:
       - Developed new features and fixed production bugs while ensuring clean code.
       - Implemented the Rules design pattern to add business rules without modifying existing code.
@@ -90,10 +97,13 @@ work:
     condensed: true
     position: Senior Java Developer
     start: Jul 2020
-    end: Oct 2020
+    end: Sep 2020
+    introduction: >-
+      Nexway is a company specialized in e-commerce, payment, and digital
+      distribution solutions, supporting payment operations in more than 140 countries.
     summary: >-
-      Contributed to the online payment system microservices. Team: 3 Java
-      developers, 1 Python developer, 4 frontend developers.
+      Contributed to the development of microservices for an online payment system.
+    team: Team composed of 3 Java developers, 1 Python developer, and 4 frontend developers.
     highlights:
       - Developed a new reference module.
     impacts:
@@ -106,11 +116,12 @@ work:
     position: Senior Java Developer
     start: Oct 2018
     end: Oct 2019
+    introduction: >-
+      BNP Paribas CIB is the Corporate and Institutional Banking division of
+      BNP Paribas Group.
     summary: >-
-      BNP CIB — Primerisk team, evolutionary and corrective maintenance of the
-      client risk-calculation application; designing and sharing solutions with
-      the team and setting up CI for the new Maestro project. Team: 2 full-stack
-      + 2 Java + 1 Java/Python developers, 1 proxy PO, 1 PO.
+      Enhanced and maintained a client risk calculation application within the
+      Primerisk team.
     highlights:
       - Developed new features and provided level-3 production support.
       - Performed technical migrations (Jenkins; SVN to Git).
@@ -121,17 +132,20 @@ work:
       - Modernised client risk-calculation applications and strengthened release automation.
       - Improved user experience on complex business screens in collaboration with UX.
       - Improved maintainability through structured SVN-to-Git and Jenkins migrations.
+    team: Team composed of 2 full-stack developers, 2 Java developers, 1 Java/Python developer, 1 Proxy Product Owner, and 1 Product Owner.
     tech: [Java 8, Python 2, Angular 6, Spring Boot, Hibernate, Oracle SQL, Tomcat, Mule, Jenkins, Ansible, Git, Sonar, Artifactory]
 
   - company: HSBC (via Meritis)
     condensed: true
-    position: Java Technical Lead
+    position: Senior Java Developer
     start: Jul 2017
     end: Oct 2018
+    introduction: >-
+      HSBC Global Banking and Markets is the investment banking and markets
+      division of HSBC, an international banking group.
     summary: >-
-      HSBC GBM — BCC team redesigning the EBCC application that manages client
-      data; providing technical solutions and improvements. Team: 4 full-stack
-      Java developers, 1 project manager, 1 PM assistant.
+      Contributed to the redesign of the EBCC application, dedicated to customer
+      data management.
     highlights:
       - Analysed requirements and developed new features.
       - Refactored code and created Facelet tags for the GUI to promote reusability and consistency, with Confluence documentation and templates.
@@ -142,17 +156,20 @@ work:
       - Increased application reliability and usability through reusable UI components, end-to-end testing and automated reporting.
       - Contributed to redesigning a key client-data management application.
       - Automated business processing with PL/SQL and PDF reporting.
+    team: Team composed of 4 full-stack Java developers, 1 project manager, and 1 project assistant.
     tech: [Java EE 6, JSF, Richfaces, Spring, Hibernate, Oracle SQL 11, Tomcat, PL/SQL, JasperReport, Confluence]
 
   - company: SSI SOFT | Réseau DEF
     condensed: true
-    position: Developer
-    start: Apr 2015
+    position: Java Software Engineer
+    start: May 2015
     end: Jul 2017
+    introduction: >-
+      SSI SOFT, part of Réseau DEF, develops software solutions for fire safety
+      systems.
     summary: >-
-      Development of TéléUltima, software for programming fire-detection control
-      panels; providing technical solutions and improvements. Team: 5 Java
-      developers, 1 project manager.
+      Developed TéléUltima, a software application used to program fire detection
+      control panels.
     highlights:
       - Developed new features; optimised performance and UI; refactored code.
       - Automated screen tests using Pulover's Macro Creator.
@@ -160,17 +177,21 @@ work:
     impacts:
       - Improved the stability, usability and functional-validation speed of a safety-critical fire-detection product.
       - Saved time in functional validation through automated screen tests.
+    team: Team composed of 5 Java developers and 1 project manager.
     tech: [Java 8, JavaFX, XML, Spring, Maven, MyBatis, H2, Jenkins, Git]
 
   - company: DEF (via Viveris Technologies)
     condensed: true
-    position: Consultant Developer
+    position: Java Software Engineer
     start: Sep 2013
-    end: Apr 2015
+    end: May 2015
+    introduction: >-
+      DEF, Détection Électronique Française, is a long-standing player in fire
+      safety in France and part of Réseau DEF.
     summary: >-
-      VisioDef3D, software for administering fire-surveillance systems;
-      providing technical solutions and developing new features. Team: 2 Java
-      developers, 1 project manager/Java developer.
+      Provided technical support and contributed to the development of the new
+      version of VisoDEF 3D, a software application used to administer fire
+      monitoring systems.
     highlights:
       - Developed an internal tool for editing XML files; input the OPC Siemens server database.
       - Fixed bugs and resolved memory leaks; implemented features per user needs.
@@ -178,17 +199,20 @@ work:
     impacts:
       - Made the monitoring software easier to maintain, deploy and use through touch-screen and installer improvements.
       - Made technical maintenance easier with an internal XML-editing tool.
+    team: Team composed of 3 Java developers.
     tech: [Java 6, XML, Maven, TortoiseHg, InnoSetup]
 
   - company: TERRASOL (via Omnitech)
     condensed: true
-    position: Developer
+    position: Java Software Engineer
     start: Apr 2012
-    end: Jul 2013
+    end: Jan 2013
+    introduction: >-
+      Terrasol, part of the Setec Group, specializes in geotechnical engineering
+      and professional software development.
     summary: >-
-      Talren (v5), software for verifying the stability of geotechnical
-      structures; strengthening the team and developing new features. Team: 2
-      Java developers.
+      Developed the new version of Talren, a geotechnical calculation and analysis
+      software application, using Java Swing.
     highlights:
       - Studied existing software and improved usability; designed and developed property panels.
       - Migrated legacy file-import modules to the new version (debugging and source analysis to extract and adapt modules).
@@ -197,13 +221,16 @@ work:
       - Modernised a specialist geotechnical application and improved interoperability with its engineering-tool ecosystem.
       - Progressively improved usability through screen redesign and participative prototypes.
       - Reused existing modules to accelerate migration to the new version.
+    team: Team composed of 2 Java developers.
     tech: [Java 6, XML, UML, HTML, Netbeans, SVN, Balsamiq]
 
   - company: CEA (Atomic Energy Commission)
     condensed: true
-    position: Developer
+    position: Java Software Engineer
     start: Jan 2012
     end: Mar 2012
+    introduction: >-
+      CEA is a French public research organization in science and technology.
     summary: >-
       CIVA, a tool for simulating and analysing materials; developed an
       annotation module for scanned images.
@@ -212,6 +239,7 @@ work:
     impacts:
       - Contributed an annotation tool for a specialised scientific and industrial simulation suite.
       - Delivered drawing and text capabilities for annotating scanned images.
+    team: Team composed of two Java developers.
     tech: [Java 6, Eclipse, SmartGit]
 
   - company: Safran Engineering Services
@@ -219,6 +247,9 @@ work:
     position: Intern
     start: Mar 2011
     end: Sep 2011
+    introduction: >-
+      Safran Engineering Services is an engineering company within the Safran Group,
+      specialized in aerospace, space, and defense engineering services.
     summary: >-
       Design and development of a tool to assist in modelling aircraft
       maintenance-system HMIs.
@@ -228,6 +259,7 @@ work:
     impacts:
       - Improved the analysis and formalisation of HMI requirements in an aerospace maintenance context.
       - Made participatory design and tool adoption easier for the project team.
+    team: Worked closely with business users and the project team.
     tech: [Java 6, UML]
 
   - company: IRIT (Institute of Research in Computer Science of Toulouse)
@@ -235,6 +267,10 @@ work:
     position: Intern
     start: Sep 2010
     end: Mar 2011
+    introduction: >-
+      IRIT, the Toulouse Institute for Research in Computer Science, is a computer
+      science research laboratory specializing in human-computer interaction,
+      artificial intelligence, distributed systems, and digital environments.
     summary: >-
       Design and development of interaction techniques for configuring a 3D
       simulation environment for home care.
@@ -244,6 +280,7 @@ work:
     impacts:
       - Validated interaction concepts for smart-home configuration through iterative prototypes and user tests.
       - Contributed to research on intelligent environments and home assistance.
+    team: Worked with the research team, a physician from CHU Rangueil, and the creator of a smart-home project in Blagnac.
     tech: [Java 6, "C++ (Irrlicht 3D engine)", Ivy Bus, Eclipse]
 
 education:
