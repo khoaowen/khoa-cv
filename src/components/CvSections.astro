@@ -43,7 +43,7 @@ const earlierWork = variant === 'print' ? data.work.filter((j) => j.condensed) :
           {variant === 'web' && job.introduction && (
             <>
               <p class="entry-detail-label">{t('experience.introduction')}</p>
-              <p class="entry-sub">{job.introduction}</p>
+              <p class="entry-detail-text">{job.introduction}</p>
             </>
           )}
           {job.summary && (
