@@ -37,6 +37,8 @@ work:
       - Remediated technical debt with SonarQube; improved API logging and OpenAPI/Swagger documentation.
       - Stabilised Oracle-backed integration tests, SQL scripts and regression coverage; investigated production incidents.
       - Created AI skills to make a complex manual release process more reliable, covering SSH scripts, database checks, Jenkins jobs and post-release Splunk monitoring.
+    impacts:
+      - Improved delivery confidence and reduced regression risk for critical employee-savings and retirement workflows.
     tech: [Java 8, Spring 3, Hibernate 5, Oracle SQL, Maven, Jenkins, SonarQube, OpenAPI/Swagger, Splunk, Grafana, ActiveMQ, Git, IntelliJ IDEA, Codex, Claude Code]
 
   - company: BVNK
@@ -52,6 +54,8 @@ work:
       - Led the technical integration of the LHV API and designed a microservice for third-party banking APIs.
       - Implemented a Spring State Machine for a complex IBAN-creation flow.
       - Analysed and fixed production bugs; helped onboard new team members.
+    impacts:
+      - Extended EUR payment capabilities while making banking-partner integrations and the IBAN journey more reliable.
     tech: [Java 21, Spring Boot, MySQL, Gradle, Kubernetes, Docker, AWS SQS/SNS, Grafana, Localstack]
 
   - company: ING
@@ -70,6 +74,8 @@ work:
       - Implemented the Rules design pattern to add business rules without modifying existing code.
       - Improved page performance via parallel multithreaded AXA API calls and caching.
       - Analysed and fixed security issues reported by Checkmarx; updated Gatling performance tests.
+    impacts:
+      - Improved service performance, application security and the evolvability of insurance-banking journeys.
     tech: [Java 11, Spring Boot, Maven, Oracle SQL, Azure DevOps, Cucumber, Checkmarx, Kibana, Gatling]
 
   - company: Nexway
@@ -82,6 +88,8 @@ work:
       developers, 1 Python developer, 4 frontend developers.
     highlights:
       - Developed a new reference module.
+    impacts:
+      - Improved the quality and maintainability of the payment microservices foundation.
     tech: [Java 11, MongoDB, Gradle, Git, IntelliJ IDEA]
 
   - company: BNP Paribas CIB (via Meritis)
@@ -100,6 +108,8 @@ work:
       - Helped design the "Maestro" microservices web app — the future central interface for risk-calculation systems.
       - Built REST APIs + GUI for counterparty creation/modification; improved the UI with Material Design alongside BNP's UX team.
       - Implemented CI/CD from development to deployment with Jenkins pipelines and Ansible; documented the release workflow.
+    impacts:
+      - Modernised client risk-calculation applications and strengthened release automation.
     tech: [Java 8, Python 2, Angular 6, Spring Boot, Hibernate, Oracle SQL, Tomcat, Mule, Jenkins, Ansible, Git, Sonar, Artifactory]
 
   - company: HSBC (via Meritis)
@@ -117,6 +127,8 @@ work:
       - Generated monthly PDF reports with hyperlinks back into the application.
       - Developed a PL/SQL procedure to calculate and categorise client statuses.
       - Initiated end-to-end automated testing with Selenium; managed production releases.
+    impacts:
+      - Increased application reliability and usability through reusable UI components, end-to-end testing and automated reporting.
     tech: [Java EE 6, JSF, Richfaces, Spring, Hibernate, Oracle SQL 11, Tomcat, PL/SQL, JasperReport, Confluence]
 
   - company: SSI SOFT | Réseau DEF
@@ -132,6 +144,8 @@ work:
       - Developed new features; optimised performance and UI; refactored code.
       - Automated screen tests using Pulover's Macro Creator.
       - Resolved N+1 SQL query problems; transferred knowledge to new members.
+    impacts:
+      - Improved the stability, usability and functional-validation speed of a safety-critical fire-detection product.
     tech: [Java 8, JavaFX, XML, Spring, Maven, MyBatis, H2, Jenkins, Git]
 
   - company: DEF (via Viveris Technologies)
@@ -147,6 +161,8 @@ work:
       - Developed an internal tool for editing XML files; input the OPC Siemens server database.
       - Fixed bugs and resolved memory leaks; implemented features per user needs.
       - Built a simplified touchscreen version used by Purpan hospital; improved the InnoSetup installer.
+    impacts:
+      - Made the monitoring software easier to maintain, deploy and use through touch-screen and installer improvements.
     tech: [Java 6, XML, Maven, TortoiseHg, InnoSetup]
 
   - company: TERRASOL (via Omnitech)
@@ -162,6 +178,8 @@ work:
       - Studied existing software and improved usability; designed and developed property panels.
       - Migrated legacy file-import modules to the new version (debugging and source analysis to extract and adapt modules).
       - Developed a printing module with layout; built interoperability with Plaxis and AutoCAD via file decoders.
+    impacts:
+      - Modernised a specialist geotechnical application and improved interoperability with its engineering-tool ecosystem.
     tech: [Java 6, XML, UML, HTML, Netbeans, SVN, Balsamiq]
 
   - company: CEA (Atomic Energy Commission)
@@ -174,6 +192,8 @@ work:
       annotation module for scanned images.
     highlights:
       - Analysed specifications and built a tool to draw shapes (line, rectangle, circle) and add text onto scanned images.
+    impacts:
+      - Contributed an annotation tool for a specialised scientific and industrial simulation suite.
     tech: [Java 6, Eclipse, SmartGit]
 
   - company: Safran Engineering Services
@@ -187,6 +207,8 @@ work:
     highlights:
       - Gathered requirements (user interviews, usability testing) and wrote the state of the art on UML modelling of user interfaces.
       - Ran participatory design and a comparative study of existing tools; trained the team on the tool (applied to the ATMOST project).
+    impacts:
+      - Improved the analysis and formalisation of HMI requirements in an aerospace maintenance context.
     tech: [Java 6, UML]
 
   - company: IRIT (Institute of Research in Computer Science of Toulouse)
@@ -200,6 +222,8 @@ work:
     highlights:
       - Applied an iterative, user-centred HCI approach; gathered requirements via interviews and wrote the state of the art on 3D interaction techniques.
       - Developed the software prototype and ran user testing.
+    impacts:
+      - Validated interaction concepts for smart-home configuration through iterative prototypes and user tests.
     tech: [Java 6, "C++ (Irrlicht 3D engine)", Ivy Bus, Eclipse]
 
 education:
