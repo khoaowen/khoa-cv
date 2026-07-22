@@ -45,6 +45,9 @@ const cv = defineCollection({
           location: z.string().optional(),
           start: dateString,
           end: dateString.optional(), // omit or leave empty => "Present"
+          // Web-only employer/product context, deliberately separate from the
+          // candidate's contribution to mirror the LinkedIn profile structure.
+          introduction: z.string().optional(),
           summary: z.string().optional(),
           highlights: z.array(z.string()).default([]),
           impacts: z.array(z.string()).default([]),

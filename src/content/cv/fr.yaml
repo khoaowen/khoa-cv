@@ -27,6 +27,8 @@ work:
     position: Développeur Java Senior
     start: Oct. 2024
     end: Juil. 2026
+    introduction: >-
+      Amundi est l'un des leaders européens de la gestion d'actifs. Amundi Technology propose des solutions technologiques et des services d'investissement pour le secteur financier.
     summary: >-
       Contributeur backend core au produit Épargne Salariale et Retraite, sur
       les services métier NOEE, les API, la qualité de livraison et la fiabilité
@@ -45,6 +47,8 @@ work:
     position: Développeur Java Senior
     start: Juin 2022
     end: Oct. 2024
+    introduction: >-
+      BVNK est une fintech spécialisée dans les infrastructures de paiement en stablecoins et les paiements internationaux.
     summary: >-
       Contribution à la squad Intégration pour les paiements EUR, la création
       d'IBAN virtuels et les flux SEPA/SWIFT. Équipe : 4 développeurs backend
@@ -63,6 +67,8 @@ work:
     position: Développeur Sénior Java
     start: Oct. 2020
     end: Mai 2022
+    introduction: >-
+      ING France était une banque en ligne proposant des produits bancaires et financiers aux particuliers.
     summary: >-
       Projet DARE — collaboration avec AXA pour intégrer des produits d'assurance
       dans les offres bancaires via une plateforme microservices permettant de
@@ -83,6 +89,8 @@ work:
     position: Développeur Sénior Java
     start: Juil. 2020
     end: Oct. 2020
+    introduction: >-
+      Nexway est une entreprise spécialisée dans les solutions e-commerce, paiement et distribution digitale.
     summary: >-
       Contribution au développement des microservices du système de paiement en
       ligne. Équipe : 3 développeurs Java, 1 développeur Python, 4 développeurs
@@ -98,6 +106,8 @@ work:
     position: Développeur Sénior Java
     start: Oct. 2018
     end: Oct. 2019
+    introduction: >-
+      BNP Paribas CIB est la branche banque de financement et d'investissement du groupe BNP Paribas.
     summary: >-
       BNP CIB — équipe Primerisk, maintenance évolutive et corrective de
       l'application de calcul de risque client ; conception et partage de
@@ -118,6 +128,8 @@ work:
     position: Java Lead technique
     start: Juil. 2017
     end: Oct. 2018
+    introduction: >-
+      HSBC Global Banking and Markets est la branche banque de financement et d'investissement du groupe HSBC.
     summary: >-
       HSBC GBM — équipe BCC, refonte de l'application EBCC qui gère les données
       clients ; apport de solutions techniques et propositions d'améliorations.
@@ -137,6 +149,8 @@ work:
     position: Développeur
     start: Avril 2015
     end: Juil. 2017
+    introduction: >-
+      SSI SOFT, filiale du Réseau DEF, développe des solutions logicielles pour les systèmes de sécurité incendie.
     summary: >-
       Développement de TéléUltima, logiciel de programmation des centrales de
       détection d'incendie ; apport de solutions techniques et d'améliorations.
@@ -154,6 +168,8 @@ work:
     position: Consultant Développeur
     start: Sept. 2013
     end: Avril 2015
+    introduction: >-
+      DEF est un acteur historique de la sécurité incendie en France, membre du Réseau DEF.
     summary: >-
       VisioDef3D, logiciel d'administration des systèmes de surveillance
       d'incendie ; apport de solutions techniques et développement de nouvelles
@@ -171,6 +187,8 @@ work:
     position: Développeur
     start: Avril 2012
     end: Juil. 2013
+    introduction: >-
+      Terrasol, filiale du groupe Setec, est spécialisée dans l'ingénierie géotechnique et les logiciels métier.
     summary: >-
       Talren (v5), logiciel de vérification de la stabilité des ouvrages
       géotechniques ; renfort de l'équipe et développement de nouvelles
@@ -188,6 +206,8 @@ work:
     position: Développeur
     start: Jan. 2012
     end: Mars 2012
+    introduction: >-
+      Le CEA est un organisme public français de recherche scientifique et technologique.
     summary: >-
       CIVA, outil de simulation et d'analyse des matériaux ; développement d'un
       module d'annotation sur les images scannées.
@@ -202,6 +222,8 @@ work:
     position: Stagiaire
     start: Mars 2011
     end: Sept. 2011
+    introduction: >-
+      Safran Engineering Services est une société d'ingénierie du groupe Safran, active dans l'aéronautique, le spatial et la défense.
     summary: >-
       Conception et développement d'un outil d'aide à la modélisation des IHM du
       système de maintenance des avions.
@@ -217,6 +239,8 @@ work:
     position: Stagiaire
     start: Sept. 2010
     end: Mars 2011
+    introduction: >-
+      L'IRIT est un laboratoire de recherche en informatique reconnu pour ses travaux en interaction homme-machine, intelligence artificielle et systèmes distribués.
     summary: >-
       Conception et développement de techniques d'interaction pour la
       configuration d'un environnement 3D de simulation d'aide à domicile.
