@@ -214,6 +214,11 @@ a:focus-visible {
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
+.entry-detail-text {
+  color: #000;
+  margin: 0;
+  font-size: 0.95rem;
+}
 .entry-dates {
   color: var(--color-muted);
   font-size: 0.85rem;
