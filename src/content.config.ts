@@ -57,6 +57,9 @@ const cv = defineCollection({
           // under "Earlier experience" (keeps the PDF to ~2 pages). The web
           // page always shows the full entry regardless of this flag.
           condensed: z.boolean().default(false),
+          // Excludes a role from the generated PDF while keeping it available
+          // on the web CV.
+          excludeFromPrint: z.boolean().default(false),
         }),
       )
       .default([]),
