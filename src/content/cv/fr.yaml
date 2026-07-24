@@ -8,13 +8,13 @@ lang: fr
 
 basics:
   name: Dang Khoa BUI
-  role: Développeur Java Senior / Tech Lead
+  role: Java Senior / Tech Lead — Backends critiques, paiements & fiabilité production
   location: Ile de France, Paris
   summary: >-
-    Développeur Java Senior et Tech Lead avec plus de dix ans d'expérience dans
-    la fintech, la banque et l'édition logicielle. Je conçois des systèmes
-    backend fiables et maintenables, de la conception et des intégrations à la
-    qualité de livraison, au support de production et à l'accompagnement technique.
+    Java Senior / Tech Lead avec plus de dix ans d'expérience en fintech, banque
+    et logiciels métier. J'interviens sur des backends critiques : API et
+    intégrations partenaires, paiements, qualité de livraison, incidents de
+    production et accompagnement technique, en lien avec Produit, QA, DevOps et support.
   links:
     linkedin: https://www.linkedin.com/in/dangkhoabui/
     github: https://github.com/khoaowen
@@ -293,26 +293,25 @@ education:
     end: "2004"
 
 skills:
-  - category: Backend
-    items: [Java 6/8/11/21, Spring, Spring Boot, Hibernate, Gradle, Docker, AWS]
-  - category: Frontend
-    items: [Angular 6, JavaFX, Java Swing, JSF/Richfaces, HTML/CSS]
-  - category: Bases de données
-    items: [MySQL, MongoDB, Oracle SQL, H2, PL/SQL]
-  - category: Autres
-    items: [Python 2, Tomcat, MyBatis, XML, UML, Mule]
-  - category: Outils
-    items: [IntelliJ IDEA, Eclipse, Netbeans, Git, Jenkins, SonarQube, Grafana]
+  - category: Backend & architecture
+    items: [Java 8/11/21, Spring, Spring Boot, API REST, Microservices, Hibernate, Gradle, Maven]
+  - category: Paiements & intégrations
+    items: [SEPA/SWIFT, API bancaires, IBAN virtuels, ActiveMQ, AWS SQS/SNS]
+  - category: Données
+    items: [Oracle SQL, MySQL, MongoDB, PL/SQL, H2]
+  - category: Livraison & fiabilité
+    items: [Jenkins, CI/CD, Tests automatisés, SonarQube, Docker, Kubernetes, Grafana, Splunk]
   - category: Pratiques
-    items: [Clean Code, Tests automatisés, CI/CD, Support de production, Accompagnement technique]
+    items: [Leadership technique, Investigation production, Clean Code, Support de production, Accompagnement technique]
+  - category: Technologies historiques
+    items: [Java 6, Java EE, JavaFX, Java Swing, JSF/RichFaces, Angular 6, XML, Tomcat]
 
 softSkills:
-  - Persévérance
-  - Collaboration en équipe
-  - Autonomie
-  - Fiabilité
-  - Rigueur
-  - Exécution orientée objectif
+  - Leadership technique
+  - Investigation et résolution d'incidents de production
+  - Collaboration Produit, QA, DevOps et support
+  - Mentorat et accompagnement technique
+  - Communication claire
 
 projects: []
 
@@ -353,8 +352,8 @@ certifications:
 sideProjects:
   - name: Workflow IA de livraison du site Krav Maga
     description: >-
-      Mise en place d'un workflow piloté depuis Discord pour mettre à jour et
-      vérifier le site Krav Maga de bout en bout : demandes via chat,
-      modifications par agent IA, PR GitHub, CI/CD et vérification du
-      déploiement live.
+      Workflow piloté depuis Discord pour livrer et vérifier le site Krav Maga
+      de bout en bout : demandes via chat, modifications par agent IA, PR GitHub,
+      CI/CD et vérification du déploiement live afin de réduire le manuel et
+      fiabiliser les mises en production.
     tech: [OpenClaw, Discord, GitHub Apps, Astro, CI/CD, Cloudflare]
