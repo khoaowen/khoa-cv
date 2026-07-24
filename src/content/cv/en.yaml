@@ -244,6 +244,7 @@ work:
 
   - company: Safran Engineering Services
     condensed: true
+    excludeFromPrint: true
     position: Intern
     start: Mar 2011
     end: Sep 2011
@@ -264,6 +265,7 @@ work:
 
   - company: IRIT (Institute of Research in Computer Science of Toulouse)
     condensed: true
+    excludeFromPrint: true
     position: Intern
     start: Sep 2010
     end: Mar 2011

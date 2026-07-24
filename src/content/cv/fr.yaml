@@ -240,6 +240,7 @@ work:
 
   - company: Safran Engineering Services
     condensed: true
+    excludeFromPrint: true
     position: Stagiaire
     start: Mars 2011
     end: Sept. 2011
@@ -259,6 +260,7 @@ work:
 
   - company: IRIT (Institut de Recherche en Informatique de Toulouse)
     condensed: true
+    excludeFromPrint: true
     position: Stagiaire
     start: Sept. 2010
     end: Mars 2011

@@ -16,8 +16,8 @@ const t = useTranslations(locale);
 const present = t('date.present');
 
 // In print, split full vs. condensed roles; on the web, everything is "full".
-const fullWork = variant === 'print' ? data.work.filter((j) => !j.condensed) : data.work;
-const earlierWork = variant === 'print' ? data.work.filter((j) => j.condensed) : [];
+const fullWork = variant === 'print' ? data.work.filter((j) => !j.condensed && !j.excludeFromPrint) : data.work;
+const earlierWork = variant === 'print' ? data.work.filter((j) => j.condensed && !j.excludeFromPrint) : [];
 ---
 
 <section class="cv-section" id="summary" aria-labelledby="h-summary">
@@ -104,12 +104,12 @@ const earlierWork = variant === 'print' ? data.work.filter((j) => j.condensed) :
   earlierWork.length > 0 && (
     <section class="cv-section" id="earlier" aria-labelledby="h-earlier">
       <h2 id="h-earlier">{t('nav.earlier')}</h2>
-      <div class:list={['condensed-list', { 'condensed-list--with-summaries': locale === 'fr' }]}>
+      <div class="condensed-list condensed-list--with-summaries">
         {earlierWork.map((job) => (
           <p class="condensed-entry">
             <strong>{job.position}</strong> — {job.company}
             <span class="entry-dates"> · {dateRange(job.start, job.end, present)}</span>
-            {locale === 'fr' && job.summary && <> — {job.summary}</>}
+            {job.summary && <> — {job.summary}</>}
           </p>
         ))}
       </div>
