@@ -20,7 +20,7 @@
   },
   "devDependencies": {
     "pdf-lib": "1.17.1",
-    "playwright": "1.61.1",
+    "playwright": "1.62.0",
     "wrangler": "4.114.0"
   },
   "overrides": {
