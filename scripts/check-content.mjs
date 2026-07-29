@@ -15,6 +15,19 @@ const PATTERNS = [
   { name: 'french phone number', re: /\b0[1-9](?:[ .\-]?\d{2}){4}\b/ },
 ];
 
+// Content contract: this certification must remain equivalent in both locales.
+// It prevents partial or accidental edits while keeping the localized date format.
+const CERTIFICATION_CONTRACTS = [
+  {
+    file: 'src/content/cv/en.yaml',
+    block: '  - name: AI Engineering Specialization\n    issuer: ByteByteGo\n    date: "Dec 2025"',
+  },
+  {
+    file: 'src/content/cv/fr.yaml',
+    block: '  - name: AI Engineering Specialization\n    issuer: ByteByteGo\n    date: "Déc. 2025"',
+  },
+];
+
 let violations = 0;
 for (const file of FILES) {
   let text;
@@ -33,6 +46,18 @@ for (const file of FILES) {
   });
 }
 
+for (const { file, block } of CERTIFICATION_CONTRACTS) {
+  const text = await readFile(file, 'utf8');
+  const occurrences = text.split(block).length - 1;
+  if (occurrences !== 1) {
+    console.error(
+      `✗ ${file} must contain exactly one complete AI Engineering Specialization certification block ` +
+        `(found ${occurrences}).`,
+    );
+    violations++;
+  }
+}
+
 if (violations > 0) {
   console.error(
     `\nContent check failed: ${violations} phone-like value(s) found. ` +
@@ -40,4 +65,4 @@ if (violations > 0) {
   );
   process.exit(1);
 }
-console.log('✓ Content check passed: no phone numbers found.');
+console.log('✓ Content check passed: no phone numbers found; AI Engineering certification contract is intact.');
