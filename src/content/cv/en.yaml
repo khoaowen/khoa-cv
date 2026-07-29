@@ -8,13 +8,14 @@ lang: en
 
 basics:
   name: Dang Khoa BUI
-  role: Senior Java Developer / Tech Lead
+  role: Senior Java Developer / Tech Lead — Critical Backends, Payments & Production Reliability
   location: Ile de France, Paris
   summary: >-
     Senior Java developer and technical lead with over a decade of experience
-    across fintech, banking and software products. I build reliable,
-    maintainable backend systems and contribute from design and integration to
-    delivery quality, production support and technical team enablement.
+    across fintech, banking and business software. I work on critical backends:
+    APIs and partner integrations, payments, delivery quality, production
+    incidents and technical enablement, alongside product, QA, DevOps and
+    support teams.
   links:
     linkedin: https://www.linkedin.com/in/dangkhoabui/
     github: https://github.com/khoaowen
@@ -302,26 +303,27 @@ education:
     end: "2004"
 
 skills:
-  - category: Backend
-    items: [Java 6/8/11/21, Spring, Spring Boot, Hibernate, Gradle, Docker, AWS]
-  - category: Frontend
-    items: [Angular 6, JavaFX, Java Swing, JSF/Richfaces, HTML/CSS]
-  - category: Databases
-    items: [MySQL, MongoDB, Oracle SQL, H2, PL/SQL]
-  - category: Other
-    items: [Python 2, Tomcat, MyBatis, XML, UML, Mule]
-  - category: Tools
-    items: [IntelliJ IDEA, Eclipse, Netbeans, Git, Jenkins, SonarQube, Grafana]
+  - category: Backend & architecture
+    items: [Java 8/11/21, Spring, Spring Boot, REST APIs, Microservices, Hibernate, Gradle, Maven]
+  - category: Payments & integrations
+    items: [SEPA/SWIFT, Banking APIs, Virtual IBANs, ActiveMQ, AWS SQS/SNS]
+  - category: Data
+    items: [Oracle SQL, MySQL, MongoDB, PL/SQL, H2]
+  - category: Delivery & reliability
+    items: [Jenkins, CI/CD, Automated testing, SonarQube, Docker, Kubernetes, Grafana, Splunk]
+  - category: AI & automation
+    items: [Large Language Models (LLMs), Codex, Claude Code]
   - category: Practices
-    items: [Clean Code, Automated testing, CI/CD, Production support, Technical leadership]
+    items: [Technical leadership, Production investigation, Clean Code, Production support, Technical enablement]
+  - category: Earlier technologies
+    items: [Java 6, Java EE, JavaFX, Java Swing, JSF/RichFaces, Angular 6, XML, Tomcat]
 
 softSkills:
-  - Perseverance
-  - Team collaboration
-  - Autonomy
-  - Reliability
-  - Attention to detail
-  - Goal-oriented execution
+  - Technical leadership
+  - Production-incident investigation and resolution
+  - Collaboration with product, QA, DevOps and support
+  - Mentoring and technical enablement
+  - Clear communication
 
 projects: []
 
@@ -343,6 +345,7 @@ certifications:
   - name: "Microsoft Certified: Azure AI Fundamentals"
     issuer: Microsoft
     date: "Jun 2022"
+  - name: AI Engineering Specialization
   - name: "Microsoft Certified: Security, Compliance, and Identity Fundamentals"
     issuer: Microsoft
     date: "Jun 2022"
