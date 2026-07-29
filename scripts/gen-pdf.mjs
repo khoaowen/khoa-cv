@@ -61,8 +61,16 @@ function startServer() {
 }
 
 const TARGETS = [
-  { route: '/cv-print/', out: 'cv-en.pdf' },
-  { route: '/fr/cv-print/', out: 'cv-fr.pdf' },
+  {
+    route: '/cv-print/',
+    out: 'cv-en.pdf',
+    certification: ['AI Engineering Specialization', 'ByteByteGo', 'Dec 2025'],
+  },
+  {
+    route: '/fr/cv-print/',
+    out: 'cv-fr.pdf',
+    certification: ['AI Engineering Specialization', 'ByteByteGo', 'Déc. 2025'],
+  },
 ];
 
 async function pageCount(buffer) {
@@ -83,6 +91,18 @@ async function renderToBudget(page, url) {
   return { ...last, fits: false }; // floor reached, still over budget
 }
 
+async function assertPrintContract(page, { route, certification }) {
+  const text = await page.locator('body').innerText();
+  const missing = certification.filter((value) => !text.includes(value));
+  const certificationCount = text.split(certification[0]).length - 1;
+  if (missing.length > 0 || certificationCount !== 1) {
+    throw new Error(
+      `Print-route drift on ${route}: certification count=${certificationCount}; ` +
+        `missing=${missing.length ? missing.join(', ') : 'none'}.`,
+    );
+  }
+}
+
 async function main() {
   try {
     await access(join(DIST, 'index.html'));
@@ -95,8 +115,12 @@ async function main() {
   let failed = false;
   try {
     const page = await browser.newPage();
-    for (const { route, out } of TARGETS) {
-      const result = await renderToBudget(page, `http://127.0.0.1:${port}${route}`);
+    for (const target of TARGETS) {
+      const { route, out } = target;
+      const url = `http://127.0.0.1:${port}${route}`;
+      await page.goto(url, { waitUntil: 'networkidle' });
+      await assertPrintContract(page, target);
+      const result = await renderToBudget(page, url);
       await writeFile(join(DIST, out), result.buffer);
       const pct = Math.round(result.scale * 100);
       if (result.fits) {
