@@ -8,8 +8,9 @@
     "check:content": "node scripts/check-content.mjs",
     "build": "astro check && astro build",
     "build:site": "node scripts/check-content.mjs && astro check && astro build",
+    "check:rendered": "node scripts/check-rendered-cv.mjs",
     "pdf": "node scripts/gen-pdf.mjs",
-    "build:all": "npm run build:site && npm run pdf",
+    "build:all": "npm run build:site && npm run check:rendered && npm run pdf",
     "preview": "astro preview"
   },
   "dependencies": {
