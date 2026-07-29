@@ -303,6 +303,8 @@ skills:
     items: [Oracle SQL, MySQL, MongoDB, PL/SQL, H2]
   - category: Livraison & fiabilité
     items: [Jenkins, CI/CD, Tests automatisés, SonarQube, Docker, Kubernetes, Grafana, Splunk]
+  - category: IA & automatisation
+    items: [Grands modèles de langage (LLM), Codex, Claude Code]
   - category: Pratiques
     items: [Leadership technique, Investigation production, Clean Code, Support de production, Accompagnement technique]
   - category: Technologies historiques
@@ -335,6 +337,7 @@ certifications:
   - name: "Microsoft Certified: Azure AI Fundamentals"
     issuer: Microsoft
     date: "Juin 2022"
+  - name: AI Engineering Specialization
   - name: "Microsoft Certified: Security, Compliance, and Identity Fundamentals"
     issuer: Microsoft
     date: "Juin 2022"
