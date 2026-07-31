@@ -18,6 +18,20 @@ const PAGES = [
     issuer: 'ByteByteGo',
     date: 'Déc. 2025',
   },
+  {
+    file: 'dist/dossier-print/index.html',
+    label: 'English skills dossier',
+    certification: 'AI Engineering Specialization',
+    issuer: 'ByteByteGo',
+    date: 'Dec 2025',
+  },
+  {
+    file: 'dist/fr/dossier-print/index.html',
+    label: 'French skills dossier',
+    certification: 'AI Engineering Specialization',
+    issuer: 'ByteByteGo',
+    date: 'Déc. 2025',
+  },
 ];
 
 let violations = 0;
@@ -27,11 +41,13 @@ for (const { file, label, certification, issuer, date } of PAGES) {
   const certificationCount = text.split(certification).length - 1;
   const expected = [certification, issuer, date];
   const missing = expected.filter((value) => !text.includes(value));
+  const issuedAt = [...html.matchAll(/data-issued-at="(\d{4}-(?:0[1-9]|1[0-2]))"/g)].map((m) => m[1]);
+  const sortedNewestFirst = issuedAt.every((value, index) => index === 0 || issuedAt[index - 1] >= value);
 
-  if (certificationCount !== 1 || missing.length > 0) {
+  if (certificationCount !== 1 || missing.length > 0 || issuedAt.length === 0 || !sortedNewestFirst) {
     console.error(
       `✗ ${label} render drift: certification count=${certificationCount}; ` +
-        `missing=${missing.length ? missing.join(', ') : 'none'}.`,
+        `missing=${missing.length ? missing.join(', ') : 'none'}; newest-first=${sortedNewestFirst}.`,
     );
     violations++;
   } else {

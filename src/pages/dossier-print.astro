@@ -1,0 +1,15 @@
+---
+import { getEntry } from 'astro:content';
+import PrintLayout from '../layouts/PrintLayout.astro';
+import CvSections from '../components/CvSections.astro';
+
+// Full dossier: deliberately uses the same content and section component as
+// the public site. Unlike the compact CV route, it keeps every role in detail.
+const entry = await getEntry('cv', 'en');
+if (!entry) throw new Error('Missing CV content: src/content/cv/en.yaml');
+const { data } = entry;
+---
+
+<PrintLayout data={data} locale="en" documentLabel="Skills dossier">
+  <CvSections data={data} locale="en" variant="web" />
+</PrintLayout>

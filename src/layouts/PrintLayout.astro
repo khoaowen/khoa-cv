@@ -6,9 +6,11 @@ import '../styles/print.css';
 interface Props {
   data: CollectionEntry<'cv'>['data'];
   locale: Locale;
+  documentLabel?: string;
 }
-const { data, locale } = Astro.props;
+const { data, locale, documentLabel } = Astro.props;
 const b = data.basics;
+const titleLabel = documentLabel ?? b.role;
 
 // Contact line for the PDF. Email/address come from the `private` block and
 // appear ONLY here (the PDF), never on the public web page. No phone, ever.
@@ -26,7 +28,7 @@ if (b.location) contacts.push({ label: b.location });
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{b.name} — {b.role}</title>
+    <title>{b.name} — {titleLabel}</title>
     <meta name="robots" content="noindex" />
   </head>
   <body>

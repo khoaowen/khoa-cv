@@ -9,8 +9,9 @@ interface Props {
   data: CollectionEntry<'cv'>['data'];
   locale: Locale;
   pdfHref: string;
+  dossierHref: string;
 }
-const { data, locale, pdfHref } = Astro.props;
+const { data, locale, pdfHref, dossierHref } = Astro.props;
 const t = useTranslations(locale);
 
 const canonical = new URL(Astro.url.pathname, Astro.site).href;
@@ -58,6 +59,10 @@ const description = data.basics.summary.slice(0, 155);
           <a class="btn btn-primary" href={pdfHref} download>
             <span>{t('action.downloadPdf')}</span>
             <small>{t('action.downloadPdfSub')}</small>
+          </a>
+          <a class="btn" href={dossierHref} download>
+            <span>{t('action.downloadDossier')}</span>
+            <small>{t('action.downloadDossierSub')}</small>
           </a>
         </div>
       </header>
