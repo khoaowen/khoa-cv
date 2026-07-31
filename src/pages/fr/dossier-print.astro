@@ -9,6 +9,6 @@ if (!entry) throw new Error('Missing CV content: src/content/cv/fr.yaml');
 const { data } = entry;
 ---
 
-<PrintLayout data={data} locale="fr" documentLabel="Dossier de compétences">
+<PrintLayout data={data} locale="fr" documentLabel="Dossier de compétences" documentType="dossier">
   <CvSections data={data} locale="fr" variant="web" />
 </PrintLayout>
