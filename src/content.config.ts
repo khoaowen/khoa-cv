@@ -15,6 +15,10 @@ const dateString = z
   .string()
   .describe('Free-form date, e.g. "2023-06", "Jun 2023", or "2021".');
 
+// Machine-readable chronology for certifications. Display dates remain localized
+// in the content files, while this field makes newest-first rendering enforceable.
+const yearMonth = z.string().regex(/^\d{4}-(0[1-9]|1[0-2])$/, 'Expected YYYY-MM.');
+
 const cv = defineCollection({
   loader: glob({ pattern: '*.yaml', base: './src/content/cv' }),
   schema: z.object({
@@ -107,6 +111,7 @@ const cv = defineCollection({
         z.object({
           name: z.string(),
           issuer: z.string().optional(),
+          issuedAt: yearMonth,
           date: dateString.optional(),
         }),
       )

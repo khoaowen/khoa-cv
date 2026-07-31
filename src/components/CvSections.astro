@@ -18,6 +18,9 @@ const present = t('date.present');
 // In print, split full vs. condensed roles; on the web, everything is "full".
 const fullWork = variant === 'print' ? data.work.filter((j) => !j.condensed && !j.excludeFromPrint) : data.work;
 const earlierWork = variant === 'print' ? data.work.filter((j) => j.condensed && !j.excludeFromPrint) : [];
+// Never rely on the YAML author remembering a manual order. The localized
+// display date is for people; issuedAt is the canonical sort key for machines.
+const certifications = [...data.certifications].sort((a, b) => b.issuedAt.localeCompare(a.issuedAt));
 ---
 
 <section class="cv-section" id="summary" aria-labelledby="h-summary">
@@ -197,12 +200,12 @@ const earlierWork = variant === 'print' ? data.work.filter((j) => j.condensed &&
 }
 
 {
-  data.certifications.length > 0 && (
+  certifications.length > 0 && (
     <section class="cv-section" id="certifications" aria-labelledby="h-cert">
       <h2 id="h-cert">{t('nav.certifications')}</h2>
       <ul class="cert-list">
-        {data.certifications.map((c) => (
-          <li>
+        {certifications.map((c) => (
+          <li data-issued-at={c.issuedAt}>
             <strong>{c.name}</strong>
             {c.issuer && <span> — {c.issuer}</span>}
             {c.date && <span> ({c.date})</span>}
