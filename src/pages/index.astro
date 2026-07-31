@@ -8,6 +8,6 @@ if (!entry) throw new Error('Missing CV content: src/content/cv/en.yaml');
 const { data } = entry;
 ---
 
-<Base data={data} locale="en" pdfHref="/cv-en.pdf">
+<Base data={data} locale="en" pdfHref="/cv-en.pdf" dossierHref="/dossier-competences-en.pdf">
   <CvSections data={data} locale="en" />
 </Base>

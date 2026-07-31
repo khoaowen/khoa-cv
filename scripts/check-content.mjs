@@ -20,11 +20,11 @@ const PATTERNS = [
 const CERTIFICATION_CONTRACTS = [
   {
     file: 'src/content/cv/en.yaml',
-    block: '  - name: AI Engineering Specialization\n    issuer: ByteByteGo\n    date: "Dec 2025"',
+    block: '  - name: AI Engineering Specialization\n    issuer: ByteByteGo\n    issuedAt: "2025-12"\n    date: "Dec 2025"',
   },
   {
     file: 'src/content/cv/fr.yaml',
-    block: '  - name: AI Engineering Specialization\n    issuer: ByteByteGo\n    date: "Déc. 2025"',
+    block: '  - name: AI Engineering Specialization\n    issuer: ByteByteGo\n    issuedAt: "2025-12"\n    date: "Déc. 2025"',
   },
 ];
 
@@ -60,8 +60,8 @@ for (const { file, block } of CERTIFICATION_CONTRACTS) {
 
 if (violations > 0) {
   console.error(
-    `\nContent check failed: ${violations} phone-like value(s) found. ` +
-      'Phone numbers are not allowed anywhere in this CV (see AGENTS.md).',
+    `\nContent check failed: ${violations} contract violation(s) found. ` +
+      'Phone numbers are not allowed anywhere in this CV; required content blocks must stay intact.',
   );
   process.exit(1);
 }

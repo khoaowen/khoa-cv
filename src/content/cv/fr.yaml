@@ -328,32 +328,41 @@ languages:
     fluency: Langue maternelle
 
 certifications:
+  - name: AI Engineering Specialization
+    issuer: ByteByteGo
+    issuedAt: "2025-12"
+    date: "Déc. 2025"
   - name: "Microsoft Certified: Azure Solutions Architect Expert"
     issuer: Microsoft
+    issuedAt: "2022-10"
     date: "Oct. 2022 - Oct. 2023"
   - name: "Microsoft Certified: Azure Administrator Associate"
     issuer: Microsoft
+    issuedAt: "2022-09"
     date: "Sept. 2022 - Sept. 2023"
   - name: "Microsoft Certified: Azure AI Fundamentals"
     issuer: Microsoft
+    issuedAt: "2022-06"
     date: "Juin 2022"
-  - name: AI Engineering Specialization
-    issuer: ByteByteGo
-    date: "Déc. 2025"
   - name: "Microsoft Certified: Security, Compliance, and Identity Fundamentals"
     issuer: Microsoft
+    issuedAt: "2022-06"
     date: "Juin 2022"
   - name: "Microsoft Certified: Azure Data Fundamentals"
     issuer: Microsoft
+    issuedAt: "2022-05"
     date: "Mai 2022"
   - name: "Microsoft Certified: Azure Fundamentals"
     issuer: Microsoft
+    issuedAt: "2022-05"
     date: "Mai 2022"
   - name: Professional Scrum Master I (PSM I)
     issuer: Scrum.org
+    issuedAt: "2019-02"
     date: "Févr. 2019"
   - name: Développement Java / JEE avec les frameworks Java/JEE
     issuer: ORSYS Paris
+    issuedAt: "2013-01"
     date: "2013"
 
 sideProjects:

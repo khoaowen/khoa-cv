@@ -61,6 +61,10 @@ private{email?, address?}), then arrays: `work[]`, `education[]`, `skills[]`,
 for exact fields and validation.
 
 - For a current job, set `end: ""` (renders as "Present" / "Présent").
+- Every `certifications[]` entry requires `issuedAt` in `YYYY-MM` format. It
+  is the canonical sort key: certifications render newest first. When only a
+  year is known, use `YYYY-01` as an internal ordering convention; the
+  displayed date may remain year-only.
 - Set `condensed: true` on a `work` entry to show it compactly under "Earlier
   experience" **in the PDF only** (keeps the PDF to ~2 pages); the web page
   always shows the full entry.

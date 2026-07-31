@@ -71,6 +71,19 @@ const TARGETS = [
     out: 'cv-fr.pdf',
     certification: ['AI Engineering Specialization', 'ByteByteGo', 'Déc. 2025'],
   },
+  {
+    route: '/dossier-print/',
+    out: 'dossier-competences-en.pdf',
+    certification: ['AI Engineering Specialization', 'ByteByteGo', 'Dec 2025'],
+    // The dossier deliberately mirrors the complete website; it has no compact-CV page limit.
+    maxPages: null,
+  },
+  {
+    route: '/fr/dossier-print/',
+    out: 'dossier-competences-fr.pdf',
+    certification: ['AI Engineering Specialization', 'ByteByteGo', 'Déc. 2025'],
+    maxPages: null,
+  },
 ];
 
 async function pageCount(buffer) {
@@ -79,14 +92,18 @@ async function pageCount(buffer) {
 }
 
 // Render one route, shrinking scale until it fits the page budget.
-async function renderToBudget(page, url) {
+async function renderToBudget(page, url, maxPages = MAX_PAGES) {
   await page.goto(url, { waitUntil: 'networkidle' });
+  if (maxPages === null) {
+    const buffer = await page.pdf({ printBackground: true, preferCSSPageSize: true });
+    return { buffer, pages: await pageCount(buffer), scale: 1, fits: true };
+  }
   let last = null;
   for (let scale = 1; scale >= MIN_SCALE - 1e-9; scale = Number((scale - SCALE_STEP).toFixed(2))) {
     const buffer = await page.pdf({ printBackground: true, preferCSSPageSize: true, scale });
     const pages = await pageCount(buffer);
     last = { buffer, pages, scale };
-    if (pages <= MAX_PAGES) return { ...last, fits: true };
+    if (pages <= maxPages) return { ...last, fits: true };
   }
   return { ...last, fits: false }; // floor reached, still over budget
 }
@@ -100,6 +117,12 @@ async function assertPrintContract(page, { route, certification }) {
       `Print-route drift on ${route}: certification count=${certificationCount}; ` +
         `missing=${missing.length ? missing.join(', ') : 'none'}.`,
     );
+  }
+  const issuedAt = await page.locator('#certifications [data-issued-at]').evaluateAll((items) =>
+    items.map((item) => item.getAttribute('data-issued-at')),
+  );
+  if (issuedAt.length === 0 || issuedAt.some((value, index) => index > 0 && issuedAt[index - 1] < value)) {
+    throw new Error(`Print-route certification chronology drift on ${route}: expected newest-first.`);
   }
 }
 
@@ -120,7 +143,8 @@ async function main() {
       const url = `http://127.0.0.1:${port}${route}`;
       await page.goto(url, { waitUntil: 'networkidle' });
       await assertPrintContract(page, target);
-      const result = await renderToBudget(page, url);
+      const maxPages = Object.hasOwn(target, 'maxPages') ? target.maxPages : MAX_PAGES;
+      const result = await renderToBudget(page, url, maxPages);
       await writeFile(join(DIST, out), result.buffer);
       const pct = Math.round(result.scale * 100);
       if (result.fits) {
@@ -130,7 +154,7 @@ async function main() {
         failed = true;
         console.error(
           `✗ ${out} — still ${result.pages} pages at the ${pct}% readable floor ` +
-            `(budget is ${MAX_PAGES}). Fix: set \`condensed: true\` on an older work ` +
+            `(budget is ${maxPages}). Fix: set \`condensed: true\` on an older work ` +
             `entry, or shorten its highlights, in the matching YAML. See AGENTS.md.`,
         );
       }
