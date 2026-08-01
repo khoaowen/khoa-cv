@@ -181,3 +181,45 @@ section > h2 {
   margin: 0;
   columns: 2;
 }
+
+/* The full dossier is the print counterpart of the public site: it keeps the
+   same section hierarchy, colours, tag pills and two-column list treatment.
+   Only navigation and download controls are omitted from a PDF. */
+.document--dossier {
+  --ink: #26160f;
+  --muted: #6b5145;
+  --accent: #632100;
+  --line: #ead9cf;
+}
+.document--dossier section {
+  margin-top: 14pt;
+}
+.document--dossier .entry {
+  margin-bottom: 11pt;
+}
+.document--dossier .entry ul {
+  margin-top: 5pt;
+  padding-left: 14pt;
+}
+.document--dossier .tags {
+  gap: 4pt;
+  margin-top: 5pt;
+}
+.document--dossier .tags li {
+  background: #fbf5f1;
+  border: 1pt solid var(--line);
+  border-radius: 999px;
+  padding: 1pt 5pt;
+  color: var(--muted);
+}
+.document--dossier .tags li::after {
+  content: none;
+}
+.document--dossier .soft-skill-list,
+.document--dossier .lang-list,
+.document--dossier .cert-list {
+  columns: initial;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 5pt 14pt;
+}

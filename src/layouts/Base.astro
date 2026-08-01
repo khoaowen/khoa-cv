@@ -56,14 +56,16 @@ const description = data.basics.summary.slice(0, 155);
           <a class="btn" href={data.basics.links.linkedin} rel="me noopener noreferrer" target="_blank">
             {t('action.viewLinkedin')}
           </a>
-          <a class="btn btn-primary" href={pdfHref} download>
-            <span>{t('action.downloadPdf')}</span>
-            <small>{t('action.downloadPdfSub')}</small>
-          </a>
-          <a class="btn" href={dossierHref} download>
-            <span>{t('action.downloadDossier')}</span>
-            <small>{t('action.downloadDossierSub')}</small>
-          </a>
+          <div class="download-actions" aria-label="PDF downloads">
+            <a class="btn btn-primary" href={pdfHref} download>
+              <span>{t('action.downloadPdf')}</span>
+              <small>{t('action.downloadPdfSub')}</small>
+            </a>
+            <a class="btn btn-primary" href={dossierHref} download>
+              <span>{t('action.downloadDossier')}</span>
+              <small>{t('action.downloadDossierSub')}</small>
+            </a>
+          </div>
         </div>
       </header>
 

@@ -7,8 +7,9 @@ interface Props {
   data: CollectionEntry<'cv'>['data'];
   locale: Locale;
   documentLabel?: string;
+  documentType?: 'cv' | 'dossier';
 }
-const { data, locale, documentLabel } = Astro.props;
+const { data, locale, documentLabel, documentType = 'cv' } = Astro.props;
 const b = data.basics;
 const titleLabel = documentLabel ?? b.role;
 
@@ -31,7 +32,7 @@ if (b.location) contacts.push({ label: b.location });
     <title>{b.name} — {titleLabel}</title>
     <meta name="robots" content="noindex" />
   </head>
-  <body>
+  <body class:list={['document', `document--${documentType}`]}>
     <div class="page">
       <header class="p-header">
         <h1>{b.name}</h1>
