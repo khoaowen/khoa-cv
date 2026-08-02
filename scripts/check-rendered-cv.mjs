@@ -32,6 +32,20 @@ const PAGES = [
     issuer: 'ByteByteGo',
     date: 'Déc. 2025',
   },
+  {
+    file: 'dist/cv-print/index.html',
+    label: 'English concise PDF source',
+    certification: 'AI Engineering Specialization',
+    issuer: 'ByteByteGo',
+    date: 'Dec 2025',
+  },
+  {
+    file: 'dist/fr/cv-print/index.html',
+    label: 'French concise PDF source',
+    certification: 'AI Engineering Specialization',
+    issuer: 'ByteByteGo',
+    date: 'Déc. 2025',
+  },
 ];
 
 let violations = 0;
@@ -43,11 +57,14 @@ for (const { file, label, certification, issuer, date } of PAGES) {
   const missing = expected.filter((value) => !text.includes(value));
   const issuedAt = [...html.matchAll(/data-issued-at="(\d{4}-(?:0[1-9]|1[0-2]))"/g)].map((m) => m[1]);
   const sortedNewestFirst = issuedAt.every((value, index) => index === 0 || issuedAt[index - 1] >= value);
+  const hasSkills = html.includes('id="skills"');
+  const hasSoftSkills = html.includes('id="soft-skills"');
 
-  if (certificationCount !== 1 || missing.length > 0 || issuedAt.length === 0 || !sortedNewestFirst) {
+  if (certificationCount !== 1 || missing.length > 0 || issuedAt.length === 0 || !sortedNewestFirst || !hasSkills || !hasSoftSkills) {
     console.error(
       `✗ ${label} render drift: certification count=${certificationCount}; ` +
-        `missing=${missing.length ? missing.join(', ') : 'none'}; newest-first=${sortedNewestFirst}.`,
+        `missing=${missing.length ? missing.join(', ') : 'none'}; newest-first=${sortedNewestFirst}; ` +
+        `skills=${hasSkills}; soft-skills=${hasSoftSkills}.`,
     );
     violations++;
   } else {
