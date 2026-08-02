@@ -57,8 +57,10 @@ for (const { file, label, certification, issuer, date } of PAGES) {
   const missing = expected.filter((value) => !text.includes(value));
   const issuedAt = [...html.matchAll(/data-issued-at="(\d{4}-(?:0[1-9]|1[0-2]))"/g)].map((m) => m[1]);
   const sortedNewestFirst = issuedAt.every((value, index) => index === 0 || issuedAt[index - 1] >= value);
-  const hasSkills = html.includes('id="skills"');
-  const hasSoftSkills = html.includes('id="soft-skills"');
+  // Assert the visible content contract rather than a particular HTML id: Astro
+  // may optimize attributes, but the recruiter-facing skills must remain present.
+  const hasSkills = html.includes('class="skill-row"') && text.includes('Spring Boot');
+  const hasSoftSkills = html.includes('class="soft-skill-list"') && /communication/i.test(text);
 
   if (certificationCount !== 1 || missing.length > 0 || issuedAt.length === 0 || !sortedNewestFirst || !hasSkills || !hasSoftSkills) {
     console.error(
