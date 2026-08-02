@@ -156,7 +156,7 @@ const certifications = [...data.certifications].sort((a, b) => b.issuedAt.locale
 }
 
 {
-  variant === 'web' && data.skills.length > 0 && (
+  data.skills.length > 0 && (
     <section class="cv-section" id="skills" aria-labelledby="h-skills">
       <h2 id="h-skills">{t('nav.skills')}</h2>
       {data.skills.map((s) => (
@@ -171,7 +171,7 @@ const certifications = [...data.certifications].sort((a, b) => b.issuedAt.locale
 
 
 {
-  variant === 'web' && data.softSkills.length > 0 && (
+  data.softSkills.length > 0 && (
     <section class="cv-section" id="soft-skills" aria-labelledby="h-soft-skills">
       <h2 id="h-soft-skills">{t("nav.softSkills")}</h2>
       <ul class="soft-skill-list">

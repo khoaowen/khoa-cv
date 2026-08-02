@@ -43,11 +43,28 @@ for (const { file, label, certification, issuer, date } of PAGES) {
   const missing = expected.filter((value) => !text.includes(value));
   const issuedAt = [...html.matchAll(/data-issued-at="(\d{4}-(?:0[1-9]|1[0-2]))"/g)].map((m) => m[1]);
   const sortedNewestFirst = issuedAt.every((value, index) => index === 0 || issuedAt[index - 1] >= value);
+  // Check the actual recruiter-facing section structure. A single translated
+  // technology label is not a stable contract: it can legitimately change
+  // while the complete skills summary remains present in both PDFs.
+  const skillsSection = html.match(/<section[^>]*id="skills"[^>]*>([\s\S]*?)<\/section>/)?.[1] ?? '';
+  const skillsText = skillsSection.replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim();
+  // Astro's optimizer can legally change element and attribute serialization
+  // between environments. Validate the recruiter-facing substance instead of
+  // coupling CI to a particular div/class representation.
+  const skillWordCount = skillsText.split(/\s+/).filter(Boolean).length;
+  const hasSkills =
+    skillWordCount >= 20 ||
+    (html.includes('id="h-skills"') && html.includes('Java 8/11/21') && html.includes('Kubernetes'));
+  const hasSoftSkills =
+    html.includes('id="soft-skills"') &&
+    /class="[^"]*\bsoft-skill-list\b[^"]*"/.test(html) &&
+    /communication/i.test(text);
 
-  if (certificationCount !== 1 || missing.length > 0 || issuedAt.length === 0 || !sortedNewestFirst) {
+  if (certificationCount !== 1 || missing.length > 0 || issuedAt.length === 0 || !sortedNewestFirst || !hasSkills || !hasSoftSkills) {
     console.error(
       `✗ ${label} render drift: certification count=${certificationCount}; ` +
-        `missing=${missing.length ? missing.join(', ') : 'none'}; newest-first=${sortedNewestFirst}.`,
+        `missing=${missing.length ? missing.join(', ') : 'none'}; newest-first=${sortedNewestFirst}; ` +
+        `skills=${hasSkills} (words=${skillWordCount}); soft-skills=${hasSoftSkills}.`,
     );
     violations++;
   } else {
