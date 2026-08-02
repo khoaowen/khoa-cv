@@ -69,7 +69,6 @@ work:
     tech: [Java 21, Spring Boot, MySQL, Gradle, Kubernetes, Docker, AWS SQS/SNS, Grafana, Localstack]
 
   - company: ING
-    condensed: true
     position: Développeur Sénior Java
     start: Oct. 2020
     end: Mai 2022
@@ -79,12 +78,14 @@ work:
       Projet DARE — collaboration avec AXA pour intégrer des produits d'assurance
       dans les offres bancaires via une plateforme microservices permettant de
       personnaliser les protections (Mobility, Living, Wellness) selon les pays.
-      Développement des écrans d'assurance motor et non-motor.
+      Développement des parcours d'assurance motor et non-motor, de leurs règles
+      métier et des intégrations API avec AXA.
     highlights:
-      - Développement de nouvelles fonctionnalités et correction des bugs en production, en assurant le clean code.
-      - Mise en place du Rules Design Pattern pour ajouter des règles métier sans modifier le code existant.
-      - Amélioration des performances de certaines pages via des appels parallèles multithreads aux API AXA et de la mise en cache.
-      - Analyse et correction des problèmes de sécurité remontés par Checkmarx ; mise à jour des tests de performance Gatling.
+      - Développement de fonctionnalités sur les parcours d'assurance et correction d'incidents de production, avec une attention constante au clean code.
+      - Mise en place du Rules Design Pattern afin d'ajouter et de faire évoluer les règles métier sans modifier le socle existant.
+      - Optimisation des pages par parallélisation des appels aux API AXA et mise en cache des données nécessaires aux parcours.
+      - Analyse et correction des vulnérabilités signalées par Checkmarx ; mise à jour des scénarios de performance Gatling.
+      - Collaboration au sein d'une équipe pluridisciplinaire sur une plateforme microservices de banque-assurance déployée dans plusieurs pays.
     impacts:
       - Amélioration des performances, de la sécurité applicative et de l'évolutivité des parcours banque-assurance.
       - Contribution à l'intégration de produits d'assurance dans le parcours bancaire client.
@@ -111,7 +112,6 @@ work:
     tech: [Java 11, MongoDB, Gradle, Git, IntelliJ IDEA]
 
   - company: BNP Paribas CIB (via Meritis)
-    condensed: true
     position: Développeur Sénior Java
     start: Oct. 2018
     end: Oct. 2019
@@ -119,14 +119,14 @@ work:
       BNP Paribas CIB est la branche banque de financement et d'investissement du groupe BNP Paribas.
     summary: >-
       BNP CIB — équipe Primerisk, maintenance évolutive et corrective de
-      l'application de calcul de risque client ; conception et partage de
-      solutions, et mise en place de l'intégration continue du projet Maestro.
+      l'application de calcul de risque client ; conception de solutions et
+      industrialisation de la livraison du projet Maestro.
     highlights:
-      - Développement de nouvelles fonctionnalités et support production niveau 3.
-      - Migrations techniques (Jenkins ; SVN vers Git).
-      - Participation à la conception de « Maestro », l'application web microservices destinée à devenir l'interface centrale du calcul de risque.
-      - Développement d'API REST + GUI pour la création/modification de contreparties ; amélioration de l'interface avec Material Design avec l'équipe UX de BNP.
-      - Mise en place de l'intégration continue du développement au déploiement avec Jenkins et Ansible ; rédaction du workflow de release.
+      - Développement d'évolutions fonctionnelles et support de production niveau 3 sur l'application de calcul de risque client.
+      - "Réalisation de migrations techniques structurantes : industrialisation Jenkins et migration du code source de SVN vers Git."
+      - Participation à la conception de « Maestro », application web microservices destinée à devenir l'interface centrale du calcul de risque.
+      - Développement d'API REST et d'écrans pour la création et la modification de contreparties ; amélioration de l'ergonomie avec Material Design et l'équipe UX BNP.
+      - Mise en place de la chaîne CI/CD du développement au déploiement avec Jenkins et Ansible ; formalisation du workflow de release pour l'équipe.
     impacts:
       - Modernisation d'applications de calcul de risque client et renforcement de l'automatisation des livraisons.
       - Amélioration de l'expérience utilisateur sur des écrans métier complexes, en collaboration avec l'équipe UX.
@@ -332,38 +332,6 @@ certifications:
     issuer: ByteByteGo
     issuedAt: "2025-12"
     date: "Déc. 2025"
-  - name: "Microsoft Certified: Azure Solutions Architect Expert"
-    issuer: Microsoft
-    issuedAt: "2022-10"
-    date: "Oct. 2022 - Oct. 2023"
-  - name: "Microsoft Certified: Azure Administrator Associate"
-    issuer: Microsoft
-    issuedAt: "2022-09"
-    date: "Sept. 2022 - Sept. 2023"
-  - name: "Microsoft Certified: Azure AI Fundamentals"
-    issuer: Microsoft
-    issuedAt: "2022-06"
-    date: "Juin 2022"
-  - name: "Microsoft Certified: Security, Compliance, and Identity Fundamentals"
-    issuer: Microsoft
-    issuedAt: "2022-06"
-    date: "Juin 2022"
-  - name: "Microsoft Certified: Azure Data Fundamentals"
-    issuer: Microsoft
-    issuedAt: "2022-05"
-    date: "Mai 2022"
-  - name: "Microsoft Certified: Azure Fundamentals"
-    issuer: Microsoft
-    issuedAt: "2022-05"
-    date: "Mai 2022"
-  - name: Professional Scrum Master I (PSM I)
-    issuer: Scrum.org
-    issuedAt: "2019-02"
-    date: "Févr. 2019"
-  - name: Développement Java / JEE avec les frameworks Java/JEE
-    issuer: ORSYS Paris
-    issuedAt: "2013-01"
-    date: "2013"
 
 sideProjects:
   - name: Workflow IA de livraison du site Krav Maga
