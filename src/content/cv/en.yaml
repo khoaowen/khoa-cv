@@ -72,7 +72,6 @@ work:
     tech: [Java 21, Spring Boot, MySQL, Gradle, Kubernetes, Docker, AWS SQS/SNS, Grafana, Localstack]
 
   - company: ING
-    condensed: true
     position: Senior Java Developer
     start: Oct 2020
     end: May 2022
@@ -81,13 +80,16 @@ work:
       offering banking and financial products to retail clients.
     summary: >-
       Contributed to the DARE project, carried out in partnership with AXA, to
-      integrate insurance products into banking offers through a microservices platform.
+      integrate insurance products into banking offers through a microservices
+      platform, covering motor and non-motor insurance journeys, business rules
+      and AXA API integrations.
     team: Mobility squad composed of 3 frontend developers, 6 Java backend developers, and 1 Product Owner.
     highlights:
-      - Developed new features and fixed production bugs while ensuring clean code.
-      - Implemented the Rules design pattern to add business rules without modifying existing code.
-      - Improved page performance via parallel multithreaded AXA API calls and caching.
-      - Analysed and fixed security issues reported by Checkmarx; updated Gatling performance tests.
+      - Developed insurance-journey features and resolved production incidents while maintaining clean, maintainable code.
+      - Implemented the Rules design pattern to add and evolve business rules without changing the existing core.
+      - Improved page performance through parallel AXA API calls and caching of journey data.
+      - Analysed and fixed security issues reported by Checkmarx; updated Gatling performance scenarios.
+      - Collaborated in a cross-functional team on a multi-country microservices banking-insurance platform.
     impacts:
       - Improved service performance, application security and the evolvability of insurance-banking journeys.
       - Contributed to integrating insurance products into the customer banking journey.
@@ -113,7 +115,6 @@ work:
     tech: [Java 11, MongoDB, Gradle, Git, IntelliJ IDEA]
 
   - company: BNP Paribas CIB (via Meritis)
-    condensed: true
     position: Senior Java Developer
     start: Oct 2018
     end: Oct 2019
@@ -122,13 +123,14 @@ work:
       BNP Paribas Group.
     summary: >-
       Enhanced and maintained a client risk calculation application within the
-      Primerisk team.
+      Primerisk team, designing solutions and industrialising delivery for the
+      Maestro project.
     highlights:
-      - Developed new features and provided level-3 production support.
-      - Performed technical migrations (Jenkins; SVN to Git).
+      - Delivered functional enhancements and level-3 production support for the client risk-calculation application.
+      - "Performed foundational technical migrations: Jenkins industrialisation and source-control migration from SVN to Git."
       - Helped design the "Maestro" microservices web app — the future central interface for risk-calculation systems.
-      - Built REST APIs + GUI for counterparty creation/modification; improved the UI with Material Design alongside BNP's UX team.
-      - Implemented CI/CD from development to deployment with Jenkins pipelines and Ansible; documented the release workflow.
+      - Built REST APIs and screens for counterparty creation and maintenance; improved usability with Material Design alongside BNP's UX team.
+      - Implemented the CI/CD chain from development to deployment with Jenkins pipelines and Ansible; documented the team release workflow.
     impacts:
       - Modernised client risk-calculation applications and strengthened release automation.
       - Improved user experience on complex business screens in collaboration with UX.
@@ -340,38 +342,6 @@ certifications:
     issuer: ByteByteGo
     issuedAt: "2025-12"
     date: "Dec 2025"
-  - name: "Microsoft Certified: Azure Solutions Architect Expert"
-    issuer: Microsoft
-    issuedAt: "2022-10"
-    date: "Oct 2022 - Oct 2023"
-  - name: "Microsoft Certified: Azure Administrator Associate"
-    issuer: Microsoft
-    issuedAt: "2022-09"
-    date: "Sep 2022 - Sep 2023"
-  - name: "Microsoft Certified: Azure AI Fundamentals"
-    issuer: Microsoft
-    issuedAt: "2022-06"
-    date: "Jun 2022"
-  - name: "Microsoft Certified: Security, Compliance, and Identity Fundamentals"
-    issuer: Microsoft
-    issuedAt: "2022-06"
-    date: "Jun 2022"
-  - name: "Microsoft Certified: Azure Data Fundamentals"
-    issuer: Microsoft
-    issuedAt: "2022-05"
-    date: "May 2022"
-  - name: "Microsoft Certified: Azure Fundamentals"
-    issuer: Microsoft
-    issuedAt: "2022-05"
-    date: "May 2022"
-  - name: Professional Scrum Master I (PSM I)
-    issuer: Scrum.org
-    issuedAt: "2019-02"
-    date: "Feb 2019"
-  - name: Java / JEE Development with Java/JEE frameworks
-    issuer: ORSYS Paris
-    issuedAt: "2013-01"
-    date: "2013"
 
 sideProjects:
   - name: Krav Maga Website AI Delivery Flow
