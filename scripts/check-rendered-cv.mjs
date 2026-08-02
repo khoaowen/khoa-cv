@@ -59,7 +59,9 @@ for (const { file, label, certification, issuer, date } of PAGES) {
   const sortedNewestFirst = issuedAt.every((value, index) => index === 0 || issuedAt[index - 1] >= value);
   // Assert the visible content contract rather than a particular HTML id: Astro
   // may optimize attributes, but the recruiter-facing skills must remain present.
-  const hasSkills = html.includes('class="skill-row"') && text.includes('Spring Boot');
+  const hasSkills =
+    text.includes('Large Language Models (LLMs)') ||
+    text.includes('Grands modèles de langage (LLM)');
   const hasSoftSkills = html.includes('class="soft-skill-list"') && /communication/i.test(text);
 
   if (certificationCount !== 1 || missing.length > 0 || issuedAt.length === 0 || !sortedNewestFirst || !hasSkills || !hasSoftSkills) {
