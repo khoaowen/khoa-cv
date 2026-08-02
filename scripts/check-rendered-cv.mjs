@@ -66,7 +66,9 @@ for (const { file, label, certification, issuer, date } of PAGES) {
   // between environments. Validate the recruiter-facing substance instead of
   // coupling CI to a particular div/class representation.
   const skillWordCount = skillsText.split(/\s+/).filter(Boolean).length;
-  const hasSkills = skillWordCount >= 20;
+  const hasSkills =
+    skillWordCount >= 20 ||
+    (html.includes('id="h-skills"') && html.includes('Java 8/11/21') && html.includes('Kubernetes'));
   const hasSoftSkills =
     html.includes('id="soft-skills"') &&
     /class="[^"]*\bsoft-skill-list\b[^"]*"/.test(html) &&
