@@ -64,24 +64,32 @@ const TARGETS = [
   {
     route: '/cv-print/',
     out: 'cv-en.pdf',
-    certification: ['AI Engineering Specialization', 'ByteByteGo', 'Dec 2025'],
+    requiredText: [
+      'AI Engineering Specialization', 'Microsoft Certified: Azure Solutions Architect Expert',
+      'Professional Scrum Master I (PSM I)', 'Java / JEE Development with Java/JEE frameworks',
+      'ActiveMQ', 'AWS SQS/SNS', 'Checkmarx', 'Ansible',
+    ],
   },
   {
     route: '/fr/cv-print/',
     out: 'cv-fr.pdf',
-    certification: ['AI Engineering Specialization', 'ByteByteGo', 'Déc. 2025'],
+    requiredText: [
+      'AI Engineering Specialization', 'Microsoft Certified: Azure Solutions Architect Expert',
+      'Professional Scrum Master I (PSM I)', 'Développement Java / JEE avec les frameworks Java/JEE',
+      'ActiveMQ', 'AWS SQS/SNS', 'Checkmarx', 'Ansible',
+    ],
   },
   {
     route: '/dossier-print/',
     out: 'dossier-competences-en.pdf',
-    certification: ['AI Engineering Specialization', 'ByteByteGo', 'Dec 2025'],
+    requiredText: ['AI Engineering Specialization', 'ByteByteGo', 'Dec 2025'],
     // The dossier deliberately mirrors the complete website; it has no compact-CV page limit.
     maxPages: null,
   },
   {
     route: '/fr/dossier-print/',
     out: 'dossier-competences-fr.pdf',
-    certification: ['AI Engineering Specialization', 'ByteByteGo', 'Déc. 2025'],
+    requiredText: ['AI Engineering Specialization', 'ByteByteGo', 'Déc. 2025'],
     maxPages: null,
   },
 ];
@@ -108,13 +116,13 @@ async function renderToBudget(page, url, maxPages = MAX_PAGES) {
   return { ...last, fits: false }; // floor reached, still over budget
 }
 
-async function assertPrintContract(page, { route, certification }) {
+async function assertPrintContract(page, { route, requiredText = [] }) {
   const text = await page.locator('body').innerText();
-  const missing = certification.filter((value) => !text.includes(value));
-  const certificationCount = text.split(certification[0]).length - 1;
-  if (missing.length > 0 || certificationCount !== 1) {
+  const missing = requiredText.filter((value) => !text.includes(value));
+  const anchorCount = requiredText.length > 0 ? text.split(requiredText[0]).length - 1 : 0;
+  if (missing.length > 0 || (requiredText.length > 0 && anchorCount !== 1)) {
     throw new Error(
-      `Print-route drift on ${route}: certification count=${certificationCount}; ` +
+      `Print-route drift on ${route}: anchor count=${anchorCount}; ` +
         `missing=${missing.length ? missing.join(', ') : 'none'}.`,
     );
   }

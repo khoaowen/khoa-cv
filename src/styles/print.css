@@ -67,6 +67,13 @@ section {
      uses the otherwise empty space after the two detailed recent roles. */
   break-inside: auto;
 }
+#experience,
+#certifications {
+  /* These are the intentional dense sections of the concise CV. Let the
+     browser distribute whole roles and certification columns across pages
+     instead of reserving a third page for an otherwise avoidable break. */
+  break-inside: auto;
+}
 #earlier > h2 {
   break-after: avoid;
 }

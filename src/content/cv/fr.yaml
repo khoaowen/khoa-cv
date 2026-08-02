@@ -69,7 +69,7 @@ work:
     tech: [Java 21, Spring Boot, MySQL, Gradle, Kubernetes, Docker, AWS SQS/SNS, Grafana, Localstack]
 
   - company: ING
-    position: Développeur Sénior Java
+    position: Développeur Java Senior
     start: Oct. 2020
     end: Mai 2022
     introduction: >-
@@ -95,7 +95,7 @@ work:
 
   - company: Nexway
     condensed: true
-    position: Développeur Sénior Java
+    position: Développeur Java Senior
     start: Juil. 2020
     end: Sept. 2020
     introduction: >-
@@ -112,7 +112,7 @@ work:
     tech: [Java 11, MongoDB, Gradle, Git, IntelliJ IDEA]
 
   - company: BNP Paribas CIB (via Meritis)
-    position: Développeur Sénior Java
+    position: Développeur Java Senior
     start: Oct. 2018
     end: Oct. 2019
     introduction: >-
@@ -332,6 +332,38 @@ certifications:
     issuer: ByteByteGo
     issuedAt: "2025-12"
     date: "Déc. 2025"
+  - name: "Microsoft Certified: Azure Solutions Architect Expert"
+    issuer: Microsoft
+    issuedAt: "2022-10"
+    date: "Oct. 2022 - Oct. 2023"
+  - name: "Microsoft Certified: Azure Administrator Associate"
+    issuer: Microsoft
+    issuedAt: "2022-09"
+    date: "Sept. 2022 - Sept. 2023"
+  - name: "Microsoft Certified: Azure AI Fundamentals"
+    issuer: Microsoft
+    issuedAt: "2022-06"
+    date: "Juin 2022"
+  - name: "Microsoft Certified: Security, Compliance, and Identity Fundamentals"
+    issuer: Microsoft
+    issuedAt: "2022-06"
+    date: "Juin 2022"
+  - name: "Microsoft Certified: Azure Data Fundamentals"
+    issuer: Microsoft
+    issuedAt: "2022-05"
+    date: "Mai 2022"
+  - name: "Microsoft Certified: Azure Fundamentals"
+    issuer: Microsoft
+    issuedAt: "2022-05"
+    date: "Mai 2022"
+  - name: Professional Scrum Master I (PSM I)
+    issuer: Scrum.org
+    issuedAt: "2019-02"
+    date: "Févr. 2019"
+  - name: Développement Java / JEE avec les frameworks Java/JEE
+    issuer: ORSYS Paris
+    issuedAt: "2013-01"
+    date: "2013"
 
 sideProjects:
   - name: Workflow IA de livraison du site Krav Maga
