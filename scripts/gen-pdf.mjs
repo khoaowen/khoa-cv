@@ -67,7 +67,11 @@ const TARGETS = [
     requiredText: [
       'AI Engineering Specialization', 'Microsoft Certified: Azure Solutions Architect Expert',
       'Professional Scrum Master I (PSM I)', 'Java / JEE Development with Java/JEE frameworks',
-      'ActiveMQ', 'AWS SQS/SNS', 'Checkmarx', 'Ansible',
+      'ActiveMQ', 'AWS SQS/SNS', 'Checkmarx', 'Ansible', 'ByteByteGo', 'Dec 2025',
+    ],
+    requiredSections: [
+      { selector: '#skills .skill-row', label: 'hard skills', minItems: 1, minWords: 20 },
+      { selector: '#soft-skills .soft-skill-list li', label: 'soft skills', minItems: 3, minWords: 6 },
     ],
   },
   {
@@ -76,7 +80,11 @@ const TARGETS = [
     requiredText: [
       'AI Engineering Specialization', 'Microsoft Certified: Azure Solutions Architect Expert',
       'Professional Scrum Master I (PSM I)', 'Développement Java / JEE avec les frameworks Java/JEE',
-      'ActiveMQ', 'AWS SQS/SNS', 'Checkmarx', 'Ansible',
+      'ActiveMQ', 'AWS SQS/SNS', 'Checkmarx', 'Ansible', 'ByteByteGo', 'Déc. 2025',
+    ],
+    requiredSections: [
+      { selector: '#skills .skill-row', label: 'hard skills', minItems: 1, minWords: 20 },
+      { selector: '#soft-skills .soft-skill-list li', label: 'soft skills', minItems: 3, minWords: 6 },
     ],
   },
   {
@@ -116,7 +124,7 @@ async function renderToBudget(page, url, maxPages = MAX_PAGES) {
   return { ...last, fits: false }; // floor reached, still over budget
 }
 
-async function assertPrintContract(page, { route, requiredText = [] }) {
+async function assertPrintContract(page, { route, requiredText = [], requiredSections = [] }) {
   const text = await page.locator('body').innerText();
   const missing = requiredText.filter((value) => !text.includes(value));
   const anchorCount = requiredText.length > 0 ? text.split(requiredText[0]).length - 1 : 0;
@@ -132,6 +140,21 @@ async function assertPrintContract(page, { route, requiredText = [] }) {
   if (issuedAt.length === 0 || issuedAt.some((value, index) => index > 0 && issuedAt[index - 1] < value)) {
     throw new Error(`Print-route certification chronology drift on ${route}: expected newest-first.`);
   }
+  for (const { selector, label, minItems, minWords } of requiredSections) {
+    const { visibleItems, wordCount } = await page.locator(selector).evaluateAll((items) => {
+      const visible = items.filter((item) => {
+        const style = getComputedStyle(item);
+        return style.display !== 'none' && style.visibility !== 'hidden';
+      });
+      const text = visible.map((item) => item.innerText).join(' ');
+      return { visibleItems: visible.length, wordCount: text.split(/\s+/).filter(Boolean).length };
+    });
+    if (visibleItems < minItems || wordCount < minWords) {
+      throw new Error(
+        `Print-route ${label} drift on ${route}: visible items=${visibleItems}; words=${wordCount}.`,
+      );
+    }
+  }
 }
 
 async function main() {
@@ -146,6 +169,7 @@ async function main() {
   let failed = false;
   try {
     const page = await browser.newPage();
+    await page.emulateMedia({ media: 'print' });
     for (const target of TARGETS) {
       const { route, out } = target;
       const url = `http://127.0.0.1:${port}${route}`;

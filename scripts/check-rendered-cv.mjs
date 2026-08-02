@@ -32,20 +32,6 @@ const PAGES = [
     issuer: 'ByteByteGo',
     date: 'Déc. 2025',
   },
-  {
-    file: 'dist/cv-print/index.html',
-    label: 'English concise PDF source',
-    certification: 'AI Engineering Specialization',
-    issuer: 'ByteByteGo',
-    date: 'Dec 2025',
-  },
-  {
-    file: 'dist/fr/cv-print/index.html',
-    label: 'French concise PDF source',
-    certification: 'AI Engineering Specialization',
-    issuer: 'ByteByteGo',
-    date: 'Déc. 2025',
-  },
 ];
 
 let violations = 0;
