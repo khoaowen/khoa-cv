@@ -7,7 +7,7 @@ import { dateRange } from '../lib/format';
 interface Props {
   data: CollectionEntry<'cv'>['data'];
   locale: Locale;
-  // 'web' (default) always shows full entries. 'print' condenses roles flagged
+  // 'web' (default) shows the complete CV. 'print' condenses roles flagged
   // `condensed: true` into compact one-liners under "Earlier experience".
   variant?: 'web' | 'print';
 }
@@ -87,15 +87,21 @@ const certifications = [...data.certifications].sort((a, b) => b.issuedAt.locale
               </ul>
             </>
           )}
-          {variant === 'web' && job.tech.length > 0 && (
-            <>
-              {variant === 'web' && <p class="entry-detail-label">{t('experience.environment')}</p>}
-              <ul class="tags" aria-label={t('experience.environment')}>
-                {job.tech.map((x) => (
-                  <li>{x}</li>
-                ))}
-              </ul>
-            </>
+          {job.tech.length > 0 && (
+            variant === 'web' ? (
+              <>
+                <p class="entry-detail-label">{t('experience.environment')}</p>
+                <ul class="tags" aria-label={t('experience.environment')}>
+                  {job.tech.map((x) => (
+                    <li>{x}</li>
+                  ))}
+                </ul>
+              </>
+            ) : (
+              <p class="entry-sub">
+                <strong>{t('experience.environment')}:</strong> {job.tech.join(', ')}
+              </p>
+            )
           )}
         </article>
       ))}
@@ -121,7 +127,7 @@ const certifications = [...data.certifications].sort((a, b) => b.issuedAt.locale
 }
 
 {
-  data.projects.length > 0 && (
+  variant === 'web' && data.projects.length > 0 && (
     <section class="cv-section" id="projects" aria-labelledby="h-proj">
       <h2 id="h-proj">{t('nav.projects')}</h2>
       {data.projects.map((p) => (
@@ -150,7 +156,7 @@ const certifications = [...data.certifications].sort((a, b) => b.issuedAt.locale
 }
 
 {
-  data.skills.length > 0 && (
+  variant === 'web' && data.skills.length > 0 && (
     <section class="cv-section" id="skills" aria-labelledby="h-skills">
       <h2 id="h-skills">{t('nav.skills')}</h2>
       {data.skills.map((s) => (

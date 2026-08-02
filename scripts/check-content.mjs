@@ -28,6 +28,43 @@ const CERTIFICATION_CONTRACTS = [
   },
 ];
 
+// The downloadable CV must retain the complete credential history, not only
+// the most recent certification. Keep this list deliberately explicit so a
+// future content edit cannot silently collapse it again.
+const REQUIRED_CERTIFICATIONS = [
+  {
+    file: 'src/content/cv/en.yaml',
+    names: [
+      'AI Engineering Specialization', 'Microsoft Certified: Azure Solutions Architect Expert',
+      'Microsoft Certified: Azure Administrator Associate', 'Microsoft Certified: Azure AI Fundamentals',
+      'Microsoft Certified: Security, Compliance, and Identity Fundamentals', 'Microsoft Certified: Azure Data Fundamentals',
+      'Microsoft Certified: Azure Fundamentals', 'Professional Scrum Master I (PSM I)',
+      'Java / JEE Development with Java/JEE frameworks',
+    ],
+  },
+  {
+    file: 'src/content/cv/fr.yaml',
+    names: [
+      'AI Engineering Specialization', 'Microsoft Certified: Azure Solutions Architect Expert',
+      'Microsoft Certified: Azure Administrator Associate', 'Microsoft Certified: Azure AI Fundamentals',
+      'Microsoft Certified: Security, Compliance, and Identity Fundamentals', 'Microsoft Certified: Azure Data Fundamentals',
+      'Microsoft Certified: Azure Fundamentals', 'Professional Scrum Master I (PSM I)',
+      'Développement Java / JEE avec les frameworks Java/JEE',
+    ],
+  },
+];
+
+const ROLE_CONTRACTS = [
+  { file: 'src/content/cv/en.yaml', company: 'Amundi', position: 'Senior Java Developer' },
+  { file: 'src/content/cv/en.yaml', company: 'BVNK', position: 'Senior Java Developer' },
+  { file: 'src/content/cv/en.yaml', company: 'ING', position: 'Senior Java Developer' },
+  { file: 'src/content/cv/en.yaml', company: 'BNP Paribas CIB (via Meritis)', position: 'Senior Java Developer' },
+  { file: 'src/content/cv/fr.yaml', company: 'Amundi', position: 'Développeur Java Senior' },
+  { file: 'src/content/cv/fr.yaml', company: 'BVNK', position: 'Développeur Java Senior' },
+  { file: 'src/content/cv/fr.yaml', company: 'ING', position: 'Développeur Java Senior' },
+  { file: 'src/content/cv/fr.yaml', company: 'BNP Paribas CIB (via Meritis)', position: 'Développeur Java Senior' },
+];
+
 let violations = 0;
 for (const file of FILES) {
   let text;
@@ -58,6 +95,25 @@ for (const { file, block } of CERTIFICATION_CONTRACTS) {
   }
 }
 
+for (const { file, names } of REQUIRED_CERTIFICATIONS) {
+  const text = await readFile(file, 'utf8');
+  for (const name of names) {
+    if (!text.includes(`name: "${name}"`) && !text.includes(`name: ${name}`)) {
+      console.error(`✗ ${file} is missing required certification: ${name}.`);
+      violations++;
+    }
+  }
+}
+
+for (const { file, company, position } of ROLE_CONTRACTS) {
+  const text = await readFile(file, 'utf8');
+  const block = `- company: ${company}\n    position: ${position}`;
+  if (!text.includes(block)) {
+    console.error(`✗ ${file} must use \"${position}\" for ${company}.`);
+    violations++;
+  }
+}
+
 if (violations > 0) {
   console.error(
     `\nContent check failed: ${violations} contract violation(s) found. ` +
@@ -65,4 +121,4 @@ if (violations > 0) {
   );
   process.exit(1);
 }
-console.log('✓ Content check passed: no phone numbers found; AI Engineering certification contract is intact.');
+console.log('✓ Content check passed: no phone numbers; complete certifications and senior-role titles are intact.');
