@@ -1,0 +1,11 @@
+{
+  "accessed_at": "2026-10-18T08:14:27.081903+00:00",
+  "method": "GET",
+  "url": "https://api.github.com/repos/khoaowen/khoa-cv/commits/main",
+  "exit_code": 0,
+  "data": {
+    "sha": "d515274f1802ea5715c3ce3a2eaa34ce6a5fb308",
+    "html_url": "https://github.com/khoaowen/khoa-cv/commit/d515274f1802ea5715c3ce3a2eaa34ce6a5fb308",
+    "subject": "deps: bump astro (#101)"
+  }
+}

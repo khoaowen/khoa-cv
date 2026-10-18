@@ -1,0 +1,13 @@
+{
+  "accessed_at": "2026-10-18T08:14:27.719555+00:00",
+  "method": "GET",
+  "url": "https://api.github.com/repos/khoaowen/khoa-cv/pulls/101",
+  "exit_code": 0,
+  "data": {
+    "number": 101,
+    "html_url": "https://github.com/khoaowen/khoa-cv/pull/101",
+    "merged_at": "2026-10-12T11:51:17Z",
+    "merge_commit_sha": "d515274f1802ea5715c3ce3a2eaa34ce6a5fb308",
+    "merged_by": "github-actions[bot]"
+  }
+}

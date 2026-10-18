@@ -1,0 +1,35 @@
+{
+  "accessed_at": "2026-10-18T08:14:28.307394+00:00",
+  "method": "GET",
+  "url": "https://api.github.com/repos/khoaowen/khoa-cv/commits/d515274f1802ea5715c3ce3a2eaa34ce6a5fb308/check-runs",
+  "exit_code": 0,
+  "data": {
+    "total_count": 4,
+    "check_runs": [
+      {
+        "name": "Supply-chain security checks",
+        "status": "completed",
+        "conclusion": "success",
+        "html_url": "https://github.com/khoaowen/khoa-cv/actions/runs/38268426924/job/114876409603"
+      },
+      {
+        "name": "Gitleaks",
+        "status": "completed",
+        "conclusion": "success",
+        "html_url": "https://github.com/khoaowen/khoa-cv/actions/runs/38256130604/job/114834566923"
+      },
+      {
+        "name": "Dependabot",
+        "status": "completed",
+        "conclusion": "success",
+        "html_url": "https://github.com/khoaowen/khoa-cv/actions/runs/38255895271/job/114833758869"
+      },
+      {
+        "name": "Analyze JavaScript and TypeScript",
+        "status": "completed",
+        "conclusion": "success",
+        "html_url": "https://github.com/khoaowen/khoa-cv/actions/runs/38254653884/job/114829479401"
+      }
+    ]
+  }
+}

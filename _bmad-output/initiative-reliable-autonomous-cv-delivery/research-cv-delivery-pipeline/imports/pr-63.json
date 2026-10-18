@@ -1,0 +1,8 @@
+{
+  "number": 63,
+  "html_url": "https://github.com/khoaowen/khoa-cv/pull/63",
+  "title": "Add rendered CV drift guards",
+  "body": "## What this guards\n- verifies the certification is rendered exactly once on both public locale pages\n- verifies the same contract on both print routes before PDF creation\n- keeps the existing two-page PDF limit\n\n## Verification\n- npm run build:all\n- staged whitespace and secret-pattern scan",
+  "merged_at": "2026-07-29T17:34:54Z",
+  "merge_commit_sha": "0aad83eafa38fc850ae0c06d7a32cc3d86510acc"
+}

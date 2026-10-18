@@ -1,0 +1,8 @@
+{
+  "number": 8,
+  "html_url": "https://github.com/khoaowen/khoa-cv/pull/8",
+  "title": "Enforce 2-page PDF budget with auto-fit harness",
+  "body": "Adds a hard guarantee that the generated PDFs never exceed 2 pages, even as content grows.\n\n- `gen-pdf.mjs` auto-fits (shrinks print scale to an 85% readable floor) and fails if it still overflows.\n- New required CI check **PDF page budget** runs on every PR, so overflow is blocked before merge \u2014 not discovered after deploy.\n- Deterministic page counting via `pdf-lib`. Documented in `AGENTS.md`.\n\nValidated locally: auto-fit shrinks to fit; floor-overflow exits non-zero with an actionable message.\n\n\ud83e\udd16 Generated with [Claude Code](https://claude.com/claude-code)",
+  "merged_at": "2026-05-30T19:31:13Z",
+  "merge_commit_sha": "f144a14cb030ff4b418648f121b145fe52687f75"
+}

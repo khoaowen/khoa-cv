@@ -1,0 +1,55 @@
+diff --git a/scripts/gen-pdf.mjs b/scripts/gen-pdf.mjs
+index 74d9c8f..1d6243c 100644
+--- a/scripts/gen-pdf.mjs
++++ b/scripts/gen-pdf.mjs
+@@ -73,2 +73,15 @@ const TARGETS = [
+   },
++  {
++    route: '/dossier-print/',
++    out: 'dossier-competences-en.pdf',
++    certification: ['AI Engineering Specialization', 'ByteByteGo', 'Dec 2025'],
++    // The dossier deliberately mirrors the complete website; it has no compact-CV page limit.
++    maxPages: null,
++  },
++  {
++    route: '/fr/dossier-print/',
++    out: 'dossier-competences-fr.pdf',
++    certification: ['AI Engineering Specialization', 'ByteByteGo', 'Déc. 2025'],
++    maxPages: null,
++  },
+ ];
+@@ -81,4 +94,8 @@ async function pageCount(buffer) {
+ // Render one route, shrinking scale until it fits the page budget.
+-async function renderToBudget(page, url) {
++async function renderToBudget(page, url, maxPages = MAX_PAGES) {
+   await page.goto(url, { waitUntil: 'networkidle' });
++  if (maxPages === null) {
++    const buffer = await page.pdf({ printBackground: true, preferCSSPageSize: true });
++    return { buffer, pages: await pageCount(buffer), scale: 1, fits: true };
++  }
+   let last = null;
+@@ -88,3 +105,3 @@ async function renderToBudget(page, url) {
+     last = { buffer, pages, scale };
+-    if (pages <= MAX_PAGES) return { ...last, fits: true };
++    if (pages <= maxPages) return { ...last, fits: true };
+   }
+@@ -103,2 +120,8 @@ async function assertPrintContract(page, { route, certification }) {
+   }
++  const issuedAt = await page.locator('#certifications [data-issued-at]').evaluateAll((items) =>
++    items.map((item) => item.getAttribute('data-issued-at')),
++  );
++  if (issuedAt.length === 0 || issuedAt.some((value, index) => index > 0 && issuedAt[index - 1] < value)) {
++    throw new Error(`Print-route certification chronology drift on ${route}: expected newest-first.`);
++  }
+ }
+@@ -122,3 +145,4 @@ async function main() {
+       await assertPrintContract(page, target);
+-      const result = await renderToBudget(page, url);
++      const maxPages = Object.hasOwn(target, 'maxPages') ? target.maxPages : MAX_PAGES;
++      const result = await renderToBudget(page, url, maxPages);
+       await writeFile(join(DIST, out), result.buffer);
+@@ -132,3 +156,3 @@ async function main() {
+           `✗ ${out} — still ${result.pages} pages at the ${pct}% readable floor ` +
+-            `(budget is ${MAX_PAGES}). Fix: set \`condensed: true\` on an older work ` +
++            `(budget is ${maxPages}). Fix: set \`condensed: true\` on an older work ` +
+             `entry, or shorten its highlights, in the matching YAML. See AGENTS.md.`,

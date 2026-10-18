@@ -1,0 +1,87 @@
+# Approved local planning entries; no execution/commit/publication authorized.
+
+[[entry]]
+id = 1
+type = "spike"
+title = "Resolve the release evidence gap and choose a safe trigger contract"
+description = "Resolve the release evidence gap and choose a safe trigger contract."
+verify = "a reviewer can follow redacted evidence links to the dated revision ledger and decision table; deterministic event cases cover ordinary bot merge, GITHUB_TOKEN-origin merge, dispatch, failure, duplicate and out-of-order completion. Unknown historical events remain explicitly unknown."
+covers = ["R1"]
+after = ["1.3"]
+hitl = false
+risk = "high"
+refine = true
+
+[[entry]]
+id = 2
+type = "story"
+title = "Verify the actual OpenClaw least-privilege principal"
+description = "Verify the actual OpenClaw least-privilege principal."
+verify = "redacted permission matrix, evidence source/time and safe authorization test/introspection results; a second reader can identify which claims are proved and which remain blocked."
+covers = ["R6"]
+after = [1]
+hitl = false
+risk = "high"
+refine = true
+unknown = "Actual OpenClaw-host credential evidence/access is unverified; establish a safe evidence source and any custodian step before execution, without token values."
+
+[[entry]]
+id = 3
+type = "bug"
+title = "Every qualifying automated main revision can initiate a safe release"
+description = "implement the chosen event chain, not a predetermined token replacement. Preserve required gates and separation from untrusted PR code."
+verify = "deterministic event/replay tests and controlled GitHub integration cases with non-sensitive changes through normal PRs. Record merge SHA, required-check results, event/run and deployment identifiers. Production demo runs only during separately authorized implementation, never this planning session."
+covers = ["R2"]
+after = [2, "1.3"]
+hitl = false
+risk = "high"
+refine = true
+severity = "P1"
+
+[[entry]]
+id = 4
+type = "story"
+title = "Detect missing releases and prove what revision is served"
+description = "Detect missing releases and prove what revision is served."
+verify = "injected deterministic failure/missing-event scenarios with clock control where needed, plus compare real served identity to a completed trusted release. Preserve redacted evidence; no private-page contents in logs."
+covers = ["R3"]
+after = [3]
+hitl = false
+risk = "high"
+refine = true
+
+[[entry]]
+id = 5
+type = "story"
+title = "Operating docs match the tested delivery and PDF contracts"
+description = "Operating docs match the tested delivery and PDF contracts."
+verify = "documentation-to-code checklist references exact commands, route/target inventory, required context names and release diagnostics; run the documented local commands in the accepted fixture and exercise the recovery instructions using safe injected failures."
+covers = ["R8"]
+after = [4, 2]
+hitl = false
+risk = "low"
+refine = true
+
+[[entry]]
+id = 6
+type = "story"
+title = "Refactor sweep"
+description = "cleanup only from implementation plans/deferred findings in this epic, especially duplicate event/validation contracts or unclear names. No displaced requirements, credential migration, feature changes or new review gates; new scope becomes a separate proposal. If no cleanup remains, record that evidence rather than inventing work."
+verify = "rerun the established regression/event commands and compare public asset/trigger contracts; record inventory and results for 2.7."
+covers = ["R2", "R3", "R8"]
+after = [5]
+hitl = false
+risk = "medium"
+refine = true
+
+[[entry]]
+id = 7
+type = "story"
+title = "Demonstrate autonomous delivery end to end and accept the initiative"
+description = "Demonstrate autonomous delivery end to end and accept the initiative."
+verify = "run repository regression/event commands plus hosted integration/smoke procedure and attach a redacted acceptance matrix R1\u2013R8/C1\u2013C4. Never merge invalid test content or intentionally leak contacts to test production."
+covers = ["R1", "R2", "R3", "R6", "R8"]
+after = [6, "1.3"]
+hitl = false
+risk = "high"
+refine = true
