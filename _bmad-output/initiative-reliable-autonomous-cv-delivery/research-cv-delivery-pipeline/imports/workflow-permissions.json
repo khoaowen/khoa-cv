@@ -1,0 +1,10 @@
+{
+  "accessed_at": "2026-10-18T08:14:25.160899+00:00",
+  "method": "GET",
+  "url": "https://api.github.com/repos/khoaowen/khoa-cv/actions/permissions/workflow",
+  "exit_code": 0,
+  "data": {
+    "default_workflow_permissions": "read",
+    "can_approve_pull_request_reviews": false
+  }
+}

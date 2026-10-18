@@ -1,0 +1,21 @@
+commit f144a14cb030ff4b418648f121b145fe52687f75
+Author:     khoaowen <khoaowen@users.noreply.github.com>
+AuthorDate: Sat May 30 21:31:12 2026 +0200
+Commit:     GitHub <noreply@github.com>
+CommitDate: Sat May 30 19:31:12 2026 +0000
+
+    Enforce a 2-page PDF budget with auto-fit harness (#8)
+    
+    gen-pdf.mjs now renders at 100% and auto-shrinks the print scale down to
+    an 85% readable floor to absorb content growth; if a PDF still exceeds
+    2 pages it exits non-zero. Add a required CI job "PDF page budget" so an
+    overflowing change is blocked at PR time, not discovered post-deploy.
+    Uses pdf-lib for deterministic page counting. Document in AGENTS.md.
+    
+    Co-authored-by: Claude Opus 4.8 <noreply@anthropic.com>
+
+ .github/workflows/ci.yml | 26 ++++++++++++++++++
+ AGENTS.md                | 15 ++++++++++
+ package.json             |  1 +
+ scripts/gen-pdf.mjs      | 71 ++++++++++++++++++++++++++++++++++++++----------
+ 4 files changed, 98 insertions(+), 15 deletions(-)

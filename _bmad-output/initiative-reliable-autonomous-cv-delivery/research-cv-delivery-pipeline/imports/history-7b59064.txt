@@ -1,0 +1,34 @@
+commit 7b59064833a9a300bae2c69ebe8ab3ec9cadca22
+Author:     donald-openclaw[bot] <289270191+donald-openclaw[bot]@users.noreply.github.com>
+AuthorDate: Sun Aug 2 21:49:34 2026 +0000
+Commit:     GitHub <noreply@github.com>
+CommitDate: Sun Aug 2 21:49:34 2026 +0000
+
+    Show older experience summaries in French PDF (#69)
+    
+    * Restore detailed PDF CV content
+    
+    * Restore skills sections in concise CV PDFs
+    
+    * Make PDF skills validation semantic
+    
+    * Validate localized PDF skills content
+    
+    * Fix PDF skills render validation
+    
+    * Stabilize PDF skills render check
+    
+    * Make PDF skills check CI-stable
+    
+    * Validate PDF skills in print media
+    
+    * Restore hard skills in CV PDFs
+    
+    ---------
+    
+    Co-authored-by: Donald <clawdonald@gmail.com>
+
+ scripts/check-rendered-cv.mjs   | 21 +++++++++++++++++++--
+ scripts/gen-pdf.mjs             | 30 +++++++++++++++++++++++++++---
+ src/components/CvSections.astro |  4 ++--
+ 3 files changed, 48 insertions(+), 7 deletions(-)

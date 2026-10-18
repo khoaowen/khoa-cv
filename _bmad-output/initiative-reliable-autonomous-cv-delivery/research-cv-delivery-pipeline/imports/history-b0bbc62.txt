@@ -1,0 +1,15 @@
+commit b0bbc62dbd3570c715e261892709ef31cf56b7c0
+Author:     donald-openclaw[bot] <289270191+donald-openclaw[bot]@users.noreply.github.com>
+AuthorDate: Sun Aug 2 13:16:57 2026 +0000
+Commit:     GitHub <noreply@github.com>
+CommitDate: Sun Aug 2 13:16:57 2026 +0000
+
+    Restore detailed PDF CV content (#68)
+    
+    Co-authored-by: Donald <clawdonald@gmail.com>
+
+ scripts/check-content.mjs       | 58 ++++++++++++++++++++++++++++++++++++++++-
+ scripts/gen-pdf.mjs             | 26 +++++++++++-------
+ src/components/CvSections.astro | 30 ++++++++++++---------
+ src/styles/print.css            |  7 +++++
+ 4 files changed, 99 insertions(+), 22 deletions(-)

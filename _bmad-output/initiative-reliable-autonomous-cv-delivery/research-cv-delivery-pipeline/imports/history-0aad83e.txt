@@ -1,0 +1,14 @@
+commit 0aad83eafa38fc850ae0c06d7a32cc3d86510acc
+Author:     khoaowen <khoaowen@users.noreply.github.com>
+AuthorDate: Wed Jul 29 19:34:53 2026 +0200
+Commit:     GitHub <noreply@github.com>
+CommitDate: Wed Jul 29 17:34:53 2026 +0000
+
+    Add rendered CV drift guards (#63)
+    
+    Co-authored-by: Donald <clawdonald@gmail.com>
+
+ package.json                  |  3 ++-
+ scripts/check-rendered-cv.mjs | 45 +++++++++++++++++++++++++++++++++++++++++++
+ scripts/gen-pdf.mjs           | 32 ++++++++++++++++++++++++++----
+ 3 files changed, 75 insertions(+), 5 deletions(-)

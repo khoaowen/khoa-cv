@@ -1,0 +1,8 @@
+{
+  "number": 7,
+  "html_url": "https://github.com/khoaowen/khoa-cv/pull/7",
+  "title": "Document autonomous PR flow + public-repo security posture",
+  "body": "Hardening follow-up: documents the autonomous PR\u2192checks\u2192auto-merge flow and updates security docs now that the repo is public.\n\nThis PR is also the **end-to-end test of the auto-merge loop** \u2014 it should merge itself once all required checks pass, with no human review.\n\n\ud83e\udd16 Generated with [Claude Code](https://claude.com/claude-code)",
+  "merged_at": "2026-05-30T19:10:39Z",
+  "merge_commit_sha": "3f3061c2cd3d0dd851843aa2f771fb21d4bf6030"
+}

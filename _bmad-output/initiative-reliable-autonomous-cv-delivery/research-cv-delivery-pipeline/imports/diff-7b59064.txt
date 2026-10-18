@@ -1,0 +1,49 @@
+diff --git a/scripts/gen-pdf.mjs b/scripts/gen-pdf.mjs
+index 46bfbfa..99566aa 100644
+--- a/scripts/gen-pdf.mjs
++++ b/scripts/gen-pdf.mjs
+@@ -69,3 +69,7 @@ const TARGETS = [
+       'Professional Scrum Master I (PSM I)', 'Java / JEE Development with Java/JEE frameworks',
+-      'ActiveMQ', 'AWS SQS/SNS', 'Checkmarx', 'Ansible',
++      'ActiveMQ', 'AWS SQS/SNS', 'Checkmarx', 'Ansible', 'ByteByteGo', 'Dec 2025',
++    ],
++    requiredSections: [
++      { selector: '#skills .skill-row', label: 'hard skills', minItems: 1, minWords: 20 },
++      { selector: '#soft-skills .soft-skill-list li', label: 'soft skills', minItems: 3, minWords: 6 },
+     ],
+@@ -78,3 +82,7 @@ const TARGETS = [
+       'Professional Scrum Master I (PSM I)', 'Développement Java / JEE avec les frameworks Java/JEE',
+-      'ActiveMQ', 'AWS SQS/SNS', 'Checkmarx', 'Ansible',
++      'ActiveMQ', 'AWS SQS/SNS', 'Checkmarx', 'Ansible', 'ByteByteGo', 'Déc. 2025',
++    ],
++    requiredSections: [
++      { selector: '#skills .skill-row', label: 'hard skills', minItems: 1, minWords: 20 },
++      { selector: '#soft-skills .soft-skill-list li', label: 'soft skills', minItems: 3, minWords: 6 },
+     ],
+@@ -118,3 +126,3 @@ async function renderToBudget(page, url, maxPages = MAX_PAGES) {
+ 
+-async function assertPrintContract(page, { route, requiredText = [] }) {
++async function assertPrintContract(page, { route, requiredText = [], requiredSections = [] }) {
+   const text = await page.locator('body').innerText();
+@@ -134,2 +142,17 @@ async function assertPrintContract(page, { route, requiredText = [] }) {
+   }
++  for (const { selector, label, minItems, minWords } of requiredSections) {
++    const { visibleItems, wordCount } = await page.locator(selector).evaluateAll((items) => {
++      const visible = items.filter((item) => {
++        const style = getComputedStyle(item);
++        return style.display !== 'none' && style.visibility !== 'hidden';
++      });
++      const text = visible.map((item) => item.innerText).join(' ');
++      return { visibleItems: visible.length, wordCount: text.split(/\s+/).filter(Boolean).length };
++    });
++    if (visibleItems < minItems || wordCount < minWords) {
++      throw new Error(
++        `Print-route ${label} drift on ${route}: visible items=${visibleItems}; words=${wordCount}.`,
++      );
++    }
++  }
+ }
+@@ -148,2 +171,3 @@ async function main() {
+     const page = await browser.newPage();
++    await page.emulateMedia({ media: 'print' });
+     for (const target of TARGETS) {
