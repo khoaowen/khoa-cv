@@ -85,6 +85,29 @@ To fix a failing budget check after adding/expanding a role:
 
 Tunable via env if ever needed: `CV_MAX_PAGES`, `CV_MIN_SCALE`, `CV_SCALE_STEP`.
 
+## Asset boundary & last privacy assertion (consumed by 1.2 / epic 2)
+
+- `.private-build/` — Astro's `outDir`. Private intermediate output: it holds
+  the print routes (`cv-print`, `dossier-print`, FR variants) that embed
+  `basics.private`. **Never deployed, never uploaded as an artifact, never
+  logged.** Git-ignored.
+- `dist/` — the **only deployable directory** (`wrangler.jsonc`
+  `assets.directory`, and the only path any artifact upload may use). Built by
+  `scripts/assemble-release.mjs` (copies `.private-build/` minus any path
+  containing `print`, then fails if any file still carries a private contact),
+  then `scripts/gen-pdf.mjs` adds the four PDFs.
+- **Last pre-upload assertion:** `scripts/check-release.mjs`, run automatically
+  at the end of `gen-pdf.mjs` (also `npm run check:release`). It exits non-zero
+  if any non-PDF file in `dist/` contains a private email/address (also
+  URL/base64/HTML-escaped, case-insensitive, street-line fragments), if a
+  print-named route exists, if PDF metadata leaks a contact, if a PDF lacks its
+  own locale's contacts, or if wrangler's directory is not `./dist/`. Any
+  deploy/upload step must run after it and use only `dist/`.
+- Tests: `npm run test:release` (serves `dist/` with `wrangler dev`, checks
+  print route forms, plants a contact) and `npm run test:fixture` (clean build
+  with synthetic sentinels in a temp copy; verifies all four PDFs and negative
+  cases). Both log target names/exit codes only, never contact values.
+
 ## Verify locally before pushing
 
 ```bash

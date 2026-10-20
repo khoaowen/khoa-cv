@@ -14,8 +14,12 @@ import { readFile, writeFile, stat, access } from 'node:fs/promises';
 import { join, extname, normalize } from 'node:path';
 import { chromium } from 'playwright';
 import { PDFDocument } from 'pdf-lib';
+import { execFileSync } from 'node:child_process';
+import { BUILD_DIR, RELEASE_DIR } from './paths.mjs';
 
-const DIST = new URL('../dist/', import.meta.url).pathname;
+// Print routes are served from the PRIVATE build directory (never deployed);
+// the resulting PDFs are written to the release directory (dist/).
+const DIST = BUILD_DIR + '/';
 
 // Budget knobs (overridable via env for flexibility).
 const MAX_PAGES = Number(process.env.CV_MAX_PAGES ?? 2);
@@ -160,8 +164,9 @@ async function assertPrintContract(page, { route, requiredText = [], requiredSec
 async function main() {
   try {
     await access(join(DIST, 'index.html'));
+    await access(join(RELEASE_DIR, 'index.html'));
   } catch {
-    throw new Error('dist/ not found. Run `npm run build` before generating PDFs.');
+    throw new Error('Build output not found. Run `npm run build:site` before generating PDFs.');
   }
 
   const { server, port } = await startServer();
@@ -177,7 +182,7 @@ async function main() {
       await assertPrintContract(page, target);
       const maxPages = Object.hasOwn(target, 'maxPages') ? target.maxPages : MAX_PAGES;
       const result = await renderToBudget(page, url, maxPages);
-      await writeFile(join(DIST, out), result.buffer);
+      await writeFile(join(RELEASE_DIR, out), result.buffer);
       const pct = Math.round(result.scale * 100);
       if (result.fits) {
         const note = pct < 100 ? ` (auto-fit to ${pct}%)` : '';
@@ -200,6 +205,11 @@ async function main() {
     console.error(`\nPDF page-budget check failed (limit: ${MAX_PAGES} pages).`);
     process.exit(1);
   }
+
+  // Last assertion before anything can be uploaded: the exact release
+  // directory must be contact-free outside the PDFs, and the PDFs must carry
+  // the intended contacts. Exits non-zero (throws) on any violation.
+  execFileSync(process.execPath, [new URL('./check-release.mjs', import.meta.url).pathname], { stdio: 'inherit' });
 }
 
 main().catch((err) => {
