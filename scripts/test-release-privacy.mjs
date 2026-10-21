@@ -30,9 +30,12 @@ const portServer = createServer();
 await new Promise((resolve) => portServer.listen(0, '127.0.0.1', resolve));
 const port = portServer.address().port;
 await new Promise((resolve) => portServer.close(resolve));
+// detached: own process group, so the whole wrangler/workerd tree can be killed.
 const child = spawn('npx', ['wrangler', 'dev', '--ip', '127.0.0.1', '--port', String(port)], {
   stdio: ['ignore', 'pipe', 'pipe'],
+  detached: true,
 });
+const killTree = (signal) => { try { process.kill(-child.pid, signal); } catch { /* already gone */ } };
 let output = '';
 child.stdout.on('data', (chunk) => { output += chunk.toString(); });
 child.stderr.on('data', (chunk) => { output += chunk.toString(); });
@@ -75,5 +78,9 @@ try {
   console.log('✓ Negative fixture: planted private data in a non-PDF release asset was rejected.');
 } finally {
   await rm(probe, { force: true });
-  child.kill('SIGTERM');
+  killTree('SIGTERM');
+  await new Promise((resolve) => setTimeout(resolve, 500));
+  killTree('SIGKILL');
+  child.stdout.destroy();
+  child.stderr.destroy();
 }
