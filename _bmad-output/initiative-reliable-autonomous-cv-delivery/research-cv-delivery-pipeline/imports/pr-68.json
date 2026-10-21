@@ -1,0 +1,8 @@
+{
+  "number": 68,
+  "html_url": "https://github.com/khoaowen/khoa-cv/pull/68",
+  "title": "Show older experience summaries in French PDF",
+  "body": "Adds each condensed French role\u2019s one-line summary to the generated PDF. Local build and PDF page-budget verification passed.",
+  "merged_at": "2026-08-02T13:16:57Z",
+  "merge_commit_sha": "b0bbc62dbd3570c715e261892709ef31cf56b7c0"
+}

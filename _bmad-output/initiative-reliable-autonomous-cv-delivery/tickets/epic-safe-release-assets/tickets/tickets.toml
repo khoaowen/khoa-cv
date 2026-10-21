@@ -1,0 +1,39 @@
+# Approved local planning entries; no execution/commit/publication authorized.
+
+[[entry]]
+id = 1
+type = "bug"
+title = "Private contacts are excluded from deployable non-PDF output"
+description = "define and enforce the final asset boundary for compact and dossier output in both languages. Build-time private HTML may exist only outside the deployable payload and must not be published in public CI artifacts/logs. If print routes remain public, their served HTML must be contact-free."
+verify = "clean-build a fixture with synthetic sentinels; scan the exact final release directory and serve it using deployment-equivalent asset routing; assert route responses and extract all four PDF texts for contacts. Record target names and exit codes, never real contacts."
+covers = ["R4"]
+after = []
+hitl = false
+risk = "high"
+refine = true
+severity = "P1"
+
+[[entry]]
+id = 2
+type = "bug"
+title = "Deployment enforces the same complete validation contract as CI"
+description = "consolidate/equate validation for PR CI and all release entry points, including manual dispatch, preserving existing check names and short-circuit failure behavior."
+verify = "run the shared/equivalent validation entry points with stage-failure fixtures and a stubbed uploader, plus workflow static assertions for automatic/manual paths; compare the executed stage list and candidate SHA. Do not use real Cloudflare credentials for negative tests."
+covers = ["R5"]
+after = [1]
+hitl = false
+risk = "high"
+refine = true
+severity = "P1"
+
+[[entry]]
+id = 3
+type = "story"
+title = "Executable output contracts guard both languages and document types"
+description = "repository-level regression cases for the release contract, not a general framework rollout; includes epic integration verification."
+verify = "one documented repository command executes positive and negative fixtures with expected exit codes; PDF text/page inspection and final-payload scan are asserted, not merely eyeballed. Live closure proof is recorded by 2.7."
+covers = ["R7"]
+after = [2]
+hitl = false
+risk = "medium"
+refine = true

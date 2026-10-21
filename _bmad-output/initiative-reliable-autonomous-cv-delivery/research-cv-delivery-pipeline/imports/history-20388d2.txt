@@ -1,0 +1,20 @@
+commit 20388d242996cbfc963c77ef5d29a4f7fd0998c3
+Author:     donald-openclaw[bot] <289270191+donald-openclaw[bot]@users.noreply.github.com>
+AuthorDate: Fri Jul 31 21:04:39 2026 +0000
+Commit:     GitHub <noreply@github.com>
+CommitDate: Fri Jul 31 21:04:39 2026 +0000
+
+    Add CV dossier publishing guardrails (#64)
+    
+    Co-authored-by: Donald <clawdonald@gmail.com>
+
+ AGENTS.md                        |  4 ++++
+ scripts/check-content.mjs        |  8 ++++----
+ scripts/check-rendered-cv.mjs    | 20 ++++++++++++++++++--
+ scripts/gen-pdf.mjs              | 32 ++++++++++++++++++++++++++++----
+ src/components/CvSections.astro  |  9 ++++++---
+ src/pages/dossier-print.astro    | 15 +++++++++++++++
+ src/pages/fr/dossier-print.astro | 14 ++++++++++++++
+ src/pages/fr/index.astro         |  2 +-
+ src/pages/index.astro            |  2 +-
+ 9 files changed, 91 insertions(+), 15 deletions(-)

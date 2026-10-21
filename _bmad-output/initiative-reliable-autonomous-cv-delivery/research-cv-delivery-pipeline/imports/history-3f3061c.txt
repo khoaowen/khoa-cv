@@ -1,0 +1,16 @@
+commit 3f3061c2cd3d0dd851843aa2f771fb21d4bf6030
+Author:     khoaowen <khoaowen@users.noreply.github.com>
+AuthorDate: Sat May 30 21:10:39 2026 +0200
+Commit:     GitHub <noreply@github.com>
+CommitDate: Sat May 30 19:10:39 2026 +0000
+
+    Document autonomous PR flow + public-repo security posture (#7)
+    
+    Update AGENTS.md (PR/auto-merge flow for bots), SECURITY.md and README
+    for the public repo and automated security suite. Fix deploy job name.
+    
+    Co-authored-by: Claude Opus 4.8 <noreply@anthropic.com>
+
+ .github/workflows/deploy.yml |  2 +-
+ AGENTS.md                    | 21 +++++++++++++++++++++
+ 2 files changed, 22 insertions(+), 1 deletion(-)
