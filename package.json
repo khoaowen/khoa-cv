@@ -7,10 +7,13 @@
     "dev": "astro dev",
     "check:content": "node scripts/check-content.mjs",
     "build": "astro check && astro build",
-    "build:site": "node scripts/check-content.mjs && astro check && astro build",
+    "build:site": "node scripts/check-content.mjs && astro check && astro build && node scripts/assemble-release.mjs",
     "check:rendered": "node scripts/check-rendered-cv.mjs",
     "pdf": "node scripts/gen-pdf.mjs",
-    "build:all": "npm run build:site && npm run check:rendered && npm run pdf",
+    "check:release": "node scripts/check-release.mjs",
+    "test:release": "node scripts/test-release-privacy.mjs",
+    "test:fixture": "node scripts/test-release-fixture.mjs",
+    "build:all": "npm run build:site && npm run check:rendered && npm run pdf && npm run test:release && npm run test:fixture",
     "preview": "astro preview"
   },
   "dependencies": {
@@ -21,6 +24,7 @@
   },
   "devDependencies": {
     "pdf-lib": "1.17.1",
+    "pdfjs-dist": "6.4.299",
     "playwright": "1.64.1",
     "wrangler": "4.151.0"
   },
