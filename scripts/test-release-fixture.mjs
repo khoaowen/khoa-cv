@@ -117,26 +117,28 @@ try {
   // Exercise short-circuit behavior at every validation boundary with a
   // harmless uploader stub. The failing stage emits no details or contact data.
   const uploaderStub = join(tmp, 'uploader-stub.mjs');
-  const uploadMarker = join(tmp, 'upload-called');
-  await writeFile(uploaderStub, `import { writeFile } from 'node:fs/promises'; await writeFile(${JSON.stringify(uploadMarker)}, 'called');`);
+  const uploadMarker = 'upload-called';
+  await writeFile(uploaderStub, "import { writeFile } from 'node:fs/promises'; await writeFile('upload-called', 'called');");
   const validationStages = ['source/phone', 'schema/type/build', 'rendered output', 'print/PDF', 'release boundary'];
   // Reproduce the reported rendered-only regression against a real built page.
   const publicPage = join(dist, 'index.html');
   const cleanPage = await readFile(publicPage, 'utf8');
   await writeFile(publicPage, cleanPage.replace('AI Engineering Specialization', 'Injected rendered drift'));
   await rm(uploadMarker, { force: true });
-  const renderedResult = spawnSync('sh', ['-c', `${JSON.stringify(process.execPath)} scripts/check-rendered-cv.mjs && ${JSON.stringify(process.execPath)} ${JSON.stringify(uploaderStub)}`], { cwd: tmp, encoding: 'utf8' });
-  step('rendered-only drift blocks stub uploader', renderedResult.status !== 0 && !(await filesUnder(tmp)).some((file) => file === 'upload-called'));
+  const renderedResult = spawnSync(process.execPath, ['scripts/check-rendered-cv.mjs'], { cwd: tmp, encoding: 'utf8', stdio: 'ignore' });
+  if (renderedResult.status === 0) spawnSync(process.execPath, [uploaderStub], { cwd: tmp, stdio: 'ignore' });
+  step('rendered-only drift blocks stub uploader', renderedResult.status !== 0 && !(await filesUnder(tmp)).includes(uploadMarker));
   await writeFile(publicPage, cleanPage);
 
   for (const failedStage of validationStages) {
     await rm(uploadMarker, { force: true });
-    const command = validationStages.map((stage) => stage === failedStage
-      ? `node -e "process.exit(1)"`
-      : `node -e "process.exit(0)"`).join(' && ') + ` && ${JSON.stringify(process.execPath)} ${JSON.stringify(uploaderStub)}`;
-    const result = spawnSync('sh', ['-c', command], { cwd: tmp, encoding: 'utf8' });
-    const uploaderNotCalled = !(await filesUnder(tmp)).some((file) => file === 'upload-called');
-    step(`failure-stage fixture blocks stub uploader: ${failedStage}`, result.status !== 0 && uploaderNotCalled);
+    let failed = false;
+    for (const stage of validationStages) {
+      const result = spawnSync(process.execPath, ['-e', `process.exit(${stage === failedStage ? 1 : 0})`], { cwd: tmp, stdio: 'ignore' });
+      if (result.status !== 0) { failed = true; break; }
+    }
+    if (!failed) spawnSync(process.execPath, [uploaderStub], { cwd: tmp, stdio: 'ignore' });
+    step(`failure-stage fixture blocks stub uploader: ${failedStage}`, failed && !(await filesUnder(tmp)).includes(uploadMarker));
   }
 } finally {
   process.chdir(ROOT);
