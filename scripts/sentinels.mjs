@@ -5,21 +5,22 @@
 // Values are never printed.
 import { readFile, readdir } from 'node:fs/promises';
 import { join } from 'node:path';
+import { parse } from 'yaml';
 
 export const SOURCE_FILES = ['src/content/cv/en.yaml', 'src/content/cv/fr.yaml'];
 
 const escapeHtml = (v) => v.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 
-// Encodings of one value; everything is compared case-insensitively.
+// Text encodings are case-insensitive; Base64 is case-sensitive.
 export function contactVariants(value) {
   return [...new Set([
-    value,
-    encodeURIComponent(value),
-    encodeURI(value),
-    Buffer.from(value, 'utf8').toString('base64'),
-    escapeHtml(value),
+    value, encodeURIComponent(value), encodeURI(value), escapeHtml(value),
     value.replace(/\s+/g, ' '),
   ].map((v) => v.toLowerCase()))].filter(Boolean);
+}
+
+export function base64Variant(value) {
+  return Buffer.from(value, 'utf8').toString('base64');
 }
 
 // Address fragments (e.g. the street line alone). Only fragments that mix a
@@ -34,12 +35,19 @@ export async function loadSentinels() {
   const sentinels = [];
   for (const file of SOURCE_FILES) {
     const text = await readFile(file, 'utf8');
-    const block = text.match(/^  private:\s*\n((?:    .*\n?)*)/m)?.[1] ?? '';
-    for (const [, kind, , value] of block.matchAll(/^    (email|address):\s*(["']?)(.+?)\2\s*$/gm)) {
+    let data;
+    try { data = parse(text); } catch { throw new Error(`Cannot parse private-contact source: ${file}`); }
+    const priv = data?.basics?.private;
+    if (!priv || typeof priv !== 'object' || Array.isArray(priv)) throw new Error(`Missing or invalid basics.private in ${file}`);
+    if (!Object.hasOwn(priv, 'email') && !Object.hasOwn(priv, 'address')) throw new Error(`No private contacts in ${file}`);
+    for (const kind of ['email', 'address']) {
+      if (!Object.hasOwn(priv, kind)) continue;
+      const value = priv[kind];
+      if (typeof value !== 'string' || !value.trim()) throw new Error(`Invalid basics.private.${kind} in ${file}`);
       const clean = value.trim();
-      if (!clean) continue;
+      const variants = contactVariants(clean);
       const extra = kind === 'address' ? addressFragments(clean).flatMap(contactVariants) : [];
-      sentinels.push({ file, kind, value: clean, variants: contactVariants(clean), all: [...new Set([...contactVariants(clean), ...extra])] });
+      sentinels.push({ file, kind, value: clean, variants, base64: base64Variant(clean), all: [...new Set([...variants, ...extra])] });
     }
   }
   return sentinels;
@@ -48,7 +56,8 @@ export async function loadSentinels() {
 export const containsSentinel = (text, sentinel) => {
   const hay = text.toLowerCase();
   const squashed = hay.replace(/\s+/g, ' ');
-  return sentinel.all.some((v) => hay.includes(v) || squashed.includes(v));
+  return sentinel.all.some((v) => hay.includes(v) || squashed.includes(v))
+    || (sentinel.base64 != null && text.includes(sentinel.base64));
 };
 
 export async function filesUnder(dir, prefix = '') {
