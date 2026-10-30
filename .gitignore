@@ -1,6 +1,8 @@
 node_modules/
 dist/
+.private-build/
 .astro/
+.wrangler/
 .DS_Store
 
 # Secrets / local env — never commit

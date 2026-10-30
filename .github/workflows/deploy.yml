@@ -16,6 +16,7 @@ concurrency:
 jobs:
   deploy:
     name: Build, generate PDFs, deploy to Cloudflare
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     timeout-minutes: 15
 
@@ -35,11 +36,15 @@ jobs:
       - name: Install Chromium for Playwright
         run: npx playwright install --with-deps chromium
 
-      - name: Build and validate content
-        run: npm run build:site
-
-      - name: Generate PDFs
-        run: npm run pdf
+      # Same complete contract as CI; all stages finish against this checkout
+      # before Wrangler is allowed to upload dist/.
+      - name: Build and validate release candidate
+        env:
+          CANDIDATE_SHA: ${{ github.sha }}
+        run: |
+          test "$(git rev-parse HEAD)" = "$CANDIDATE_SHA"
+          npm run build:all
+          test "$(git rev-parse HEAD)" = "$CANDIDATE_SHA"
 
       - name: Deploy to Cloudflare Workers (static assets)
         uses: cloudflare/wrangler-action@v4

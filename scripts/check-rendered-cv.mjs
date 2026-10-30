@@ -2,6 +2,8 @@
 // still expose the intended CV content. Check both locale entry pages after
 // Astro has built them, before PDFs are generated.
 import { readFile } from 'node:fs/promises';
+import { join } from 'node:path';
+import { BUILD_DIR } from './paths.mjs';
 
 const PAGES = [
   {
@@ -19,14 +21,14 @@ const PAGES = [
     date: 'Déc. 2025',
   },
   {
-    file: 'dist/dossier-print/index.html',
+    file: join(BUILD_DIR, 'dossier-print/index.html'),
     label: 'English skills dossier',
     certification: 'AI Engineering Specialization',
     issuer: 'ByteByteGo',
     date: 'Dec 2025',
   },
   {
-    file: 'dist/fr/dossier-print/index.html',
+    file: join(BUILD_DIR, 'fr/dossier-print/index.html'),
     label: 'French skills dossier',
     certification: 'AI Engineering Specialization',
     issuer: 'ByteByteGo',
