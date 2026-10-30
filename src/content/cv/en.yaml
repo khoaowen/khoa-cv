@@ -24,6 +24,29 @@ basics:
     email: khoaowen2510@gmail.com
 
 work:
+  - company: Crédit Agricole CIB
+    position: Senior Java Developer / Tech Lead
+    start: Sep 2026
+    end: ""
+    introduction: >-
+      Crédit Agricole CIB is the corporate and investment banking arm of the
+      Crédit Agricole Group.
+    summary: >-
+      Modernising ISAAC, an internal operations portal for monitoring
+      integration flows, managing alerts and processing reports: stabilised the
+      legacy Java application and led the ongoing React and Spring Boot rebuild.
+    team: Team of 4 developers and 1 project manager.
+    highlights:
+      - Migrated the legacy ISAAC portal from Java 7 on JBoss to Java 8 on WildFly 26, resolving compatibility, deployment-packaging and IBM MQ classloading issues.
+      - Used BMAD to plan the rebuild, covering requirements, functional inventory, architecture decisions and phased implementation while preserving existing functionality and the database schema.
+      - Developed the new application with Java 25, Spring Boot 4 and React 19, targeting Kubernetes infrastructure and aligned with the bank's corporate design system.
+      - Established automated quality checks with Playwright end-to-end and contract tests, local and CI verification, and a SonarQube quality gate in GitLab CI.
+    impacts:
+      - Stabilised the legacy application on WildFly 26 and established the foundation for its React and Spring Boot replacement.
+      - Reduced migration risk through incremental validation and compatibility with the existing database schema.
+      - Strengthened delivery confidence and maintainability through repeatable builds, automated tests and CI quality gates.
+    tech: [Java 7/8/25, Spring Boot 4, Spring Security, Spring Data JPA, SQL Server, React 19, TypeScript, Vite, Playwright, Maven, GitLab CI, SonarQube, JBoss, WildFly 26, JSF, IBM MQ, Kubernetes, GitHub Copilot, BMAD]
+
   - company: Amundi
     position: Senior Java Developer
     start: Oct 2024
@@ -116,6 +139,7 @@ work:
 
   - company: BNP Paribas CIB (via Meritis)
     position: Senior Java Developer
+    condensed: true
     start: Oct 2018
     end: Oct 2019
     introduction: >-
@@ -312,7 +336,7 @@ skills:
   - category: Data
     items: [Oracle SQL, MySQL, MongoDB, PL/SQL, H2]
   - category: Delivery & reliability
-    items: [Jenkins, CI/CD, Automated testing, SonarQube, Docker, Kubernetes, Grafana, Splunk]
+    items: [Jenkins, CI/CD, Automated testing, SonarQube, Docker, Kubernetes, Ansible, Grafana, Splunk]
   - category: AI & automation
     items: [Large Language Models (LLMs), Codex, Claude Code]
   - category: Practices
