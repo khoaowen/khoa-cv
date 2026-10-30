@@ -336,7 +336,7 @@ skills:
   - category: Data
     items: [Oracle SQL, MySQL, MongoDB, PL/SQL, H2]
   - category: Delivery & reliability
-    items: [Jenkins, CI/CD, Automated testing, SonarQube, Docker, Kubernetes, Grafana, Splunk]
+    items: [Jenkins, CI/CD, Automated testing, SonarQube, Docker, Kubernetes, Ansible, Grafana, Splunk]
   - category: AI & automation
     items: [Large Language Models (LLMs), Codex, Claude Code]
   - category: Practices
