@@ -23,6 +23,30 @@ basics:
     email: khoaowen2510@gmail.com
 
 work:
+  - company: Crédit Agricole CIB
+    position: Développeur Java Senior / Tech Lead
+    start: Sept. 2026
+    end: ""
+    introduction: >-
+      Crédit Agricole CIB est la branche de banque de financement et
+      d'investissement du groupe Crédit Agricole.
+    summary: >-
+      Modernisation d'ISAAC, un portail interne d'exploitation destiné au suivi
+      des flux d'intégration, à la gestion des alertes et au traitement des
+      rapports : stabilisation du legacy Java et pilotage de la refonte React et
+      Spring Boot en cours.
+    team: Équipe composée de 4 développeurs et d'un chef de projet.
+    highlights:
+      - "Migration du portail ISAAC de Java 7 sur JBoss vers Java 8 sur WildFly 26, avec résolution des problèmes de compatibilité, de packaging de déploiement et de classloading IBM MQ."
+      - "Utilisation de BMAD pour planifier la refonte : recueil des besoins, inventaire fonctionnel, décisions d'architecture et mise en œuvre progressive, tout en préservant les fonctionnalités et le schéma de base de données existants."
+      - Développement de la nouvelle application avec Java 25, Spring Boot 4 et React 19, cible Kubernetes et alignement sur le design system du groupe.
+      - "Mise en place de contrôles qualité automatisés : tests end-to-end Playwright et tests de contrat, vérifications locales et en CI, quality gate SonarQube dans GitLab CI."
+    impacts:
+      - Stabilisation de l'application legacy sur WildFly 26 et mise en place des fondations de son remplacement React et Spring Boot.
+      - Réduction du risque de migration grâce à une validation incrémentale et à la compatibilité avec le schéma de base de données existant.
+      - Renforcement de la confiance dans les livraisons et de la maintenabilité grâce à des builds reproductibles, des tests automatisés et des quality gates CI.
+    tech: [Java 7/8/25, Spring Boot 4, Spring Security, Spring Data JPA, SQL Server, React 19, TypeScript, Vite, Playwright, Maven, GitLab CI, SonarQube, JBoss, WildFly 26, JSF, IBM MQ, Kubernetes, GitHub Copilot, BMAD]
+
   - company: Amundi
     position: Développeur Java Senior
     start: Oct. 2024
@@ -113,6 +137,7 @@ work:
 
   - company: BNP Paribas CIB (via Meritis)
     position: Développeur Java Senior
+    condensed: true
     start: Oct. 2018
     end: Oct. 2019
     introduction: >-
